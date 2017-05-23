@@ -8,7 +8,7 @@ COMPONENTS
 #### MAIN SCREEN
 1. Title
 2. control-bar
-    - search bar
+    - search bar : typing in it will filter the recipe-listing in real time to only show names that match
     - add button (links to RECIPE-FULL (add mode))  /recipe/new
 3. recipe-listing
   - recipe
@@ -28,5 +28,14 @@ COMPONENTS
 STATE
 -------------------------------------------------
 
+recipes : array of recipe objects
+  recipe : object -> {name: "stuff", ingriedents: [{quantity: 10, unit: "tablespoon", "name" }], directions: "" }
+recipeList : array of recipe names?  
+mode: string -> "add", "edit", "display"  
 
 
+
+USING REACT ROUTER
+-----------------------------------------------------
+
+[Instructions](https://reacttraining.com/react-router/web/guides/quick-start)
