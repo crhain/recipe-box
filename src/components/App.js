@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import RecipeList from './recipe_list/recipe-list';
-import RecipeView from './recipe_view/recipe-view';
-import RecipeNew from './recipe_new/recipe-new';
+import RecipeList from './RecipeList/';
+import RecipeView from './RecipeView/';
+import RecipeNew from './RecipeNew/';
 import './App.css';
 
 class App extends Component {
