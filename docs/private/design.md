@@ -2,6 +2,16 @@ DESIGN DOCUMENT
 ======================================================
 
 
+TODO
+--------------------------------------------
+* convert components to pure functions
+* add RecipeEdit component and tests (and hook up to router)
+* finish writing all unit tests
+* write e2e tests
+* create actual app!
+
+
+
 COMPONENTS
 --------------------------------------------
 
