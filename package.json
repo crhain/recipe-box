@@ -2,6 +2,7 @@
   "name": "recipe-box",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://crhwebdev.github.io/fcc-recipe-box.git",
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^15.5.4",
