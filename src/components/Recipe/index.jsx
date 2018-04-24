@@ -10,8 +10,8 @@ class RecipeView extends Component{
         return (
             <div>
                 <h1>Recipe View For: { id }</h1>
-                <Link to="/recipe/1555/edit">Edit Recipe</Link>
-                <Link to="/">Back To Listing</Link>
+                <Link className="waves-effect waves-light btn" style={{marginRight: '1rem'}} to="/recipe/1555/edit">Edit Recipe</Link>
+                <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
             </div>
         );
     }

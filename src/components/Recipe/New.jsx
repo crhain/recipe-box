@@ -6,7 +6,7 @@ class New extends Component{
         return (
             <div>
                 <h1>Create A New Recipe</h1>
-                <Link to="/">Back To Listing</Link>
+                <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
             </div>
         );
     }

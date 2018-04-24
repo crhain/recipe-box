@@ -19,7 +19,7 @@ class List extends Component{
         return (
             <div>
                 <h1>Recipe List</h1>
-                <Link to="/recipe/new">Create New Recipe</Link>
+                <Link className="waves-effect waves-light btn" to="/recipe/new">Create New Recipe</Link>
                 <div>
                     <ul>
                         {this.createRecipeList()}

@@ -4,11 +4,15 @@ DESIGN DOCUMENT
 
 TODO
 --------------------------------------------
-* convert components to pure functions
-* add RecipeEdit component and tests (and hook up to router)
-* finish writing all unit tests
+* add basic styling (use Materialize.css)
+* create dummy data structure to represent recipes and hook up to actions and reducers
+* add New form that adds to recipes to datastructure
+* add delete action to remove recipes from datastructure
+* add edit action to edit recipes in datastructure
+* get all unit tests to pass
+* add in ability to store data in LocalStorage and retrieve from LocalStorage
 * write e2e tests
-* create actual app!
+
 
 
 

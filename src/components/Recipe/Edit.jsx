@@ -7,7 +7,7 @@ class Edit extends Component {
         return (
             <div>
                 <h2>Edit Recipe</h2>
-                <Link to="/">Return to list</Link>
+                <Link className="waves-effect waves-light btn" to="/">Return to list</Link>
             </div>   
         );
     }
