@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import RecipeView from './';
+import New from './New.jsx';
 
-describe('RecipeView', () => {
+describe('New', () => {
   
     let component;
 
     beforeEach(() => {
-        component = shallow(<RecipeView />);
+        component = shallow(<New />);
     });
 
     it('renders correctly', () => {

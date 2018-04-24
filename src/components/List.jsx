@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import SearchBar from '../SearchBar/';
 
-class RecipeList extends Component{
+
+class List extends Component{
     createRecipeList(){
         const listing = this.props.recipes ? 
                         this.props.recipes.map((recipe, index)=>{
-                            return <li key={index}>{recipe.title}</li>;
+                            return <Link to="/recipe/1555"><li key={index}>{recipe.title}</li></Link>;
                         }) :
                         <li>Loading...</li>;
 
@@ -19,7 +19,6 @@ class RecipeList extends Component{
         return (
             <div>
                 <h1>Recipe List</h1>
-                <SearchBar />                
                 <Link to="/recipe/new">Create New Recipe</Link>
                 <div>
                     <ul>
@@ -39,5 +38,5 @@ function mapStateToProps(state){
     };
 }
 
-export default connect(mapStateToProps)(RecipeList);
+export default connect(mapStateToProps)(List);
 

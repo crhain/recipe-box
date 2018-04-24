@@ -1,14 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import SearchBar from './';
+import Edit from './Edit.jsx';
 
-describe('RecipeList', () => {
+describe('Edit', () => {
   
     let component;
-    let submit = jest.fn()
 
     beforeEach(() => {
-        component = shallow(<SearchBar />);
+        component = shallow(<Edit />);
     });
 
     it('renders correctly', () => {
