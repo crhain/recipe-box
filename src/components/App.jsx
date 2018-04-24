@@ -11,9 +11,9 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Switch>
-              <Route path="/recipe/new" component={RecipeNew} />        
-              <Route path="/recipe/:id" component={RecipeView} />              
-              <Route path="/" component={RecipeList} />          
+              <Route exact path="/recipe/new" component={RecipeNew} />        
+              <Route exact path="/recipe/:id" component={RecipeView} />              
+              <Route exact path="/" component={RecipeList} />          
             </Switch>                  
           </div>      
       </BrowserRouter>   
