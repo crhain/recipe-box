@@ -4,14 +4,14 @@ DESIGN DOCUMENT
 
 TODO
 --------------------------------------------
-* create dummy data structure to represent recipes and hook up to actions and reducers
-* add New form that adds to recipes to datastructure
-* add delete action to remove recipes from datastructure
-* add edit action to edit recipes in datastructure
-* get all unit tests to pass (add we add new stuff such as actions and reducers)
-* add in ability to store data in LocalStorage and retrieve from LocalStorage
-* write e2e tests
-* finish styling
+
+* hook up actions and reducers for getting a recipe, adding a recipe, editing recipe, and deleting a recipe
+* create component for adding new recipes
+* create edit component for editing existing recipe
+* add delete and edit buttons on recipeView
+* convert application to use localStorage for storing model instead of in-memory model
+* write e2e tests and test out application
+* finish styling to it's all nice and purty
 
 
 

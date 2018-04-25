@@ -1,50 +1,38 @@
-import actions from '.';
-import types from '../constants/';
+import { getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe } from ".";
+import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "./types";
 
-describe('Actions', () => {
+
+describe("Actions", () => {
+    describe("getRecipes action", () => {
+        it("Should return an action with type GET_RECIPES", () => {                            
+            expect(getRecipes().type).toEqual(GET_RECIPES);
     
-     
-
-    it('should create an action to filter recipes', () => {
-        const searchTerm = "Beef Stroganof";
-        const expectedAction = {
-            type: types.FILTER_RECIPES,
-            term: searchTerm
-        };
-
-        expect(actions.filterRecipes(searchTerm)).toEqual(expectedAction);
-
+        });
+    });
+    
+    describe("getRecipe action", () => {
+        it("should return an action with type GET_RECIPE", () => {
+            expect(getRecipe().type).toEqual(GET_RECIPE);
+        });
     });
 
-    it('should create an action to add a recipe', () => {
-        const recipe = {};
-        const expectedAction = {
-            type: types.ADD_RECIPE,
-            recipe: recipe
-        };
-
-        expect(actions.addRecipe(recipe)).toEqual(expectedAction);
+    describe("addRecipe action", () => {
+        it("should return an action with type ADD_RECIPE", () => {
+            expect(addRecipe().type).toEqual(ADD_RECIPE);
+        });
     });
 
-    it('should create an action to delete a recipe', () => {
-        const expectedAction = {
-            type: types.DELETE_RECIPE,
-            id: 1
-        };
-
-        expect(actions.deleteRecipe(id)).toEqual(expectedAction);
+    describe("editRecipe action", () => {
+        it("should return an action with type EDIT_RECIPE", () => {
+            expect(editRecipe().type).toEqual(EDIT_RECIPE);
+        });
     });
 
-    it('should create an action to edit a recipe', () => {
-        const recipe = {};
-        const expectedAction = {
-            type: types.EDIT_RECIPE,
-            id: 1,
-            recipe: recipe
-        };
-
-        expect(actions.filterRecipes(id, recipe)).toEqual(expectedAction);
+    describe("deleteRecipe action", () => {
+        it("should return an action with type DELETE_RECIPE", () => {
+            expect(deleteRecipe().type).toEqual(DELETE_RECIPE);
+        });
     });
-
+    
 
 });
