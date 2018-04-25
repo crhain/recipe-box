@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getRecipes } from "../actions";
 
 
 class List extends Component{
-    createRecipeList(){
-        const listing = this.props.recipes ? 
-                        this.props.recipes.map((recipe, index)=>{
-                            return <Link to="/recipe/1555"><li key={index}>{recipe.title}</li></Link>;
-                        }) :
-                        <li>Loading...</li>;
+    
+    componentDidMount(){
+        this.props.getRecipes();
+    }
 
+    createRecipeList(){                
+        const listing = this.props.recipes.length > 0 ? 
+            this.props.recipes.map((recipe, index)=>{
+                return <Link to="/recipe/1555" key={index}><li>{recipe.title}</li></Link>;
+            }) :
+        <li>Loading...</li>;
+                        
         return listing;
     }
 
-    render(){
-        console.log(this.props.recipes);
+    render(){        
         return (
             <div>
                 <h1>Recipe List</h1>
@@ -32,11 +37,9 @@ class List extends Component{
 }
 
 
-function mapStateToProps(state){
-    return {
-        recipes: state.recipes
-    };
+function mapStateToProps({ recipes }){
+    return { recipes };
 }
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps, { getRecipes })(List);
 

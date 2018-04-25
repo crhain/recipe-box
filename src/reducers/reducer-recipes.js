@@ -1,16 +1,16 @@
-import types from '../constants/';
+import { GET_RECIPES } from "../actions/types";
+import model from "../model/index.js";
 
-export const initialState = {
+const initialState = {
     recipes: []
 };
 
-export const reducer = (state = initialState, action) => {
-    return [                
-                {title: 'Beef Strogonoff'},
-                {title: 'Lasagna'},
-                {title: 'Spanish Rice'}
-            ];
-        
-};
+export default function (state = initialState, action) {
+    if(action.type === GET_RECIPES) {
+        return action.model;
+    } else {
+        return state;
+    }
+                
+}
 
-export default reducer;
