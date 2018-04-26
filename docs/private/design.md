@@ -5,7 +5,7 @@ DESIGN DOCUMENT
 TODO
 --------------------------------------------
 
-* hook up actions and reducers for getting a recipe, adding a recipe, editing recipe, and deleting a recipe
+* hook up actions and reducers for getting a recipe, adding a recipe, editing recipe, and deleting a recipe (and write unit tests to get each of these to pass)
 * create component for adding new recipes
 * create edit component for editing existing recipe
 * add delete and edit buttons on recipeView
