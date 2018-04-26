@@ -1,5 +1,5 @@
 import recipeReducer from "./recipeReducer";
-import { GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/types";
+import { GET_RECIPE } from "../actions/types";
 import model from "../model/index.js";
 
 const beef = {

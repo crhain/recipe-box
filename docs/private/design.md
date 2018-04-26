@@ -5,10 +5,10 @@ DESIGN DOCUMENT
 TODO
 --------------------------------------------
 
-* hook up actions and reducers for getting a recipe, adding a recipe, editing recipe, and deleting a recipe (and write unit tests to get each of these to pass)
-* create component for adding new recipes
-* create edit component for editing existing recipe
-* add delete and edit buttons on recipeView
+* get recipeView working correctly
+* add working delete and edit buttons on recipeView
+* create component for adding new recipes and get to work
+* create edit component for editing existing recipe and get to work
 * convert application to use localStorage for storing model instead of in-memory model
 * write e2e tests and test out application
 * finish styling to it's all nice and purty

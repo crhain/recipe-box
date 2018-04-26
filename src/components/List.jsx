@@ -10,8 +10,9 @@ class List extends Component{
         this.props.getRecipes();
     }
 
-    createRecipeList(){                
-        const listing = this.props.recipes ? 
+    createRecipeList(){     
+                   
+        const listing = this.props.recipes.length > 0 ? 
             this.props.recipes.map((recipe, index)=>{
                 return <Link to="/recipe/1555" key={index}><li>{recipe.title}</li></Link>;
             }) :

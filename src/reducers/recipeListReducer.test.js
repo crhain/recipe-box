@@ -1,5 +1,5 @@
 import recipeListReducer from "./recipeListReducer";
-import { GET_RECIPES } from "../actions/types";
+import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/types";
 import model from "../model/";
 
 
@@ -55,52 +55,52 @@ const newRecipe = {
 
 describe("recipeListReducer", () => {
     
-    it("Should return initial state of null when no action type passed and inital state not set", () => {
-        expect(recipeListReducer(undefined, {type: null, payload: null})).toEqual(null);
+    it("Should return initial state of [] when no action type passed and inital state not set", () => {
+        expect(recipeListReducer(undefined, {type: null, payload: null}).length).toEqual(0);
     });
 
     describe("GET_RECIPES", () => {
                     
         it("Should return the correct state when called with GET_RECIPES action type", () => {
-            expect(recipeListReducer(null, {type: GET_RECIPES, payload: null})).toMatchObject(model);
+            expect(recipeListReducer(undefined, {type: GET_RECIPES, payload: null})).toMatchObject(model);
         });
     });
     
     describe("ADD_RECIPE", () => {
-
-        it("Should return null if recipe already exists", () => {
-            expect( recipeReducer( undefined, { type: ADD_RECIPE, recipe: beef } ) ).toEqual(null);
-        }); 
-
-        it("Should add new recipe to recipes", () => {
-            //this might be wrong syntax -- might not be able to add not
-            expect( recipeReducer( undefined, { type: ADD_RECIPE, recipe: newRecipe } ) ).not.toContainEqual(newRecipe);
+        
+        it("Should add new recipe to recipes", () => {            
+            expect( recipeListReducer( undefined, { type: ADD_RECIPE, recipe: newRecipe } ) ).toContainEqual(newRecipe);                        
         });    
+
+        it("Should not add recipe if recipe already exists", () => {
+            
+            let result = recipeListReducer( model, { type: ADD_RECIPE, recipe: beef } );
+            let numberRecipeCopies = result.filter( recipe => recipe.id === beef.id ).length;            
+            expect( numberRecipeCopies ).toBe(1);
+        }); 
           
     });
 
     describe("EDIT_RECIPE", () => {
-        // it("Should return null if recipe does not exist", () => {
-        //     expect( recipeReducer( undefined, { type: GET_RECIPE, recipe: beef } ) ).toEqual(null);
-        // });    
-
+       
         it("Should return new list of recipes with changed recipe in it", () => {
-            expect( recipeReducer( undefined, { type: EDIT_RECIPE, recipe: editedRecipe } ) ).toContainEqual(editedRecipe);
+            expect( recipeListReducer( model, { type: EDIT_RECIPE, recipe: editedRecipe } ) ).toContainEqual(editedRecipe);
         });
         
         it("Should **not** return new list of recipes with old recipe in it", () => {
-            expect( recipeReducer( undefined, { type: EDIT_RECIPE, recipe: editedRecipe } ) ).toContainEqual(beef);
+            expect( recipeListReducer( model, { type: EDIT_RECIPE, recipe: editedRecipe } ) ).not.toContainEqual(beef);
         });
+
     });
 
     describe("DELETE_RECIPE", () => {
         it("Should delete recipe from recipes", () => {
-            expect( recipeReducer( undefined, { type: DELETE_RECIPE, recipe: newRecipe } ) ).not.toContainEqual(newRecipe);
+            expect( recipeListReducer( model, { type: DELETE_RECIPE, id: beef.id } ) ).not.toContainEqual(beef);
         });    
 
-        // it("", () => {
-            
-        // });    
+        it("Should not delete anything if recipe not in recipes", () => {
+            expect( recipeListReducer( model, { type: DELETE_RECIPE, id: newRecipe.id } ).length ).toBe(model.length);
+        });    
     });
     
 });
