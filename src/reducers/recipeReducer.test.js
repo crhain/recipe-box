@@ -18,17 +18,25 @@ const beef = {
         "1 1/2 cups sour cream",
         "3 cups hot cooked egg noodles"
     ]
-}
+};
 
 
 describe("recipeReducer", () => {
+    
     it("Should return initial state of null when no action type passed and inital state not set", () => {
         expect(recipeReducer(undefined, {type: null, payload: null})).toEqual(null);
     });
 
-    
-    it("Should return the correct recipe when passed id for recipe in action", () => {        
-        expect( recipeReducer( undefined, {type: GET_RECIPE, id: "beefstrogonoff"} ) ).toMatchObject(beef);
+    describe("GET_RECIPE", () => {
+                   
+        it("Should return the correct recipe when passed id for recipe in action", () => {        
+            expect( recipeReducer( undefined, { type: GET_RECIPE, id: "beefstrogonoff" } ) ).toMatchObject(beef);
+        });
+
+        it("should return null if recipeID not found", () => {
+            expect( recipeReducer( undefined, { type: GET_RECIPE, id: "beefstrogonoffff" } ) ).toEqual(null);
+        });
+
     });
-    
+            
 });

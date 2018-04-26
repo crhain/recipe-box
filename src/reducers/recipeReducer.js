@@ -9,14 +9,9 @@ export default (state = null, action) => {
                 return recipe[0];
             } else {
                 return null;
-            }                              
-        case ADD_RECIPE:
-            return state;
-        case EDIT_RECIPE:
-            return state;
-        case DELETE_RECIPE:
-            return state;        
+            }                                          
         default:
             return state;
     }
+
 }

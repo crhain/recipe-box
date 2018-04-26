@@ -1,12 +1,22 @@
-import { GET_RECIPES } from "../actions/types";
+import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/types";
 import model from "../model/index.js";
 
-
 export default (state = null, action) => {
-    if(action.type === GET_RECIPES) {
-        return model;
-    } else {
-        return state;
-    } 
+    switch (action.type) {
+        case GET_RECIPES:            
+            return model;                              
+        case ADD_RECIPE:
+            return state;
+        case EDIT_RECIPE:
+            return state;
+        case DELETE_RECIPE:
+            return state;        
+        default:
+            return state;
+    }
+    
 }
+
+
+
 
