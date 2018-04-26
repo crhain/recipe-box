@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-// import { getRecipe } from "../actions/";
+import { getRecipe } from "../../actions";
+
 
 
 class RecipeView extends Component{
-       
+    
+    componentDidMount(){
+
+    }
+
     render(){
         //get id paramater from url
         const {id} = this.props.match.params;
@@ -20,10 +25,9 @@ class RecipeView extends Component{
 }
 
 
-// function mapStateToProps(){
-//     return [];
-// }
+function mapStateToProps({ recipes }){
+    return { recipes };
+}
 
-// export default connect(mapStateToProps, { getRecipe })(RecipeView);
+export default connect(mapStateToProps, { getRecipe })(RecipeView);
 
-export default RecipeView;

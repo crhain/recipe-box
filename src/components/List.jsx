@@ -14,7 +14,7 @@ class List extends Component{
                    
         const listing = this.props.recipes.length > 0 ? 
             this.props.recipes.map((recipe, index)=>{
-                return <Link to="/recipe/1555" key={index}><li>{recipe.title}</li></Link>;
+                return <Link to={ "/recipe/" + recipe.id } key={index}><li>{recipe.title}</li></Link>;
             }) :
         <li>Loading...</li>;
                         
