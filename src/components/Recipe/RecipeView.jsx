@@ -15,6 +15,16 @@ export class RecipeView extends Component{
         this.recipe = null;        
     }
 
+    renderIngredients(){
+        let ingredients = "";
+
+        if(this.props.recipe.ingredients) {
+            ingredients = this.props.recipe.ingredients.map( (ingredient, index) => <li key={ index }>{ ingredient }</li> );            
+        }
+
+        return ingredients;
+    }
+
     render(){
         
         return (
@@ -24,7 +34,14 @@ export class RecipeView extends Component{
                     
                 </div>
                 <Link className="waves-effect waves-light btn" style={{marginRight: '1rem'}} to="/recipe/1555/edit">Edit Recipe</Link>
+                <button className="waves-effect waves-light btn" style={{marginRight: '1rem'}} to="/recipe/1555/edit">Delete Recipe</button>
                 <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
+                <div>
+                    <h3>Ingredients:</h3>
+                    <ol>
+                        { this.renderIngredients() }
+                    </ol>
+                </div>
             </div>
         );
     }

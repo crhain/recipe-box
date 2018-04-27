@@ -10,9 +10,6 @@ Recipe/index.jsx will not pass render in index.test.jsx even though it works in 
 TODO
 --------------------------------------------
 
-* get recipeView working correctly
-  - still need to add listing of ingredients
-  - still need to fix test for component : the component needs a this.props.match.param.id passed in
 * add working delete and edit buttons on recipeView
 * create component for adding new recipes and get to work
 * create edit component for editing existing recipe and get to work

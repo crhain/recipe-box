@@ -3,6 +3,7 @@ export default [
     {
         id: "beefstrogonoff", 
         title: "Beef Strogonoff", 
+        servings: 4,
         ingredients: [
             "1 1/2 pounds beef sirloin steak", 
             "8 ounces fresh mushrooms",
@@ -20,6 +21,7 @@ export default [
     {
         id: "lasagna", 
         title: "Lasagna", 
+        servings: 4,
         ingredients: [
             "1 1/4 pounds Johnsonville Ground Mild Italian sausage",
             "3/4 pound ground beef",
@@ -43,6 +45,7 @@ export default [
     {
         id: "spanishrice", 
         title: "Spanish Rice", 
+        servings: 4,
         ingredients: [
             "2 tablespoons olive oil",
             "1 onion, finely chopped (about 1 cup)",
