@@ -5,10 +5,8 @@ import model from "../model/index.js";
 export default (state = [], action) => {
     let exists;
     switch (action.type) {
-
         case GET_RECIPES:            
-            return model;
-
+            return model;      
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:            
             exists = state.find( recipe => {
