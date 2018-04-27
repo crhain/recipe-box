@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getRecipes } from "../actions";
 
 
-export class List extends Component{
+export class RecipeList extends Component{
     
     componentDidMount(){
         this.props.getRecipes();
@@ -42,5 +42,5 @@ function mapStateToProps({ recipes }){
     return { recipes };
 }
 
-export default connect(mapStateToProps, { getRecipes })(List);
+export default connect(mapStateToProps, { getRecipes })(RecipeList);
 

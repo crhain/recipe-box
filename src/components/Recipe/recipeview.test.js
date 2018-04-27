@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { RecipeView } from './index.jsx';
+import { RecipeView } from './RecipeView';
 
 describe('Recipe', () => {
   

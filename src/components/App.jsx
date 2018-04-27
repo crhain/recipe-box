@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import RecipeList from './List';
-import RecipeView from './Recipe/';
+import RecipeList from './RecipeList';
+import RecipeView from './Recipe/RecipeView';
 import RecipeEdit from './Recipe/Edit';
 import RecipeNew from './Recipe/New';
 import './App.css';
