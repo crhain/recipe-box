@@ -4,13 +4,13 @@ DESIGN DOCUMENT
 BUGS
 -------------------------------------------
 
-Recipe/index.jsx will not pass render in index.test.jsx even though it works in application??????
+* deleteRecipe only deletes recipe from recipeList but does not delete the recipe so can navigate back to the recipe page...
 
 
 TODO
 --------------------------------------------
 
-* add working delete and edit buttons on recipeView
+ 
 * create component for adding new recipes and get to work
 * create edit component for editing existing recipe and get to work
 * convert application to use localStorage for storing model instead of in-memory model

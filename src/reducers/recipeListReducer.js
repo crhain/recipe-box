@@ -5,8 +5,11 @@ import model from "../model/index.js";
 export default (state = [], action) => {
     let exists;
     switch (action.type) {
-        case GET_RECIPES:            
-            return model;      
+        case GET_RECIPES:
+            if(state.length < 1){
+                return model;      
+            }            
+            return state;
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:            
             exists = state.find( recipe => {
@@ -44,8 +47,11 @@ export default (state = [], action) => {
             });
 
             if(exists){
-                
-                return state.filter( recipe => recipe.id != action.id );
+                let newState = state.filter( recipe => recipe.id != action.id );
+                console.log("My updated state after delete is");
+                console.log(newState);
+                action.history.push("/");
+                return newState;
                 
             }
 

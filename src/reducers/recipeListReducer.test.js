@@ -95,11 +95,11 @@ describe("recipeListReducer", () => {
 
     describe("DELETE_RECIPE", () => {
         it("Should delete recipe from recipes", () => {
-            expect( recipeListReducer( model, { type: DELETE_RECIPE, id: beef.id } ) ).not.toContainEqual(beef);
+            expect( recipeListReducer( model, { type: DELETE_RECIPE, id: beef.id, history: [] } ) ).not.toContainEqual(beef);
         });    
 
         it("Should not delete anything if recipe not in recipes", () => {
-            expect( recipeListReducer( model, { type: DELETE_RECIPE, id: newRecipe.id } ).length ).toBe(model.length);
+            expect( recipeListReducer( model, { type: DELETE_RECIPE, id: newRecipe.id, history: [] } ).length ).toBe(model.length);
         });    
     });
     

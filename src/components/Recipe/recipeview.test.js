@@ -7,6 +7,8 @@ describe("RecipeView", () => {
   
     let component;
     let mockGetRecipeFunction = jest.fn();
+    let mockDeleteRecipeFunction = jest.fn();
+    let mockHistory = jest.fn();
     let mockMatch = {
         params: {
             id: "xyz"
@@ -15,7 +17,14 @@ describe("RecipeView", () => {
     let mockRecipe = model[0];
     
     beforeEach(() => {
-        component = shallow(<RecipeView getRecipe={ mockGetRecipeFunction } match={ mockMatch } recipe={ mockRecipe }  />);
+        component = shallow(
+            <RecipeView 
+                getRecipe={ mockGetRecipeFunction } 
+                deleteRecipe = { mockDeleteRecipeFunction }
+                history = { mockHistory }
+                match={ mockMatch } 
+                recipe={ mockRecipe }  />
+        );
     });
 
     it('renders correctly', () => {

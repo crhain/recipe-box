@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getRecipe, getRecipes } from "../../actions";
+import { getRecipe, deleteRecipe } from "../../actions";
 
 
 
@@ -12,7 +12,9 @@ export class RecipeView extends Component{
 
     constructor(props){
         super(props);                
-        this.recipe = null;        
+        this.recipe = null; 
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);    
+        this.history = this.props.history;   
     }
 
     renderIngredients(){
@@ -25,6 +27,10 @@ export class RecipeView extends Component{
         return ingredients;
     }
 
+    handleDeleteClick(){      
+        this.props.deleteRecipe(this.props.recipe.id, this.history);        
+    }
+
     render(){
         
         return (
@@ -34,7 +40,14 @@ export class RecipeView extends Component{
                     
                 </div>
                 <Link className="waves-effect waves-light btn" style={{marginRight: '1rem'}} to="/recipe/1555/edit">Edit Recipe</Link>
-                <button className="waves-effect waves-light btn" style={{marginRight: '1rem'}} to="/recipe/1555/edit">Delete Recipe</button>
+                <button 
+                    onClick={ this.handleDeleteClick }
+                    className="waves-effect waves-light btn" 
+                    style={{marginRight: '1rem'}}
+
+                >
+                        Delete Recipe
+                </button>
                 <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
                 <div>
                     <h3>Ingredients:</h3>
@@ -53,5 +66,5 @@ function mapStateToProps({ recipe }){
     return { recipe };
 }
 
-export default connect(mapStateToProps, { getRecipe })(RecipeView);
+export default withRouter(connect(mapStateToProps, { getRecipe, deleteRecipe })(RecipeView));
 
