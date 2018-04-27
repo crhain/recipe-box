@@ -22,7 +22,6 @@ yarn-error.log*
 
 #design
 /docs/private
-/docs/private/design.md
 docs/private
 ./docs/private
 
