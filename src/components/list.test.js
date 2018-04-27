@@ -1,16 +1,20 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import RecipeList from './';
+import model from "../model";
+import { List } from './List';
 
 describe('RecipeList', () => {
   
     let component;
+    let mockGetRecipesAction = jest.fn();
+    let mockRecipes = model;
 
     beforeEach(() => {
-        component = shallow(<RecipeList />);
+        component = shallow(<List getRecipes={ mockGetRecipesAction } recipes={ mockRecipes } />);
     });
 
     it('renders correctly', () => {
         expect(component.exists()).toEqual(true);
     });
+
 });

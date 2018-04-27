@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getRecipes } from "../actions";
 
 
-class List extends Component{
+export class List extends Component{
     
     componentDidMount(){
         this.props.getRecipes();
@@ -31,7 +31,7 @@ class List extends Component{
                         {this.createRecipeList()}
                     </ul>
                 </div>
-                
+                                
             </div>
         );
     }
