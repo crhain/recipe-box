@@ -5,9 +5,9 @@ import { getRecipe, getRecipes } from "../../actions";
 
 
 
-class RecipeView extends Component{
-    componentWillMount(){              
-        this.props.getRecipe(this.props.match.params.id);                                  
+export class RecipeView extends Component{
+    componentWillMount(){             
+        this.props.getRecipe(this.props.match.params.id);                                                            
     }
 
     constructor(props){
@@ -19,7 +19,7 @@ class RecipeView extends Component{
         
         return (
             <div>
-                <h1>{ this.props.recipe ? this.props.recipe.title : "" }</h1>
+                <h1>{ this.props.recipe ? this.props.recipe.title : "" }</h1>                
                 <div>
                     
                 </div>
@@ -28,6 +28,7 @@ class RecipeView extends Component{
             </div>
         );
     }
+    //hello    
 }
 
 
