@@ -7,9 +7,10 @@ import { getRecipe, deleteRecipe } from "../../actions";
 
 export class RecipeView extends Component{
     componentWillMount(){             
-        this.props.getRecipe(this.props.match.params.id);                                                            
+        this.props.getRecipe(this.props.match.params.id); 
+        console.log("recipe view is mounting");                                                           
     }
-
+  
     constructor(props){
         super(props);                
         this.recipe = null; 
