@@ -1,5 +1,5 @@
 
-export default [                
+export const model = [                
     {
         id: "beefstrogonoff", 
         title: "Beef Strogonoff", 

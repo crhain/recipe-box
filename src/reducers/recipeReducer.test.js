@@ -1,6 +1,6 @@
 import recipeReducer from "./recipeReducer";
 import { GET_RECIPE } from "../actions/types";
-import model from "../model/index.js";
+import { model } from "../model/index.js";
 
 const beef = {
     id: "beefstrogonoff", 

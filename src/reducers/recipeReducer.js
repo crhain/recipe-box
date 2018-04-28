@@ -1,5 +1,5 @@
 import { GET_RECIPE, DELETE_RECIPE } from "../actions/types";
-import model from "../model/index";
+import { model } from "../model/index";
 
 export default (state = {}, action) => {
     switch (action.type) {
