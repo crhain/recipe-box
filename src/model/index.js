@@ -58,3 +58,34 @@ export const model = [
         ]
     }
 ];
+
+let Model = {};
+
+Model.getAllRecipes = function(){
+    return model;
+}
+
+Model.addRecipe = function(recipe){
+    model.push(recipe);
+}
+
+Model.editRecipe = function(recpie){
+
+}
+
+Model.getRecipeById = function(id){
+    return model.filter( recipe => recipe.id === id)[0];
+}
+
+Model.deleteRecipeById = function(id){
+    //find recipe in model
+    let targetRecipeIndex = model.findIndex( recipe => recipe.id === id );
+    //splice it out
+    model.splice(targetRecipeIndex, 1);
+}
+
+
+
+
+
+export default Model;
