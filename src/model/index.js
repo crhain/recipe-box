@@ -69,8 +69,12 @@ Model.addRecipe = function(recipe){
     model.push(recipe);
 }
 
-Model.editRecipe = function(recpie){
-
+Model.editRecipe = function(recipe){
+    //find recipe in model
+    let matchPosition = model.findIndex( matchingRecipe => matchingRecipe.id === recipe.id  );
+    if(matchPosition !== -1){
+        model[matchPosition] = recipe;
+    }
 }
 
 Model.getRecipeById = function(id){

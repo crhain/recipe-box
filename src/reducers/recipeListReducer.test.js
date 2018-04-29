@@ -3,27 +3,11 @@ import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/
 import { model } from "../model/";
 
 
+
 const beef = {
     id: "beefstrogonoff", 
     title: "Beef Strogonoff", 
-    ingredients: [
-        "1 1/2 pounds beef sirloin steak", 
-        "8 ounces fresh mushrooms",
-        "2 medium onions, thinly sliced",
-        "1 garlic clove, finely chopped",
-        "1/2 cup butter",
-        "1 1/2 cups Progresso, beef flavored broth",
-        "1/2 teaspoon salt",
-        "1 teaspoon Worcestshire sauce",
-        "1/4 cup Gold Medal all-purpose flour",
-        "1 1/2 cups sour cream",
-        "3 cups hot cooked egg noodles"
-    ]
-};
-
-const editedRecipe = {
-    id: "beefstrogonoff", 
-    title: "Beef Strogonoff Deluxe", 
+    servings: 4,
     ingredients: [
         "1 1/2 pounds beef sirloin steak", 
         "8 ounces fresh mushrooms",
@@ -42,6 +26,7 @@ const editedRecipe = {
 const newRecipe = {
     id: "tunafishcasserole",
     title: "Tuna Fish Casserole",
+    servings: 2,
     ingredients: [
         "10-16 ounces egg noodles",
         "1 (10 ounce) can cream of mushroom soup",
@@ -49,6 +34,25 @@ const newRecipe = {
         "2 (6 ounce) cans tuna in water",
         "5-6 ounces milk (1/2 of soup can)",
         "1 teaspoon butter, pat"
+    ]
+};
+
+const editedRecipe = {
+    id: "beefstrogonoff", 
+    servings: 4,
+    title: "Beef Strogonoff Deluxe", 
+    ingredients: [
+        "1 1/2 pounds beef sirloin steak", 
+        "8 ounces fresh mushrooms",
+        "2 medium onions, thinly sliced",
+        "1 garlic clove, finely chopped",
+        "1/2 cup butter",
+        "1 1/2 cups Progresso, beef flavored broth",
+        "1/2 teaspoon salt",
+        "1 teaspoon Worcestshire sauce",
+        "1/4 cup Gold Medal all-purpose flour",
+        "1 1/2 cups sour cream",
+        "3 cups hot cooked egg noodles"
     ]
 };
 
