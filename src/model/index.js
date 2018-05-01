@@ -67,6 +67,7 @@ Model.getAllRecipes = function(){
 
 Model.addRecipe = function(recipe){
     model.push(recipe);
+    return model;
 }
 
 Model.editRecipe = function(recipe){
@@ -75,6 +76,8 @@ Model.editRecipe = function(recipe){
     if(matchPosition !== -1){
         model[matchPosition] = recipe;
     }
+
+    return model;
 }
 
 Model.getRecipeById = function(id){
