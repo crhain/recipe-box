@@ -78,7 +78,12 @@ Model.editRecipe = function(recipe){
 }
 
 Model.getRecipeById = function(id){
-    return model.filter( recipe => recipe.id === id)[0];
+    let recipe = model.filter( recipe => recipe.id === id);
+    if(recipe.length > 0){
+        return recipe[0];
+    }
+    
+    return {};
 }
 
 Model.deleteRecipeById = function(id){
@@ -86,6 +91,7 @@ Model.deleteRecipeById = function(id){
     let targetRecipeIndex = model.findIndex( recipe => recipe.id === id );
     //splice it out
     model.splice(targetRecipeIndex, 1);
+    return model;
 }
 
 
