@@ -89,7 +89,7 @@ describe("Model", () => {
     describe("deleteRecipeById", () => {
         it("deletes a recipe by id from model", () => {
             Model.deleteRecipeById("beefstrogonoff");
-            expect(Model.getRecipeById("beefstrogonoff")).toBeFalsy();
+            expect(Model.getRecipeById("beefstrogonoff").error).toBeTruthy();
         });
     });
 });
