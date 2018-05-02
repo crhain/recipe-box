@@ -7,12 +7,7 @@ export default (state = {}, action) => {
         case GET_RECIPE:                                                
             let recipe = Model.getRecipeById(action.id);                                                
             return recipe;
-            // return recipe;
-        case DELETE_RECIPE:
-            let emptyState = {};
-            // console.log("Recipe state should be empty");
-            // console.log(emptyState);
-            return emptyState;    
+            // return recipe;        
         default:
             return state;
     }
