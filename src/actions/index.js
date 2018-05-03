@@ -9,11 +9,11 @@ export const getRecipe = ( id ) => {
     return { type: GET_RECIPE, id };
 }
 
-export const addRecipe = ( recipe ) => {
+export const addRecipe = ( recipe, history ) => {
     return { type: ADD_RECIPE, recipe };
 }
 
-export const editRecipe = ( recipe ) => {
+export const editRecipe = ( recipe, history ) => {
     return { type: EDIT_RECIPE, recipe };
 }
 
