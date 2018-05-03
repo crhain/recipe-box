@@ -69,9 +69,8 @@ Model.addRecipe = function(recipe){
     
     if(model.findIndex( item => item.id === recipe.id ) > -1){    
         return { error: "Already exists" };
-    } 
-    
-    model.push(recipe);
+    }   
+    model.push(recipe);  
     return model;
 }
 

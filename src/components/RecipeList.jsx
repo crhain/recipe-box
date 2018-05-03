@@ -7,11 +7,10 @@ import { getRecipes } from "../actions";
 export class RecipeList extends Component{
     
     componentDidMount(){
-        this.props.getRecipes();
+        this.props.getRecipes();        
     }
 
-    createRecipeList(){     
-                   
+    createRecipeList(){             
         const listing = this.props.recipes.length > 0 ? 
             this.props.recipes.map((recipe, index)=>{
                 return <Link to={ "/recipe/" + recipe.id } key={index}><li>{recipe.title}</li></Link>;

@@ -13,20 +13,14 @@ export default (state = [], action) => {
             return state;
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:            
-            // exists = state.find( recipe => {
-            //     return recipe.id === action.recipe.id;
-            // });
-            
-            if(exists){
-                return state;
-            } 
-
+                        
             let added = Model.addRecipe(action.recipe);
             if(added.error){
                 return state;
             }
-                        
-            return added
+            
+            action.history.push("/");
+            return added;
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:

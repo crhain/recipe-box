@@ -10,7 +10,7 @@ export const getRecipe = ( id ) => {
 }
 
 export const addRecipe = ( recipe, history ) => {
-    return { type: ADD_RECIPE, recipe };
+    return { type: ADD_RECIPE, recipe, history };
 }
 
 export const editRecipe = ( recipe, history ) => {

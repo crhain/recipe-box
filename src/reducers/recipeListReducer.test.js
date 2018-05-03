@@ -73,12 +73,12 @@ describe("recipeListReducer", () => {
     describe("ADD_RECIPE", () => {
         
         it("Should add new recipe to recipes", () => {            
-            expect( recipeListReducer( undefined, { type: ADD_RECIPE, recipe: newRecipe } ) ).toContainEqual(newRecipe);                        
+            expect( recipeListReducer( undefined, { type: ADD_RECIPE, recipe: newRecipe, history: [] } ) ).toContainEqual(newRecipe);                        
         });    
 
         it("Should not add recipe if recipe already exists", () => {
             
-            let result = recipeListReducer( model, { type: ADD_RECIPE, recipe: beef } );
+            let result = recipeListReducer( model, { type: ADD_RECIPE, recipe: beef, history: [] } );
             let numberRecipeCopies = result.filter( recipe => recipe.id === beef.id ).length;            
             expect( numberRecipeCopies ).toBe(1);
         }); 

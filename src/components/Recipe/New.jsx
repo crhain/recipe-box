@@ -15,14 +15,13 @@ class New extends Component{
         event.preventDefault();
         let recipe = {
             id: "newstuffnow",
-            name: "New Stuff Now",
+            title: "New Stuff Now",
             servings: 4,
             ingredients: [
                 "1 cup awesome",
                 "2 teaspoons good"
             ]
-        };
-        console.log("adding recipe");
+        };        
         this.props.addRecipe(recipe, this.history);
     }
 
