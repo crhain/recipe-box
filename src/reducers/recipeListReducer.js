@@ -2,9 +2,30 @@ import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/
 import { model } from "../model/index.js";
 import Model from "../model/index";
 
+function getRecipeId(title){
+    //convert to lower case
+    let value = title
+        .toLowerCase()
+        .split("")
+        .filter( letter => letter !== " ")
+        .join("");
+    
+    return value;
+}
+
+function getRecipeIngredients(ingredients){
+    
+    let value = ingredients.split("\n");
+    console.log("My list of ingredients is:");
+    console.log(value);
+                    
+    return value;
+}
+
 
 export default (state = [], action) => {
     let exists;
+    let recipe = {};
     switch (action.type) {
         case GET_RECIPES:
             if(state.length < 1){
@@ -13,13 +34,18 @@ export default (state = [], action) => {
             return state;
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:            
-                        
-            let added = Model.addRecipe(action.recipe);
+            console.log(action.recipe);            
+            recipe.title = action.recipe.title;
+            recipe.servings = action.recipe.servings;
+            recipe.id = getRecipeId(action.recipe.title);
+            recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);
+                         
+            let added = Model.addRecipe(recipe);
             if(added.error){
                 return state;
             }
             
-            action.history.push("/");
+            // action.history.push("/");
             return added;
 
         //action contains **recipe** to be updated                           

@@ -1,58 +1,20 @@
-import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from "react-redux";
-import { addRecipe } from "../../actions";
+// SampleNew shows SsampleForm
+import React from "react";
+import Form from "../Form/Form";
+import { Link } from 'react-router-dom';
 
-class New extends Component{
+
+ function New({ addRecipe, history }){            
     
-    constructor(props){
-        super(props);
-        this.handleAddClick = this.handleAddClick.bind(this);
-        this.history = this.props.history; 
-    }
-
-    handleAddClick(event){
-        event.preventDefault();
-        let recipe = {
-            id: "newstuffnow",
-            title: "New Stuff Now",
-            servings: 4,
-            ingredients: [
-                "1 cup awesome",
-                "2 teaspoons good"
-            ]
-        };        
-        this.props.addRecipe(recipe, this.history);
-    }
-
-    render(){
-        return (
-            <div>
-                <h1>Create A New Recipe</h1>
-                <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
-                <form>
-                    <label htmlFor="add-recipe-name">
-                        Recipe Name
-                        <input name="name" id="add-recipe-name" type="text"/>
-                    </label>
-                    
-                    <label htmlFor="add-recipe-ingredients">
-                        Recipe Ingredients
-                        <textarea name="ingredients" id="add-recipe-ingredients" type="text">
-                        </textarea>                   
-                    </label> 
-                    
-                    <button className="waves-effect waves-light btn" onClick={this.handleAddClick}>Add</button>
-                </form>
-                
-            </div>
-        );
-    }
+    return (        
+        <div>
+            <h1>Create A New Recipe</h1>        
+            <Form />
+            <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
+        </div>        
+    );
+    
+        
 }
 
-
-// function mapStateToProps({ recipe }){
-//     return { recipe };
-// }
-
-export default withRouter(connect(null, { addRecipe })(New));
+export default New;

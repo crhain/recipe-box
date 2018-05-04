@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://crhwebdev.github.io/fcc-recipe-box.git",
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
