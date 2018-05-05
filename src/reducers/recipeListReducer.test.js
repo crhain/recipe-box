@@ -3,11 +3,18 @@ import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/
 import { model } from "../model/";
 
 
+const newBeef = {
+    id: "beefstrogonoff", 
+    title: "Beef Strogonoff", 
+    servings: "4",
+    ingredients: "1 1/2 pounds beef sirloin steak\n8 ounces fresh mushrooms\n2 medium onions, thinly sliced\n1 garlic clove, finely chopped\n1/2 cup butter\n1 1/2 cups Progresso, beef flavored broth\n1/2 teaspoon salt\n1 teaspoon Worcestshire sauce\n1/4 cup Gold Medal all-purpose flour\n1 1/2 cups sour cream\n3 cups hot cooked egg noodles"    
+};
+
 
 const beef = {
     id: "beefstrogonoff", 
     title: "Beef Strogonoff", 
-    servings: 4,
+    servings: "4",
     ingredients: [
         "1 1/2 pounds beef sirloin steak", 
         "8 ounces fresh mushrooms",
@@ -23,10 +30,17 @@ const beef = {
     ]
 };
 
-const newRecipe = {
-    id: "tunafishcasserole",
+const newRecipe = {    
     title: "Tuna Fish Casserole",
-    servings: 2,
+    servings: "2",
+    ingredients: "10-16 ounces egg noodles\n1 (10 ounce) can cream of mushroom soup\n1 (10 ounce) can peas\n2 (6 ounce) cans tuna in water\n5-6 ounces milk (1/2 of soup can)\n1 teaspoon butter, pat"
+    
+};
+
+const newRecipeTest = { 
+    id: "tunafishcasserole",   
+    title: "Tuna Fish Casserole",
+    servings: "2",
     ingredients: [
         "10-16 ounces egg noodles",
         "1 (10 ounce) can cream of mushroom soup",
@@ -35,7 +49,9 @@ const newRecipe = {
         "5-6 ounces milk (1/2 of soup can)",
         "1 teaspoon butter, pat"
     ]
+    
 };
+
 
 const editedRecipe = {
     id: "beefstrogonoff", 
@@ -73,12 +89,12 @@ describe("recipeListReducer", () => {
     describe("ADD_RECIPE", () => {
         
         it("Should add new recipe to recipes", () => {            
-            expect( recipeListReducer( undefined, { type: ADD_RECIPE, recipe: newRecipe, history: [] } ) ).toContainEqual(newRecipe);                        
+            expect( recipeListReducer( undefined, { type: ADD_RECIPE, recipe: newRecipe, history: [] } )[3] ).toEqual(newRecipeTest);                        
         });    
 
         it("Should not add recipe if recipe already exists", () => {
             
-            let result = recipeListReducer( model, { type: ADD_RECIPE, recipe: beef, history: [] } );
+            let result = recipeListReducer( model, { type: ADD_RECIPE, recipe: newBeef, history: [] } );
             let numberRecipeCopies = result.filter( recipe => recipe.id === beef.id ).length;            
             expect( numberRecipeCopies ).toBe(1);
         }); 
