@@ -1,8 +1,7 @@
-// SampleNew shows SsampleForm
 import React from "react";
 import Form from "../Form/Form";
 import { Link } from 'react-router-dom';
-
+import BackButton from "../Buttons/BackButton";
 
  function New({ addRecipe, history }){            
     
@@ -10,7 +9,7 @@ import { Link } from 'react-router-dom';
         <div>
             <h1>Create A New Recipe</h1>        
             <Form />
-            <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
+            <BackButton />
         </div>        
     );
     

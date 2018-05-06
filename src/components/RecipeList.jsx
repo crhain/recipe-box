@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getRecipes } from "../actions";
+import AddButton from "./Buttons/AddButton";
 
 
 export class RecipeList extends Component{
@@ -24,7 +25,7 @@ export class RecipeList extends Component{
         return (
             <div>
                 <h1>Recipe List</h1>
-                <Link className="waves-effect waves-light btn" to="/recipe/new">Create New Recipe</Link>
+                <AddButton />
                 <div>
                     <ul>
                         {this.createRecipeList()}

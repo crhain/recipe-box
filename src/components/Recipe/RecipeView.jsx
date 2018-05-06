@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getRecipe, deleteRecipe } from "../../actions";
+import BackButton from "../Buttons/BackButton";
+import EditButton from "../Buttons/EditButton";
+import DeleteButton from "../Buttons/DeleteButton";
 
 
 
@@ -22,7 +25,7 @@ export class RecipeView extends Component{
         let ingredients = "";
 
         if(this.props.recipe.ingredients) {
-            ingredients = this.props.recipe.ingredients.map( (ingredient, index) => <li key={ index }>{ ingredient }</li> );            
+            ingredients = this.props.recipe.ingredients.map( (ingredient, index) => <li className="collection-item" key={ index }>{ ingredient }</li> );            
         }
 
         return ingredients;
@@ -40,21 +43,15 @@ export class RecipeView extends Component{
                 <div>
                     
                 </div>
-                <Link className="waves-effect waves-light btn" style={{marginRight: '1rem'}} to="/recipe/1555/edit">Edit Recipe</Link>
-                <button 
-                    onClick={ this.handleDeleteClick }
-                    className="waves-effect waves-light btn" 
-                    style={{marginRight: '1rem'}}
-
-                >
-                        Delete Recipe
-                </button>
-                <Link className="waves-effect waves-light btn" to="/">Back To Listing</Link>
+                <EditButton />
+                <DeleteButton handleDeleteClick={ this.handleDeleteClick } />                
+                <BackButton />
                 <div>
-                    <h3>Ingredients:</h3>
-                    <ol>
+                    
+                    <ul className="collection with-header">
+                        <li className="collection-header"><h3>Ingredients</h3></li>
                         { this.renderIngredients() }
-                    </ol>
+                    </ul>
                 </div>
             </div>
         );
