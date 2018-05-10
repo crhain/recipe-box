@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import Form from "../Form/Form";
 import BackButton from "../Buttons/BackButton";
 
 class Edit extends Component {    
@@ -8,6 +8,7 @@ class Edit extends Component {
         return (
             <div>
                 <h2>Edit Recipe</h2>
+                <Form />
                 <BackButton />
             </div>   
         );
