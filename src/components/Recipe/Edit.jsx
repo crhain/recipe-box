@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import { editRecipe } from '../../actions';
 import Form from "../Form/Form";
 import BackButton from "../Buttons/BackButton";
 
-class Edit extends Component {    
-    render(){
-        return (
-            <div>
-                <h2>Edit Recipe</h2>
-                <Form />
-                <BackButton />
-            </div>   
-        );
-    }
+function Edit({ editRecipe, history }) {        
+    return (
+        <div>
+            <h2>Edit Recipe</h2>
+            <Form formHandler={ editRecipe } history={ history } />
+            <BackButton />
+        </div>   
+    );
 }
 
-export default Edit;
+
+export default connect(null, { editRecipe })(withRouter(Edit));

@@ -1,9 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
-import { Link, withRouter } from 'react-router-dom';
-import { addRecipe } from '../../actions';
+import { Link } from 'react-router-dom';
 import FormTextField from './FormTextField';
 import FormTextBoxField from './FormTextBoxField';
 
@@ -41,13 +39,13 @@ class Form extends Component {
     }
     //onSubmit={ () => this.props.addRecipe(this.props.formValues, this.props.history) }
     render(){
-        const { handleSubmit, history } = this.props;
+        const { handleSubmit, formHandler, history } = this.props;
         return (
             <div>
                 <form 
                     onSubmit={ handleSubmit((values, dispatch) => {                                                
                         //must use dispatch with redux-form or it does not fire action handler
-                        dispatch(addRecipe(values, history));                                                  
+                        dispatch(formHandler(values, history));                                                  
                     }) }              
                 >
                     { this.renderFields(this.props.onSubmit) }
@@ -82,4 +80,4 @@ function validate(values){
 export default reduxForm({
     validate,
     form: "recipeForm"
-})(connect(null, { addRecipe })(withRouter(Form)));
+})(Form);

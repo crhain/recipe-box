@@ -33,8 +33,7 @@ export default (state = [], action) => {
             }            
             return state;
         //action contains **recipe** to be added                                              
-        case ADD_RECIPE:            
-            console.log(action.recipe);            
+        case ADD_RECIPE:                   
             recipe.title = action.recipe.title;
             recipe.servings = action.recipe.servings;
             recipe.id = getRecipeId(action.recipe.title);
@@ -44,17 +43,12 @@ export default (state = [], action) => {
             if(added.error){
                 return state;
             }
-            
-            // action.history.push("/");
+            action.history.push("/");
             return added;
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
-            // exists = state.find( recipe => {
-            //     return recipe.id === action.recipe.id;
-            // });
-
-            
+                                                
             let edited = Model.editRecipe(action.recipe);
             if(edited.error){
                 return state;
