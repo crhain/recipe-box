@@ -24,6 +24,7 @@ describe("RecipeView", () => {
                 history = { mockHistory }
                 match={ mockMatch } 
                 recipe={ mockRecipe }  />
+                
         );
     });
 

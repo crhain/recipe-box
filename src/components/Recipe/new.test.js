@@ -5,9 +5,15 @@ import New from './New.jsx';
 describe('New', () => {
   
     let component;
+    let mockHistory = jest.fn();
+    let mockFormHandler = jest.fn();
 
     beforeEach(() => {
-        component = shallow(<New />);
+        component = shallow(
+        <New 
+            history={ mockHistory }
+            addRecipe= { mockFormHandler }                       
+        />);
     });
 
     it('renders correctly', () => {

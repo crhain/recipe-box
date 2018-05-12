@@ -15,5 +15,5 @@ function Edit({ editRecipe, history }) {
     );
 }
 
-
-export default connect(null, { editRecipe })(withRouter(Edit));
+// export default connect(null, { editRecipe })(withRouter(Edit));
+export default withRouter(connect(null, { editRecipe })(Edit));

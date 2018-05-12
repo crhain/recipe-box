@@ -18,4 +18,6 @@ import BackButton from "../Buttons/BackButton";
         
 }
 
-export default connect(null, { addRecipe })(withRouter(New));
+// export default connect(null, { addRecipe })(withRouter(New));
+
+export default withRouter(connect(null, { addRecipe })(New));

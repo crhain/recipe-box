@@ -57,13 +57,3 @@ describe("EditButton", () => {
 });
 
 
-// let component;
-// let mockGetRecipeFunction = jest.fn();
-// let mockDeleteRecipeFunction = jest.fn();
-// let mockHistory = jest.fn();
-// let mockMatch = {
-//     params: {
-//         id: "xyz"
-//     }
-// }
-// let mockRecipe = model[0];
