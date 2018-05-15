@@ -8,6 +8,14 @@ import FormTextBoxField from './FormTextBoxField';
 import fields from './fields';
 
 class Form extends Component {
+    componentDidMount() {
+        let recipe = this.props.intialRecipeValues;
+        if(recipe){
+            this.props.initialize(recipe);
+        }        
+        // set the value individually
+        // this.props.dispatch(change("recipeForm", 'anotherField', 'value'));
+    }
     renderFields(){        
         return _.map(fields, ({ label, name, type }) => {
             switch(type) {
@@ -79,5 +87,6 @@ function validate(values){
 //reducer provided by reddux-form
 export default reduxForm({
     validate,
-    form: "recipeForm"
+    form: "recipeForm",    
+    enableReintialization: true
 })(Form);

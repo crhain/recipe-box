@@ -5,15 +5,31 @@ import { editRecipe } from '../../actions';
 import Form from "../Form/Form";
 import BackButton from "../Buttons/BackButton";
 
-function Edit({ editRecipe, history }) {        
+function convertIngredientListToForm(ingredientsList){
+    return ingredientsList.join("\n");
+}
+
+function Edit({ editRecipe, history, recipe }) {        
+    let initialRecipeValues = {};
+    initialRecipeValues.title = recipe.title;
+    initialRecipeValues.servings = recipe.servings;
+    initialRecipeValues.ingredients = convertIngredientListToForm(recipe.ingredients);
     return (
         <div>
             <h2>Edit Recipe</h2>
-            <Form formHandler={ editRecipe } history={ history } />
+            <Form 
+                formHandler={ editRecipe } 
+                history={ history } 
+                intialRecipeValues={ initialRecipeValues }
+            />
             <BackButton />
         </div>   
     );
 }
 
+function mapStateToProps({ recipe }){
+    return { recipe };
+}
+
 // export default connect(null, { editRecipe })(withRouter(Edit));
-export default withRouter(connect(null, { editRecipe })(Edit));
+export default withRouter(connect(mapStateToProps, { editRecipe })(Edit));
