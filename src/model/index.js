@@ -82,6 +82,8 @@ Model.editRecipe = function(recipe){
     }
 
     model[matchPosition] = recipe;
+    console.log("My updated recipe is:");
+    console.log(model[matchPosition]);
     return model;
 }
 

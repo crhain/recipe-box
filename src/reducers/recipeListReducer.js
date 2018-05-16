@@ -48,12 +48,16 @@ export default (state = [], action) => {
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
-                                                
-            let edited = Model.editRecipe(action.recipe);
-            if(edited.error){
+            recipe.title = action.recipe.title;
+            recipe.servings = action.recipe.servings;
+            recipe.id = action.recipe.id;
+            recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);                                    
+            let edited = Model.editRecipe(recipe);
+            if(edited.error){           
                 return state;
             }
             
+            // action.history.push("/");
             return edited;
 
         //action continas the **id** of a recipe to be deleted    

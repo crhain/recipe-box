@@ -13,7 +13,7 @@ export const addRecipe = ( recipe, history ) => {
     return { type: ADD_RECIPE, recipe, history };
 }
 
-export const editRecipe = ( recipe, history ) => {
+export const editRecipe = ( recipe, history ) => { 
     return { type: EDIT_RECIPE, recipe };
 }
 

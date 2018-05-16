@@ -11,6 +11,7 @@ function convertIngredientListToForm(ingredientsList){
 
 function Edit({ editRecipe, history, recipe }) {        
     let initialRecipeValues = {};
+    initialRecipeValues.id = recipe.id;
     initialRecipeValues.title = recipe.title;
     initialRecipeValues.servings = recipe.servings;
     initialRecipeValues.ingredients = convertIngredientListToForm(recipe.ingredients);

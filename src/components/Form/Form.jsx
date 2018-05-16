@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import FormTextField from './FormTextField';
+import FormInvisibleTextField from './FormInvisibleTextField';
 import FormTextBoxField from './FormTextBoxField';
 
 import fields from './fields';
@@ -38,6 +39,16 @@ class Form extends Component {
                             name={name} 
                         />
                     );
+                case "invisible":
+                    return (
+                        <Field 
+                            component={FormInvisibleTextField}
+                            type="text"
+                            key={name}
+                            label=""
+                            name={name}
+                        />
+                    );    
                 default:
                     return (<div>ERROR!</div>);
 
@@ -76,6 +87,10 @@ class Form extends Component {
 function validate(values){
     const errors = {};    
     _.each(fields, ({ name }) => {
+        if(name === "id"){
+            return errors;
+        }
+
         if(!values[name]){
             errors[name] = "You must provide a value";
         }
