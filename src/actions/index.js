@@ -14,7 +14,7 @@ export const addRecipe = ( recipe, history ) => {
 }
 
 export const editRecipe = ( recipe, history ) => { 
-    return { type: EDIT_RECIPE, recipe };
+    return { type: EDIT_RECIPE, recipe, history };
 }
 
 export const deleteRecipe = ( id, history ) => {

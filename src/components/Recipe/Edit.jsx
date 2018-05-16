@@ -20,7 +20,7 @@ function Edit({ editRecipe, history, recipe }) {
             <h2>Edit Recipe</h2>
             <Form 
                 formHandler={ editRecipe } 
-                history={ history } 
+                history={ history }
                 intialRecipeValues={ initialRecipeValues }
             />
             <BackButton />

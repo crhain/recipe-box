@@ -55,9 +55,8 @@ export default (state = [], action) => {
             let edited = Model.editRecipe(recipe);
             if(edited.error){           
                 return state;
-            }
-            
-            // action.history.push("/");
+            }            
+            action.history.push("/");
             return edited;
 
         //action continas the **id** of a recipe to be deleted    
