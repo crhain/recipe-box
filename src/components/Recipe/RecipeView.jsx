@@ -10,13 +10,13 @@ import DeleteButton from "../Buttons/DeleteButton";
 
 export class RecipeView extends Component{
     componentWillMount(){             
-        this.props.getRecipe(this.props.match.params.id); 
-        console.log("recipe view is mounting");                                                           
+        this.props.getRecipe(this.props.match.params.id);                                                                
     }
   
     constructor(props){
         super(props);                
-        this.recipe = null; 
+        this.recipe = null;      
+        this.recipeId = this.props.match.params.id;   
         this.handleDeleteClick = this.handleDeleteClick.bind(this);    
         this.history = this.props.history;   
     }
@@ -43,7 +43,7 @@ export class RecipeView extends Component{
                 <div>
                     
                 </div>
-                <EditButton />
+                <EditButton recipeId={ this.recipeId }/>
                 <DeleteButton handleDeleteClick={ this.handleDeleteClick } />                
                 <BackButton />
                 <div>
