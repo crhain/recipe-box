@@ -52,6 +52,12 @@ const newRecipeTest = {
     
 };
 
+const editedRecipeInput = {
+    id: "beefstrogonoff", 
+    servings: 4,
+    title: "Beef Strogonoff Deluxe", 
+    ingredients: "1 1/2 pounds beef sirloin steak\n8 ounces fresh mushrooms\n2 medium onions, thinly sliced\n1 garlic clove, finely chopped\n1/2 cup butter\n1 1/2 cups Progresso, beef flavored broth\n1/2 teaspoon salt\n1 teaspoon Worcestshire sauce\n1/4 cup Gold Medal all-purpose flour\n1 1/2 cups sour cream\n3 cups hot cooked egg noodles"    
+}
 
 const editedRecipe = {
     id: "beefstrogonoff", 
@@ -104,11 +110,11 @@ describe("recipeListReducer", () => {
     describe("EDIT_RECIPE", () => {
        
         it("Should return new list of recipes with changed recipe in it", () => {
-            expect( recipeListReducer( model, { type: EDIT_RECIPE, recipe: editedRecipe } ) ).toContainEqual(editedRecipe);
+            expect( recipeListReducer( model, { type: EDIT_RECIPE, recipe: editedRecipeInput, history: [] } ) ).toContainEqual(editedRecipe);
         });
         
         it("Should **not** return new list of recipes with old recipe in it", () => {
-            expect( recipeListReducer( model, { type: EDIT_RECIPE, recipe: editedRecipe } ) ).not.toContainEqual(beef);
+            expect( recipeListReducer( model, { type: EDIT_RECIPE, recipe: editedRecipeInput, history: [] } ) ).not.toContainEqual(beef);
         });
 
     });
