@@ -47,7 +47,7 @@ export class RecipeView extends Component{
                 <DeleteButton handleDeleteClick={ this.handleDeleteClick } />                
                 <BackButton />
                 <div>
-                    
+                    <h3>Servings: <span>{this.props.recipe ? this.props.recipe.servings : ""}</span></h3>    
                     <ul className="collection with-header">
                         <li className="collection-header"><h3>Ingredients</h3></li>
                         { this.renderIngredients() }
