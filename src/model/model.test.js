@@ -1,4 +1,4 @@
-import { model } from "./";
+import model  from "./seed.js";
 import Model from "./";
 
 

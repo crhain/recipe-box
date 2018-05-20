@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Edit from './Edit.jsx';
-import { model } from "../../model";
+import model  from "../../model/seed.js";
 
 describe('Edit', () => {
   
