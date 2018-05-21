@@ -1,7 +1,8 @@
 import React from "react";
-import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
-import { addRecipe } from '../../actions';
+import { connect } from "react-redux";
+import { Link, withRouter } from "react-router-dom";
+import { addRecipe } from "../../actions";
+import fields from "../Form/fields";
 import Form from "../Form/Form";
 import BackButton from "../Buttons/BackButton";
 
@@ -10,7 +11,7 @@ import BackButton from "../Buttons/BackButton";
     return (        
         <div>
             <h1>Create A New Recipe</h1>        
-            <Form formHandler={ addRecipe } history={ history }/>
+            <Form fields={fields} formHandler={ addRecipe } history={ history }/>
             <BackButton />
         </div>        
     );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { editRecipe } from '../../actions';
+import fields from "../Form/fields";
 import Form from "../Form/Form";
 import BackButton from "../Buttons/BackButton";
 
@@ -19,6 +20,7 @@ function Edit({ editRecipe, history, recipe }) {
         <div>
             <h2>Edit Recipe</h2>
             <Form 
+                fields={fields}
                 formHandler={ editRecipe } 
                 history={ history }
                 intialRecipeValues={ initialRecipeValues }

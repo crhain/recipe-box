@@ -6,7 +6,7 @@ import FormTextField from './FormTextField';
 import FormInvisibleTextField from './FormInvisibleTextField';
 import FormTextBoxField from './FormTextBoxField';
 
-import fields from './fields';
+// import fields from './fields';
 
 class Form extends Component {
     componentDidMount() {
@@ -18,6 +18,7 @@ class Form extends Component {
         // this.props.dispatch(change("recipeForm", 'anotherField', 'value'));
     }
     renderFields(){        
+        let fields = this.props.fields || [];
         return _.map(fields, ({ label, name, type }) => {
             switch(type) {
                 case "text":
@@ -84,8 +85,9 @@ class Form extends Component {
 }
 
 //form validation function
-function validate(values){
-    const errors = {};    
+function validate(values, form){
+    const errors = {};
+    const fields = form.fields;
     _.each(fields, ({ name }) => {
         if(name === "id"){
             return errors;
