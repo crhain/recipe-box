@@ -7,9 +7,11 @@ import FormInvisibleTextField from "./FormInvisibleTextField";
 
 
 let component; 
+let meta = {error: null, touched: false};
 const fields = [];
 const mockFormHandler = jest.fn();
 const mockHistory = [];
+const input = {};
 
 
 describe("Form", () => {
@@ -34,7 +36,11 @@ describe("FormTextField", () => {
         
     beforeEach(() => {
         component = shallow(
-            <FormTextField />
+            <FormTextField 
+                input={input}
+                label={"test"}
+                meta={ meta }            
+            />
         );
     });
 
@@ -49,7 +55,11 @@ describe("FormTextBoxField", () => {
         
     beforeEach(() => {
         component = shallow(
-            <FormTextBoxField />
+            <FormTextBoxField 
+                input={input}
+                label={"test"}
+                meta={ meta } 
+            />
         );
     });
 
@@ -64,7 +74,11 @@ describe("FormInvisibleTextField", () => {
         
     beforeEach(() => {
         component = shallow(
-            <FormInvisibleTextField />
+            <FormInvisibleTextField 
+                input={input}
+                label={"test"}
+                meta={ meta } 
+            />
         );
     });
 
