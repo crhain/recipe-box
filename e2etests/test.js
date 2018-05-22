@@ -58,14 +58,5 @@ describe('RecipeBox App', () => {
         it('should allow user to return to recipe list by clicking on back button', () => {
 
         });
-    
     });
-
-    
-    
-
-    it('should all me to edit a recipe', () => {
-        
-    });
-
 });

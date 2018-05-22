@@ -26,15 +26,16 @@
     "webdriverio": "^4.8.0"
   },
   "scripts": {
-    "start": "npm-run-all --parallel watch:sass watch:react",
+    "start": "npm-run-all --parallel watch:sass watch:react test",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "selenium-setup": "selenium-standalone install",
-    "selenium-start": "selenium-standalone start",
+    "test:e2e": "npm-run-all --parallel selenium-start watch:e2e-tests",
     "e2e-tests": "wdio wdio.conf.js",
-    "e2e-tests-watch": "wdio wdio.conf.js --watch",
+    "watch:react": "react-scripts start",
     "watch:sass": "node-sass src/sass/main.scss public/css/style.css -w",
-    "watch:react": "react-scripts start"
+    "selenium-start": "selenium-standalone start",
+    "watch:e2e-tests": "wdio wdio.conf.js --watch",
+    "selenium-setup": "selenium-standalone install",    
+    "eject": "react-scripts eject"        
   }
 }
