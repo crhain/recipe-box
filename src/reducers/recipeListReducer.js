@@ -15,10 +15,7 @@ function getRecipeId(title){
 
 function getRecipeIngredients(ingredients){
     
-    let value = ingredients.split("\n");
-    console.log("My list of ingredients is:");
-    console.log(value);
-                    
+    let value = ingredients.split("\n");                  
     return value;
 }
 
