@@ -1,6 +1,6 @@
-import recipeListReducer from "./recipeListReducer";
-import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/types";
-import model  from "../model/seed.js";
+import recipeListReducer from "../recipeListReducer";
+import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../../actions/types";
+import model  from "../../model/seed.js";
 
 
 const newBeef = {

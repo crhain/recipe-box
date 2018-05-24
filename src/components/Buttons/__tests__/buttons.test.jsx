@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import AddButton from "./AddButton";
-import BackButton from "./BackButton";
-import DeleteButton from "./DeleteButton";
-import EditButton from "./EditButton";
+import AddButton from "../AddButton";
+import BackButton from "../BackButton";
+import DeleteButton from "../DeleteButton";
+import EditButton from "../EditButton";
 
 let component; 
 describe("AddButton", () => {
