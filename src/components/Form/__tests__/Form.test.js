@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Form from "./Form";
-import FormTextField from "./FormTextField";
-import FormTextBoxField from "./FormTextBoxField";
-import FormInvisibleTextField from "./FormInvisibleTextField";
+import Form from "components/Form/Form";
+import FormTextField from "components/Form/FormTextField";
+import FormTextBoxField from "components/Form/FormTextBoxField";
+import FormInvisibleTextField from "components/Form/FormInvisibleTextField";
 
 
 let component; 

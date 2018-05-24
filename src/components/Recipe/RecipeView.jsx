@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getRecipe, deleteRecipe } from "../../actions";
-import BackButton from "../Buttons/BackButton";
-import EditButton from "../Buttons/EditButton";
-import DeleteButton from "../Buttons/DeleteButton";
+import { getRecipe, deleteRecipe } from "actions/";
+import BackButton from "components/Buttons/BackButton";
+import EditButton from "components/Buttons/EditButton";
+import DeleteButton from "components/Buttons/DeleteButton";
 
 
 

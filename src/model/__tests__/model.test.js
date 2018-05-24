@@ -1,5 +1,5 @@
-import model  from "./seed.js";
-import Model from "./";
+import model  from "model/seed.js";
+import Model from "model/";
 
 
 const beef =   {

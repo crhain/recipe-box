@@ -2,9 +2,9 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import FormTextField from './FormTextField';
-import FormInvisibleTextField from './FormInvisibleTextField';
-import FormTextBoxField from './FormTextBoxField';
+import FormTextField from 'components/Form/FormTextField';
+import FormInvisibleTextField from 'components/Form/FormInvisibleTextField';
+import FormTextBoxField from 'components/Form/FormTextBoxField';
 
 // import fields from './fields';
 

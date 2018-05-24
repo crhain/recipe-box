@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import model  from "../../model/seed.js";
-import { RecipeList } from '../RecipeList';
+import model  from "model/seed.js";
+import { RecipeList } from 'components/RecipeList';
 
 describe('RecipeList', () => {
   

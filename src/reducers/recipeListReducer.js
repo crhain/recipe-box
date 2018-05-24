@@ -1,6 +1,6 @@
-import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../actions/types";
-import { model } from "../model/index.js";
-import Model from "../model/index";
+import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
+import { model } from "model/index";
+import Model from "model/index";
 
 function getRecipeId(title){
     //convert to lower case

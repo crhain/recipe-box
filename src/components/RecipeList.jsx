@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getRecipes } from "../actions";
-import AddButton from "./Buttons/AddButton";
+import { getRecipes } from "actions/";
+import AddButton from "components/Buttons/AddButton";
 
 
 export class RecipeList extends Component{

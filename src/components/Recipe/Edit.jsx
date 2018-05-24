@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { editRecipe } from '../../actions';
-import fields from "../Form/fields";
-import Form from "../Form/Form";
-import BackButton from "../Buttons/BackButton";
+import { editRecipe } from 'actions/';
+import fields from "components/Form/fields";
+import Form from "components/Form/Form";
+import BackButton from "components/Buttons/BackButton";
 
 function convertIngredientListToForm(ingredientsList){
     return ingredientsList.join("\n");

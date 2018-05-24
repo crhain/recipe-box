@@ -1,5 +1,5 @@
-import { getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe } from "../";
-import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "../types";
+import { getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe } from "actions/";
+import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
 
 const recipe = {
     id: "beefstrogonoff", 

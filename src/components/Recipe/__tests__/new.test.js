@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import New from '../New.jsx';
+import New from 'components/Recipe/New.jsx';
 
 describe('New', () => {
   

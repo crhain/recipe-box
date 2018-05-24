@@ -1,5 +1,5 @@
 
-import model from "./seed.js";
+import model from "model/seed.js";
 
 let Model = {};
 
