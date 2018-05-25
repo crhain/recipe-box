@@ -2,6 +2,9 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import { RecipeView } from "components/Recipe/RecipeView";
 import model  from "model/seed.js";
+import BackButton from 'components/Buttons/BackButton';
+import DeleteButton from 'components/Buttons/DeleteButton';
+import EditButton from 'components/Buttons/EditButton';
 
 describe("RecipeView", () => {
   
@@ -32,4 +35,33 @@ describe("RecipeView", () => {
         expect(component.exists()).toEqual(true);
     });
 
+    it('includes an edit button, delete button, and back button', () =>{         
+       expect(component.containsMatchingElement(<EditButton />)).toEqual(true); 
+       expect(component.containsMatchingElement(<DeleteButton />)).toEqual(true); 
+       expect(component.containsMatchingElement(<BackButton />)).toEqual(true);        
+    });
+
+    it('includes an a h1 (title), h3 (servings), and ul (ingredient list)', () =>{
+        expect(component.find('h1').length).toEqual(1); 
+        expect(component.find('.servings').length).toEqual(1); 
+        expect(component.find('.ingredientList').length).toEqual(1); 
+    });
+
+    it('shows a title that maches recipe passed to component as state', () => {        
+        expect(component.find('h1').text()).toEqual(mockRecipe.title); 
+    });
+
+    it('shows servings that matches recipe passed to component as state', () => {        
+        expect(component.find('.servings').text()).toEqual('Servings: ' + mockRecipe.servings); 
+    });
+
+    it('shows a list of ingredient li elements that matches recipe passed to component as state', () => {
+        
+        let ingredientListElements = component.find('.ingredientList li');                        
+        expect(ingredientListElements.length).toEqual(mockRecipe.ingredients.length);
+        expect(ingredientListElements.everyWhere((el, i) => el.text() === mockRecipe.ingredients[i])).toEqual(true);
+        
+    });
+
+    
 });
