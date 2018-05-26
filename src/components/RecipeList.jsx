@@ -14,7 +14,7 @@ export class RecipeList extends Component{
     createRecipeList(){             
         const listing = this.props.recipes.length > 0 ? 
             this.props.recipes.map((recipe, index)=>{
-                return <Link to={ "/recipe/" + recipe.id } key={index}><li>{recipe.title}</li></Link>;
+                return <li key={index}><Link to={ "/recipe/" + recipe.id }>{recipe.title}</Link></li>;
             }) :
         <li>Loading...</li>;
                         
