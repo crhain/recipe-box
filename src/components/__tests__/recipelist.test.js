@@ -25,7 +25,7 @@ describe('RecipeList', () => {
         expect(component.find('ul').length).toEqual(1); 
     });
 
-    it('shows a list of recipes that match the recipes state passed to the component', () => {
+    it('show one recipe per recipe passed in state', () => {
         let recipeListElements = component.find('ul > li');
         expect(recipeListElements.length).toEqual(mockRecipes.length);                
         // TODO: must find way to test text within <Link /> element within li. But <Link /> doesn't
