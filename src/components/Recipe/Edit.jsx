@@ -6,28 +6,31 @@ import fields from "components/Form/fields";
 import Form from "components/Form/Form";
 import BackButton from "components/Buttons/BackButton";
 
-function convertIngredientListToForm(ingredientsList){
-    return ingredientsList.join("\n");
-}
+export class Edit extends Component{
+    convertIngredientListToForm(ingredientsList){
+        return ingredientsList.join("\n");
+    }
+    render(){
+        const { editRecipe, history, recipe } = this.props;
 
-function Edit({ editRecipe, history, recipe }) {        
-    let initialRecipeValues = {};
-    initialRecipeValues.id = recipe.id;
-    initialRecipeValues.title = recipe.title;
-    initialRecipeValues.servings = recipe.servings;
-    initialRecipeValues.ingredients = convertIngredientListToForm(recipe.ingredients);
-    return (
-        <div>
-            <h2>Edit Recipe</h2>
-            <Form 
-                fields={fields}
-                formHandler={ editRecipe } 
-                history={ history }
-                intialRecipeValues={ initialRecipeValues }
-            />
-            <BackButton />
-        </div>   
-    );
+        let initialRecipeValues = {};
+        initialRecipeValues.id = recipe.id;
+        initialRecipeValues.title = recipe.title;
+        initialRecipeValues.servings = recipe.servings;
+        initialRecipeValues.ingredients = this.convertIngredientListToForm(recipe.ingredients);
+        return (
+            <div>
+                <h2>Edit Recipe</h2>
+                <Form 
+                    fields={fields}
+                    formHandler={ editRecipe } 
+                    history={ history }
+                    intialRecipeValues={ initialRecipeValues }
+                />
+                <BackButton />
+            </div>   
+        );
+    }    
 }
 
 function mapStateToProps({ recipe }){

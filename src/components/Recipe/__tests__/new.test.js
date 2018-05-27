@@ -1,6 +1,9 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import New from 'components/Recipe/New.jsx';
+import React from "react";
+import { shallow, mount } from "enzyme";
+import { RecipeView } from "components/Recipe/RecipeView";
+import Form from 'components/Form/Form';
+import BackButton from 'components/Buttons/BackButton';
+import { New } from 'components/Recipe/New';
 
 describe('New', () => {
   
@@ -19,6 +22,12 @@ describe('New', () => {
 
     it('renders correctly', () => {
         expect(component.exists()).toEqual(true);
+    });
+
+    it('renders a h1 tag, a Form, and a BackButton', () => { 
+        expect(component.find('h1').length).toEqual(1);  
+        expect(component.containsMatchingElement(<Form />)).toEqual(true);  
+        expect(component.containsMatchingElement(<BackButton />)).toEqual(true);  
     });
 
 });
