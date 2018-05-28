@@ -1,4 +1,7 @@
-const expect = require('chai').expect;
+import React from 'react';
+import { mount } from 'enzyme';
+import App from 'components/App';
+
 
 describe('RecipeBox App', () => {
     describe('Recipes View', () => {
@@ -60,3 +63,4 @@ describe('RecipeBox App', () => {
         });
     });
 });
+
