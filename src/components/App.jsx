@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Root from 'components/Root';
 import RecipeList from 'components/RecipeList';
 import RecipeView from 'components/Recipe/RecipeView';
 import RecipeEdit from 'components/Recipe/Edit';
@@ -9,7 +10,7 @@ import 'components/App.css';
 class App extends Component {
   render() {
     return (          
-        <BrowserRouter>
+        <Root>
           <div>
             <Switch>
               <Route exact path="/recipe/new" component={RecipeNew} />        
@@ -18,7 +19,7 @@ class App extends Component {
               <Route exact path="/" component={RecipeList} />          
             </Switch>                  
           </div>      
-      </BrowserRouter>   
+      </Root>   
     );
   }
 }
