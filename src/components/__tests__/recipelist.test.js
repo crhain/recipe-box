@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { Link } from 'react-router-dom';
 import model  from "model/seed.js";
 import { RecipeList } from 'components/RecipeList';
+import Root from 'components/Root';
 import AddButton from 'components/Buttons/AddButton';
 
 describe('RecipeList', () => {
@@ -12,7 +13,11 @@ describe('RecipeList', () => {
     let mockRecipes = model;
 
     beforeEach(() => {
-        component = shallow(<RecipeList getRecipes={ mockGetRecipesAction } recipes={ mockRecipes } />);
+        component = mount(
+            <Root>
+                <RecipeList getRecipes={ mockGetRecipesAction } recipes={ mockRecipes } />
+            </Root>
+        );
     });
 
     it('renders without crashing', () => {
@@ -25,11 +30,17 @@ describe('RecipeList', () => {
         expect(component.find('ul').length).toEqual(1); 
     });
 
-    it('show one recipe per recipe passed in state', () => {
+    it('shows one recipe per recipe passed in state', () => {
         let recipeListElements = component.find('ul > li');
         expect(recipeListElements.length).toEqual(mockRecipes.length);                
         // TODO: must find way to test text within <Link /> element within li. But <Link /> doesn't
         //        currently place nice with shallow render? Maybe I have to pass some additional information
+    });
+
+    it('shows correct recipe text per recipe shown on page', () => {
+        let recipeListElements = component.find('ul > li > Link');
+        recipeListElements.forEach( (recipe, index) => expect(recipe.text()).toEqual(model[index]['title']));
+        // expect(recipeListElements.find(<Link />))
     });
     
 });
