@@ -1,12 +1,19 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import Root from 'components/Root';
 import App from 'components/App';
 
+let component;
 
 describe('RecipeBox App', () => {
+  
     describe('Recipes View', () => {
-        it('should correctly display a list of recipes', () => {
-        
+        beforeEach(() => {
+            component = mount(
+                <Root>
+                    <App />
+                </Root>
+            );
         });
 
         it('should link to associated recipe view when clicking on recipe name', () => {
@@ -15,7 +22,8 @@ describe('RecipeBox App', () => {
 
         
         it('should display new recipe page when clicking on new button', () => {
-            
+            // let button = component.find('EditButton');
+            // button.simulate('click');    
         });
 
     });
