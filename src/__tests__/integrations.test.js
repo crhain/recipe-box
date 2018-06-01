@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import Root from 'components/Root';
 import App from 'components/App';
 
@@ -11,7 +12,9 @@ describe('RecipeBox App', () => {
         beforeEach(() => {
             component = mount(
                 <Root>
-                    <App />
+                    <MemoryRouter>
+                        <App />
+                    </MemoryRouter>
                 </Root>
             );
         });
