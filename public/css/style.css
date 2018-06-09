@@ -1,0 +1,6 @@
+.form {
+  width: 75%;
+  margin: 0 auto; }
+  .form__text-box {
+    resize: none;
+    height: 100px; }

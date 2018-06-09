@@ -61,7 +61,7 @@ class Form extends Component {
     render(){
         const { handleSubmit, formHandler, history } = this.props;
         return (
-            <div>
+            <div className="form">
                 <form 
                     onSubmit={ handleSubmit((values, dispatch) => {                                                
                         //must use dispatch with redux-form or it does not fire action handler
