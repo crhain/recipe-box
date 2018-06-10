@@ -14,7 +14,7 @@ export class RecipeList extends Component{
     createRecipeList(){             
         const listing = this.props.recipes.length > 0 ? 
             this.props.recipes.map((recipe, index)=>{
-                return <li key={index}><Link to={ "/recipe/" + recipe.id }>{recipe.title}</Link></li>;
+                return <li key={index} className="collection-item"><Link to={ "/recipe/" + recipe.id }>{recipe.title}</Link></li>;
             }) :
         <li>Loading...</li>;
                         
@@ -23,11 +23,11 @@ export class RecipeList extends Component{
 
     render(){        
         return (
-            <div>
+            <div className="recipe-list">
                 <h1>Recipe List</h1>
                 <AddButton />
                 <div>
-                    <ul>
+                    <ul className="collection">
                         {this.createRecipeList()}
                     </ul>
                 </div>
