@@ -19,7 +19,7 @@ export class RecipeList extends Component{
                         key={index} 
                         className="collection-item"
                     >
-                        <Link to={ "/recipe/" + recipe.id }>{recipe.title}</Link>
+                        <Link to={ "/recipe/" + recipe.id } className="collection-item">{recipe.title}</Link>
                     </li>
                 );
             });
