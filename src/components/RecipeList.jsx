@@ -11,14 +11,21 @@ export class RecipeList extends Component{
         this.props.getRecipes();        
     }
 
-    createRecipeList(){             
-        const listing = this.props.recipes.length > 0 ? 
-            this.props.recipes.map((recipe, index)=>{
-                return <li key={index} className="collection-item"><Link to={ "/recipe/" + recipe.id }>{recipe.title}</Link></li>;
-            }) :
-        <li>Loading...</li>;
-                        
-        return listing;
+    createRecipeList(){ 
+        if(this.props.recipes.length > 0){
+            return this.props.recipes.map((recipe, index)=> {
+                return (
+                    <li 
+                        key={index} 
+                        className="collection-item"
+                    >
+                        <Link to={ "/recipe/" + recipe.id }>{recipe.title}</Link>
+                    </li>
+                );
+            });
+        } else {
+            return <li>Loading...</li>;
+        }                                                            
     }
 
     render(){        
