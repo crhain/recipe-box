@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getRecipes } from "actions/";
 import AddButton from "components/Buttons/AddButton";
+import EditButton from "components/Buttons/EditButton";
+import DeleteButton from "components/Buttons/DeleteButton";
 
 
 export class RecipeList extends Component{
@@ -20,6 +22,8 @@ export class RecipeList extends Component{
                         className="collection-item"
                     >
                         <Link to={ "/recipe/" + recipe.id } className="collection-item">{recipe.title}</Link>
+                        <EditButton recipeId={recipe.id} />
+                        
                     </li>
                 );
             });
