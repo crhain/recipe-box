@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { getRecipes } from "actions/";
+import { Link, withRouter } from 'react-router-dom';
+import { getRecipes, deleteRecipe } from "actions/";
 import AddButton from "components/Buttons/AddButton";
 import EditButton from "components/Buttons/EditButton";
 import DeleteButton from "components/Buttons/DeleteButton";
@@ -11,6 +11,10 @@ export class RecipeList extends Component{
     
     componentDidMount(){
         this.props.getRecipes();        
+    }
+
+    handleDeleteClick(recipeId){      
+        this.props.deleteRecipe(recipeId, this.props.history);        
     }
 
     createRecipeList(){ 
@@ -23,7 +27,7 @@ export class RecipeList extends Component{
                     >
                         <Link to={ "/recipe/" + recipe.id } className="collection-item">{recipe.title}</Link>
                         <EditButton recipeId={recipe.id} />
-                        
+                        <DeleteButton handleDeleteClick={this.handleDeleteClick.bind(this, recipe.id)} />
                     </li>
                 );
             });
@@ -53,5 +57,5 @@ function mapStateToProps({ recipes }){
     return { recipes };
 }
 
-export default connect(mapStateToProps, { getRecipes })(RecipeList);
+export default withRouter(connect(mapStateToProps, { getRecipes, deleteRecipe })(RecipeList));
 
