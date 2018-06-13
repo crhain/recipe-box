@@ -10,6 +10,7 @@ describe('Edit', () => {
     let component;
     let mockHistory = jest.fn();
     let mockFormHandler = jest.fn();
+    let mockGetRecipe = jest.fn();
     let mockRecipe = model[0];
    
 
@@ -19,6 +20,7 @@ describe('Edit', () => {
             history={ mockHistory } 
             editRecipe={ mockFormHandler } 
             recipe={ mockRecipe } 
+            getRecipe={ mockGetRecipe }
         />);
     });
 

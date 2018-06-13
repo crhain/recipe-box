@@ -8,7 +8,8 @@ import BackButton from "components/Buttons/BackButton";
 
 export class Edit extends Component{
 
-    componentWillMount(){             
+    componentWillMount(){    
+        console.log(this.props.match.params.id);         
         this.props.getRecipe(this.props.match.params.id);                                                                
     }
  
@@ -17,10 +18,13 @@ export class Edit extends Component{
     }
     render(){
         const { editRecipe, history, recipe } = this.props;
+        console.log("Recipe is...");
+        console.log(recipe);
 
-        let initialRecipeValues = {};
+        let initialRecipeValues;
 
-        if(recipe){
+        if(recipe.id){
+            initialRecipeValues = {};
             initialRecipeValues.id = recipe.id;
             initialRecipeValues.title = recipe.title;
             initialRecipeValues.servings = recipe.servings;
@@ -34,7 +38,7 @@ export class Edit extends Component{
                     fields={fields}
                     formHandler={ editRecipe } 
                     history={ history }
-                    intialRecipeValues={ initialRecipeValues }
+                    intialRecipeValues={ initialRecipeValues ? initialRecipeValues : "" }
                 />
                 <BackButton />
             </div>   

@@ -58,7 +58,7 @@ export class RecipeView extends Component{
             </div>
         );
     }
-    //hello    
+    
 }
 
 

@@ -25,8 +25,7 @@ export class RecipeList extends Component{
                         key={index} 
                         className="collection-item"
                     >
-                        <Link to={ "/recipe/" + recipe.id } className="collection-item">{recipe.title}</Link>
-                        <EditButton recipeId={recipe.id} />
+                        <Link to={ "/recipe/" + recipe.id } className="collection-item">{recipe.title}</Link>                        
                         <DeleteButton handleDeleteClick={this.handleDeleteClick.bind(this, recipe.id)} />
                     </li>
                 );
