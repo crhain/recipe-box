@@ -9,7 +9,7 @@ import DeleteButton from "components/Buttons/DeleteButton";
 
 
 export class RecipeView extends Component{
-    componentWillMount(){             
+    componentDidMount(){             
         this.props.getRecipe(this.props.match.params.id);                                                                
     }
   
