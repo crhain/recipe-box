@@ -27,16 +27,16 @@ export class Edit extends Component{
 
     render(){
         
-        if(this.props.recipe.id){
-            this.initialRecipeValues.id = this.props.recipe.id;
-            this.initialRecipeValues.title = this.props.recipe.title;
-            this.initialRecipeValues.servings = this.props.recipe.servings;
-            this.initialRecipeValues.ingredients = this.convertIngredientListToForm(this.props.recipe.ingredients);    
+        if(this.props.selectedRecipe.id){
+            this.initialRecipeValues.id = this.props.selectedRecipe.id;
+            this.initialRecipeValues.title = this.props.selectedRecipe.title;
+            this.initialRecipeValues.servings = this.props.selectedRecipe.servings;
+            this.initialRecipeValues.ingredients = this.convertIngredientListToForm(this.props.selectedRecipe.ingredients);    
         }
 
         return (
             <div>
-                <h1>Edit: { this.props.recipe ? this.props.recipe.title : "" }</h1>                
+                <h1>Edit: { this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
                 <div>
                     
                 </div>                
@@ -56,8 +56,8 @@ export class Edit extends Component{
 }
 
 
-function mapStateToProps({ recipe }){
-    return { recipe };
+function mapStateToProps({ selectedRecipe }){
+    return { selectedRecipe };
 }
 
 export default withRouter(connect(mapStateToProps, { getRecipe, editRecipe })(Edit));

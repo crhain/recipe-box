@@ -24,22 +24,22 @@ export class RecipeView extends Component{
     renderIngredients(){
         let ingredients = "";
 
-        if(this.props.recipe.ingredients) {
-            ingredients = this.props.recipe.ingredients.map( (ingredient, index) => <li className="collection-item" key={ index }>{ ingredient }</li> );            
+        if(this.props.selectedRecipe.ingredients) {
+            ingredients = this.props.selectedRecipe.ingredients.map( (ingredient, index) => <li className="collection-item" key={ index }>{ ingredient }</li> );            
         }
 
         return ingredients;
     }
 
     handleDeleteClick(){      
-        this.props.deleteRecipe(this.props.recipe.id, this.history);        
+        this.props.deleteRecipe(this.props.selectedRecipe.id, this.history);        
     }
 
     render(){
         
         return (
             <div>
-                <h1>{ this.props.recipe ? this.props.recipe.title : "" }</h1>                
+                <h1>{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
                 <div>
                     
                 </div>
@@ -47,7 +47,7 @@ export class RecipeView extends Component{
                 <DeleteButton handleDeleteClick={ this.handleDeleteClick } />                
                 <BackButton />
                 <div>
-                    <h3 className="servings">Servings: <span>{this.props.recipe ? this.props.recipe.servings : ""}</span></h3> 
+                    <h3 className="servings">Servings: <span>{this.props.selectedRecipe ? this.props.selectedRecipe.servings : ""}</span></h3> 
                     <div className="ingredientList">
                         <h3 className="collection-header">Ingredients</h3>   
                         <ul className="collection with-header">                                                
@@ -62,8 +62,8 @@ export class RecipeView extends Component{
 }
 
 
-function mapStateToProps({ recipe }){
-    return { recipe };
+function mapStateToProps({ selectedRecipe }){
+    return { selectedRecipe };
 }
 
 export default withRouter(connect(mapStateToProps, { getRecipe, deleteRecipe })(RecipeView));

@@ -6,7 +6,7 @@ import RecipeReducer from "reducers/recipeReducer";
 
 const rootReducer = combineReducers({
   recipes: RecipeListReducer,
-  recipe: RecipeReducer,
+  selectedRecipe: RecipeReducer,
   form: formReducer
 });
 
