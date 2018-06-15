@@ -18,9 +18,10 @@ describe('Edit', () => {
         component = shallow(
         <Edit 
             history={ mockHistory } 
-            editRecipe={ mockFormHandler } 
-            recipe={ mockRecipe } 
-            getRecipe={ mockGetRecipe }
+            editRecipe={ mockFormHandler }
+            getRecipe={ mockGetRecipe } 
+            selectedRecipe={ mockRecipe } 
+            
         />);
     });
 

@@ -26,7 +26,7 @@ describe("RecipeView", () => {
                 deleteRecipe = { mockDeleteRecipeFunction }
                 history = { mockHistory }
                 match={ mockMatch } 
-                recipe={ mockRecipe }  />
+                selectedRecipe={ mockRecipe }  />
                 
         );
     });
