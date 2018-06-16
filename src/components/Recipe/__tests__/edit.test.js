@@ -11,7 +11,13 @@ describe('Edit', () => {
     let mockHistory = jest.fn();
     let mockFormHandler = jest.fn();
     let mockGetRecipe = jest.fn();
+    let mockMatch = {
+        params: {
+            id: "xyz"
+        }
+    }
     let mockRecipe = model[0];
+    
    
 
     beforeEach(() => {
@@ -20,6 +26,7 @@ describe('Edit', () => {
             history={ mockHistory } 
             editRecipe={ mockFormHandler }
             getRecipe={ mockGetRecipe } 
+            match={ mockMatch } 
             selectedRecipe={ mockRecipe } 
             
         />);
@@ -29,8 +36,8 @@ describe('Edit', () => {
         expect(component.exists()).toEqual(true);
     });
 
-    it('renders a h2 tag, a Form, and a BackButton', () => { 
-        expect(component.find('h2').length).toEqual(1);  
+    it('renders a h1 tag, a Form, and a BackButton', () => { 
+        expect(component.find('h1').length).toEqual(1);  
         expect(component.containsMatchingElement(<Form />)).toEqual(true);  
         expect(component.containsMatchingElement(<BackButton />)).toEqual(true);  
     });
