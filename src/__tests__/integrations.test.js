@@ -7,18 +7,22 @@ import App from 'components/App';
 let component;
 
 describe('RecipeBox App', () => {
-  
-    describe('Recipes View', () => {
-        beforeEach(() => {
-            component = mount(
-                <Root>
-                    <MemoryRouter>
-                        <App />
-                    </MemoryRouter>
-                </Root>
-            );
-        });
+    beforeEach(() => {
+        component = mount(                
+            <Root>   
+                <MemoryRouter initialEntries={['/']} initialIndex={0}>                                     
+                    <App />                                        
+                </MemoryRouter>    
+            </Root>                
+        );
+    });
 
+    it('should should render application', () => {
+        expect(component.exists()).toEqual(true);
+    });
+
+    describe('Recipes View', () => {
+        
         it('should link to associated recipe view when clicking on recipe name', () => {
         
         });
