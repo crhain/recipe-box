@@ -21,6 +21,10 @@ describe('RecipeBox App', () => {
         expect(component.exists()).toEqual(true);
     });
 
+    it('should should render Recipe List when going to root route', () => {
+        expect(component.find('RecipeList')).toHaveLength(1);
+    });
+
     describe('Recipes View', () => {
         
         it('should link to associated recipe view when clicking on recipe name', () => {

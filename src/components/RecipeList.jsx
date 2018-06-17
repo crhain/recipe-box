@@ -23,10 +23,10 @@ export class RecipeList extends Component{
                 return (
                     <li 
                         key={index} 
-                        className="collection-item"
+                        className="recipe-list__item"
                     >
-                        <Link to={ "/recipe/" + recipe.id } className="collection-item">{recipe.title}</Link>
-                        <EditButton recipeId={ recipe.id }/>
+                        <Link to={ "/recipe/" + recipe.id } className="collection-item recipe-list__item__name">{recipe.title}</Link>
+                        <EditButton recipeId={ recipe.id } />
                         <DeleteButton handleDeleteClick={this.handleDeleteClick.bind(this, recipe.id)} />
                     </li>
                 );

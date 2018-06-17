@@ -1,7 +1,16 @@
 
 .recipe-list {
+    display: inline-block;
     width: 75%;
     margin: 0 auto;
+
+    &__item {
+        display: flex;
+        
+        &__name {
+            width: 90%;
+        }
+    }
 }
 
 .form {
