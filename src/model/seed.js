@@ -2,6 +2,8 @@ export default  [
     {
         id: "beefstrogonoff", 
         title: "Beef Strogonoff", 
+        description: "Strong beefy flavor",
+        image: "",
         servings: 4,
         ingredients: [
             "1 1/2 pounds beef sirloin steak", 
@@ -20,6 +22,8 @@ export default  [
     {
         id: "lasagna", 
         title: "Lasagna", 
+        description: "It's the best!",
+        image: "",
         servings: 4,
         ingredients: [
             "1 1/4 pounds Johnsonville Ground Mild Italian sausage",
@@ -44,6 +48,8 @@ export default  [
     {
         id: "spanishrice", 
         title: "Spanish Rice", 
+        description: "Spicy!",
+        image: "",
         servings: 4,
         ingredients: [
             "2 tablespoons olive oil",
