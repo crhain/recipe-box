@@ -30,6 +30,7 @@ export class Edit extends Component{
         if(this.props.selectedRecipe.id){
             this.initialRecipeValues.id = this.props.selectedRecipe.id;
             this.initialRecipeValues.title = this.props.selectedRecipe.title;
+            this.initialRecipeValues.description = this.props.selectedRecipe.description;
             this.initialRecipeValues.servings = this.props.selectedRecipe.servings;
             this.initialRecipeValues.ingredients = this.convertIngredientListToForm(this.props.selectedRecipe.ingredients);    
         }

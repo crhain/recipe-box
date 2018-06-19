@@ -32,6 +32,7 @@ export default (state = [], action) => {
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:                   
             recipe.title = action.recipe.title;
+            recipe.description = action.recipe.description;
             recipe.servings = action.recipe.servings;
             recipe.id = getRecipeId(action.recipe.title);
             recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);
@@ -46,6 +47,7 @@ export default (state = [], action) => {
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
             recipe.title = action.recipe.title;
+            recipe.description = action.recipe.description;
             recipe.servings = action.recipe.servings;
             recipe.id = action.recipe.id;
             recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);                                    
