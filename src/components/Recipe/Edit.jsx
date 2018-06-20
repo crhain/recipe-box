@@ -31,6 +31,7 @@ export class Edit extends Component{
             this.initialRecipeValues.id = this.props.selectedRecipe.id;
             this.initialRecipeValues.title = this.props.selectedRecipe.title;
             this.initialRecipeValues.description = this.props.selectedRecipe.description;
+            this.initialRecipeValues.image = this.props.selectedRecipe.image;
             this.initialRecipeValues.servings = this.props.selectedRecipe.servings;
             this.initialRecipeValues.ingredients = this.convertIngredientListToForm(this.props.selectedRecipe.ingredients);    
         }

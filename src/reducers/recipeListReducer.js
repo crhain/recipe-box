@@ -33,6 +33,7 @@ export default (state = [], action) => {
         case ADD_RECIPE:                   
             recipe.title = action.recipe.title;
             recipe.description = action.recipe.description;
+            recipe.image = action.recipe.image;
             recipe.servings = action.recipe.servings;
             recipe.id = getRecipeId(action.recipe.title);
             recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);
@@ -48,6 +49,7 @@ export default (state = [], action) => {
         case EDIT_RECIPE:
             recipe.title = action.recipe.title;
             recipe.description = action.recipe.description;
+            recipe.image = action.recipe.image;
             recipe.servings = action.recipe.servings;
             recipe.id = action.recipe.id;
             recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);                                    
