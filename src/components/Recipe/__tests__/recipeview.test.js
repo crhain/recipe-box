@@ -41,9 +41,10 @@ describe("RecipeView", () => {
        expect(component.containsMatchingElement(<BackButton />)).toEqual(true);        
     });
 
-    it('includes an a h1 (title), h3 (servings), and ul (ingredient list)', () =>{
+    it('includes an a h1 (title), h3 (servings), p.description and ul (ingredient list)', () =>{
         expect(component.find('h1').length).toEqual(1); 
-        expect(component.find('.servings').length).toEqual(1); 
+        expect(component.find('.servings').length).toEqual(1);
+        expect(component.find('.description').length).toEqual(1);
         expect(component.find('.ingredientList').length).toEqual(1); 
     });
 
@@ -53,6 +54,10 @@ describe("RecipeView", () => {
 
     it('shows servings that matches recipe passed to component as state', () => {        
         expect(component.find('.servings').text()).toEqual('Servings: ' + mockRecipe.servings); 
+    });
+
+    it('shows a description that matches recipe passed to component as state', () => {        
+        expect(component.find('.description').text()).toEqual(mockRecipe.description); 
     });
 
     it('shows a list of ingredient li elements with one element per ingredient', () => {
