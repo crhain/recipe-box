@@ -41,8 +41,9 @@ describe("RecipeView", () => {
        expect(component.containsMatchingElement(<BackButton />)).toEqual(true);        
     });
 
-    it('includes an a h1 (title), h3 (servings), p.description and ul (ingredient list)', () =>{
+    it('includes an a h1 (title), image, h3 (servings), p.description and ul (ingredient list)', () =>{
         expect(component.find('h1').length).toEqual(1); 
+        expect(component.find('.recipe-image > img').length).toEqual(1); 
         expect(component.find('.servings').length).toEqual(1);
         expect(component.find('.description').length).toEqual(1);
         expect(component.find('.ingredientList').length).toEqual(1); 
