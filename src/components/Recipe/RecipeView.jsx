@@ -40,8 +40,8 @@ export class RecipeView extends Component{
         return (
             <div>
                 <h1>{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
-                <div>
-                    <p>{this.props.selectedRecipe ? this.props.selectedRecipe.image : ""}</p>    
+                <div className="recipe-image">
+                    <img src={this.props.selectedRecipe ? this.props.selectedRecipe.image : ""} />    
                 </div>
                 <EditButton recipeId={ this.recipeId }/>
                 <DeleteButton handleDeleteClick={ this.handleDeleteClick } />                

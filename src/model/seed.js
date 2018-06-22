@@ -3,7 +3,7 @@ export default  [
         id: "beefstrogonoff", 
         title: "Beef Strogonoff", 
         description: "Strong beefy flavor",
-        image: "",
+        image: "https://tiphero.com/wp-content/uploads/2017/05/easy-beef-stroganoff-FI-750x364.jpg",
         servings: 4,
         ingredients: [
             "1 1/2 pounds beef sirloin steak", 
@@ -23,7 +23,7 @@ export default  [
         id: "lasagna", 
         title: "Lasagna", 
         description: "It's the best!",
-        image: "",
+        image: "https://www.cscassets.com/recipes/wide_cknew/wide_60207.jpg",
         servings: 4,
         ingredients: [
             "1 1/4 pounds Johnsonville Ground Mild Italian sausage",
