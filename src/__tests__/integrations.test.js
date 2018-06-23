@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Root from 'components/Root';
 import App from 'components/App';
 
+
 let component;
 
 describe('RecipeBox App', () => {
@@ -25,7 +26,29 @@ describe('RecipeBox App', () => {
         expect(component.find('RecipeList')).toHaveLength(1);
     });
 
+    it('should should link to new recipe form when clicking on the new button', (done) => {
+        let newButton = component.find('AddButton');
+        expect(newButton).toHaveLength(1);
+        newButton.find('a').simulate('click', () => {
+            component.match('/recipe/new');
+            done();
+        });
+
+        
+        
+    });
+
     describe('Recipes View', () => {
+
+        beforeEach(() => {
+            component = mount(                
+                <Root>   
+                    <MemoryRouter initialEntries={['/recipe' + 'beefstrogonoff']} initialIndex={0}>                                     
+                        <App />                                        
+                    </MemoryRouter>    
+                </Root>                
+            );
+        });
         
         it('should link to associated recipe view when clicking on recipe name', () => {
         
