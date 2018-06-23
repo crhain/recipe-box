@@ -13,3 +13,7 @@
   .form__text-box {
     resize: none;
     height: 100px; }
+
+.recipe-image {
+  width: 60%;
+  margin: 0 auto; }
