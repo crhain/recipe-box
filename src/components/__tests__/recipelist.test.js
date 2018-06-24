@@ -38,7 +38,7 @@ describe('RecipeList', () => {
     });
 
     it('shows correct recipe text per recipe shown on page', () => {
-        let recipeListElements = component.find('ul > li > Link');
+        let recipeListElements = component.find('div > ul > li > Link');
         recipeListElements.forEach( (recipe, index) => expect(recipe.text()).toEqual(model[index]['title']));
         // expect(recipeListElements.find(<Link />))
     });

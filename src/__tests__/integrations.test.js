@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import moxios from 'moxios';
-import Root from 'components/Root';
 import App from 'components/App';
 
 
@@ -13,17 +12,20 @@ describe('Integration Tests', () => {
         beforeEach(() => {
             component = mount(                
                 
-                <MemoryRouter initialEntries={['/']} initialIndex={0}>    
-                    <Root>                                 
-                        <App />                                        
-                    </Root>    
+                <MemoryRouter initialEntries={['/']} initialIndex={0}>                                               
+                    <App />                                                                                   
                 </MemoryRouter>    
-                             
+                                         
             );
+
+            
+        });
+
+        afterEach(() => {
+            component.unmount();
         });
     
-        it('should should render application', () => {
-            console.log(component.find('App').props());
+        it('should should render application', () => {            
             expect(component.exists()).toEqual(true);
         });
     
@@ -35,7 +37,8 @@ describe('Integration Tests', () => {
             expect(component.find('h1').text()).toEqual('Recipe List');
         });
     
-        it('should should link to new recipe form when clicking on the new button', (done) => {
+        it('should link to new recipe component when clicking on the new button', (done) => {
+           console.log(component.find('h1').text()); 
            component.find('AddButton').simulate('click', {button: 0});
            moxios.wait(
             () => {                
@@ -44,6 +47,20 @@ describe('Integration Tests', () => {
             }               
            );
            
+        });
+
+        it('should link to recipe view for a recipe when clicking on link for that recipe', (done) => {
+            
+            let recipe = component.find('ul > li > Link')[0];
+            // console.log(recipe);
+            done();
+            recipe.simulate('click', {button: 0});
+            moxios.wait(
+                () => {
+                    expect(component.find('h1').text()).toEqual('Beef Strogonoff');
+                    done();
+                }
+            );
         });
 
     });
