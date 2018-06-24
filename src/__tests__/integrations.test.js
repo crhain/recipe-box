@@ -17,12 +17,11 @@ describe('Integration Tests', () => {
                 </MemoryRouter>    
                                          
             );
-
             
         });
 
         afterEach(() => {
-            component.unmount();
+            component = {};
         });
     
         it('should should render application', () => {            
@@ -50,13 +49,12 @@ describe('Integration Tests', () => {
         });
 
         it('should link to recipe view for a recipe when clicking on link for that recipe', (done) => {
-            
-            let recipe = component.find('ul > li > Link')[0];
-            // console.log(recipe);
-            done();
+                                
+            let recipe = component.find('ul > li > Link').first();
+                        
             recipe.simulate('click', {button: 0});
             moxios.wait(
-                () => {
+                () => {                    
                     expect(component.find('h1').text()).toEqual('Beef Strogonoff');
                     done();
                 }
