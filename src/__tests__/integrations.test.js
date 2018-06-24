@@ -8,42 +8,50 @@ import App from 'components/App';
 
 let component;
 
-describe('RecipeBox App', () => {
-    beforeEach(() => {
-        component = mount(                
-            
-            <MemoryRouter initialEntries={['/']} initialIndex={0}>    
-                <Root>                                 
-                    <App />                                        
-                </Root>    
-            </MemoryRouter>    
-                         
-        );
-    });
+describe('Integration Tests', () => {
+    describe('RecipeList', () => {
+        beforeEach(() => {
+            component = mount(                
+                
+                <MemoryRouter initialEntries={['/']} initialIndex={0}>    
+                    <Root>                                 
+                        <App />                                        
+                    </Root>    
+                </MemoryRouter>    
+                             
+            );
+        });
+    
+        it('should should render application', () => {
+            console.log(component.find('App').props());
+            expect(component.exists()).toEqual(true);
+        });
+    
+        it('should should render Recipe List when going to root route', () => {
+            expect(component.find('RecipeList')).toHaveLength(1);
+        });
+    
+        it('should have title: Recipe List', () => {
+            expect(component.find('h1').text()).toEqual('Recipe List');
+        });
+    
+        it('should should link to new recipe form when clicking on the new button', (done) => {
+           component.find('AddButton').simulate('click', {button: 0});
+           moxios.wait(
+            () => {                
+                expect(component.find('h1').text()).toEqual('Create A New Recipe');
+                done();
+            }               
+           );
+           
+        });
 
-    it('should should render application', () => {
-        expect(component.exists()).toEqual(true);
     });
-
-    it('should should render Recipe List when going to root route', () => {
-        expect(component.find('RecipeList')).toHaveLength(1);
-    });
-
-    it('should should link to new recipe form when clicking on the new button', (done) => {
-        done();    
-    });
+    
 
     describe('Recipes View', () => {
 
-        beforeEach(() => {
-            component = mount(                
-                <Root>   
-                    <MemoryRouter initialEntries={['/recipe' + 'beefstrogonoff']} initialIndex={0}>                                     
-                        <App />                                        
-                    </MemoryRouter>    
-                </Root>                
-            );
-        });
+        
         
         it('should link to associated recipe view when clicking on recipe name', () => {
         
