@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
+import moxios from 'moxios';
 import Root from 'components/Root';
 import App from 'components/App';
 
@@ -29,10 +30,14 @@ describe('RecipeBox App', () => {
     it('should should link to new recipe form when clicking on the new button', (done) => {
         let newButton = component.find('AddButton');
         expect(newButton).toHaveLength(1);
-        newButton.find('a').simulate('click', () => {
-            component.match('/recipe/new');
-            done();
-        });
+        newButton.find('a').simulate('click');
+
+        moxios.wait(
+            () => {
+                component.update();
+                done();
+            }
+        );
 
         
         
