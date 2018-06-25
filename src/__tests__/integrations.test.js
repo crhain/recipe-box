@@ -56,9 +56,28 @@ describe('Integration Tests', () => {
             moxios.wait(
                 () => {                    
                     expect(component.find('h1').text()).toEqual('Beef Strogonoff');
+                    //kludge code because MemoryRouter will not reset
+                    component.find('.back-button').simulate('click', {button: 0});  
                     done();
                 }
             );
+        });
+
+        it('should link to edit view for recipe when clicking on edit button for a recipe', (done) => {
+            let recipe = component.find('.recipe-list__item').first();
+            let recipeEditButton = recipe.find('EditButton');
+            recipeEditButton.simulate('click', {button: 0});
+            moxios.wait(
+                () => {
+                    expect(component.find('h1').text()).toEqual('Edit: Beef Strogonoff');
+                    component.find('.back-button').simulate('click', {button: 0});  
+                    done();
+                }
+            );
+        });
+
+        it('should delete a recipe when clicking on delete button for a recipe', () => {
+
         });
 
     });
