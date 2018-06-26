@@ -77,7 +77,16 @@ describe('Integration Tests', () => {
         });
 
         it('should delete a recipe when clicking on delete button for a recipe', () => {
-
+            let recipe = component.find('.recipe-list__item').first();
+            let recipeDeleteButton = recipe.find('DeleteButton');
+            recipeDeleteButton.simulate('click', {button: 0});
+            moxios.wait(
+                () => {
+                    let recipeName = component.find('.recipe-list__item__name').first();
+                    expect(recipeName.text()).toEqual('Lasagna');                    
+                    done();
+                }
+            );
         });
 
     });
