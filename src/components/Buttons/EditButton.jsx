@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function EditButton(props){
     return (
         <Link 
-            className="waves-effect waves-light btn" 
+            className="waves-effect waves-light btn edit-button" 
             style={{marginRight: '1rem'}} 
             to={"/recipe/" + props.recipeId + "/edit"}
         >

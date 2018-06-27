@@ -4,11 +4,9 @@ import { MemoryRouter } from 'react-router-dom';
 import moxios from 'moxios';
 import App from 'components/App';
 
-
-let component;
-
 describe('Integration Tests', () => {
     describe('RecipeList', () => {
+        let component;
         beforeEach(() => {
             component = mount(                
                 
@@ -20,10 +18,6 @@ describe('Integration Tests', () => {
             
         });
 
-        afterEach(() => {
-            
-        });
-    
         it('should should render application', () => {            
             expect(component.exists()).toEqual(true);
         });
@@ -83,7 +77,7 @@ describe('Integration Tests', () => {
             moxios.wait(
                 () => {
                     let recipeName = component.find('.recipe-list__item__name').first();
-                    expect(recipeName.text()).toEqual('Lasagna');                    
+                    expect(recipeName.text()).toEqual('Lasagna');                       
                     done();
                 }
             );
@@ -92,18 +86,41 @@ describe('Integration Tests', () => {
     });
     
 
-    describe('Recipes View', () => {
-
-        
-        
-        it('should link to associated recipe view when clicking on recipe name', () => {
-        
+    describe('Recipe View', () => {
+        let component;
+        beforeEach(() => {
+            component = mount(                                
+                <MemoryRouter initialEntries={['/recipe/lasagna']} initialIndex={0}>                                               
+                    <App />                                                                                   
+                </MemoryRouter>                                             
+            );
+            
         });
 
-        
-        it('should display new recipe page when clicking on new button', () => {
-            // let button = component.find('EditButton');
-            // button.simulate('click');    
+        it('should render Recipe View correctly', (done) => {   
+            let recipe = component.find('ul > li > Link').first();                        
+            recipe.simulate('click', {button: 0});
+            moxios.wait(
+                () => {
+                    let title = component.find('h1').text();
+                    console.log(title);
+                    expect(component.find('h1').text()).toEqual('Lasagna');
+                    done();
+                }
+            );                               
+            
+        });
+          
+        it('should display edit recipe page when clicking on edit button', () => {
+            component.find('.edit-button').simulate('click', {button: 0});
+            moxios.wait(
+             () => {                                 
+                 expect(component.find('h1').text()).toEqual('Edit: Lasagna');
+                 //kludge code because MemoryRouter will not reset
+                 component.find('.back-button').simulate('click', {button: 0});                                    
+                 done();
+             }               
+            );
         });
 
     });
