@@ -18,7 +18,12 @@ export class Edit extends Component{
         this.recipeId = this.props.match.params.id;   
         this.history = this.props.history;   
         this.initialRecipeValues = {};
+        this.handleBackClick = this.handleBackClick.bind(this);
 
+    }
+    
+    handleBackClick(){
+        this.history.goBack();
     }
 
     convertIngredientListToForm(ingredientsList){        
@@ -35,14 +40,14 @@ export class Edit extends Component{
             this.initialRecipeValues.servings = this.props.selectedRecipe.servings;
             this.initialRecipeValues.ingredients = this.convertIngredientListToForm(this.props.selectedRecipe.ingredients);    
         }
-
+        
         return (
             <div>
                 <h1>Edit: { this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
                 <div>
                     
                 </div>                
-                <BackButton />
+                <BackButton handleBackClick={this.handleBackClick}/>
                 <div>
                     <Form 
                         fields={fields}
