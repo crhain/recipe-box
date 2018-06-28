@@ -31,7 +31,7 @@ describe('Integration Tests', () => {
             () => {                
                 expect(component.find('h1').text()).toEqual('Create A New Recipe');
 
-                //kludge code because MemoryRouter will not reset
+                //kludge code because MemoryRouter will not reset                
                 component.find('.back-button').simulate('click', {button: 0});    
                 done();
             }               
@@ -39,7 +39,8 @@ describe('Integration Tests', () => {
            
         });
 
-        it('should link to recipe view for a recipe when clicking on link for that recipe', (done) => {                 
+        it('should link to recipe view for a recipe when clicking on link for that recipe', (done) => {    
+            console.log(component.find('h1').text());             
             let recipe = component.find('ul > li > Link').first();                        
             recipe.simulate('click', {button: 0});
             moxios.wait(
