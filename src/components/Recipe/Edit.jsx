@@ -17,15 +17,9 @@ export class Edit extends Component{
         // this.recipe = null;      
         this.recipeId = this.props.match.params.id;   
         this.history = this.props.history;   
-        this.initialRecipeValues = {};
-        this.handleBackClick = this.handleBackClick.bind(this);
-
+        this.initialRecipeValues = {};        
     }
-    
-    handleBackClick(){
-        this.history.goBack();
-    }
-
+        
     convertIngredientListToForm(ingredientsList){        
         return ingredientsList ? ingredientsList.join("\n") : "";
     }
@@ -47,7 +41,7 @@ export class Edit extends Component{
                 <div>
                     
                 </div>                
-                <BackButton handleBackClick={this.handleBackClick}/>
+                <BackButton history={ this.history }/>
                 <div>
                     <Form 
                         fields={fields}

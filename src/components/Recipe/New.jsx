@@ -10,12 +10,6 @@ import BackButton from "components/Buttons/BackButton";
     constructor(props){
         super(props);
         this.history = this.props.history;
-        this.handleBackClick = this.handleBackClick.bind(this);
-
-    }
-
-    handleBackClick(){
-        this.history.goBack();
     }
 
     render(){
@@ -25,7 +19,7 @@ import BackButton from "components/Buttons/BackButton";
             <div>
                 <h1>Create A New Recipe</h1>        
                 <Form fields={fields} formHandler={ addRecipe } history={ history } />
-                <BackButton handleBackClick={this.handleBackClick}/>
+                <BackButton history={ this.history }/>
             </div>        
         );
     }

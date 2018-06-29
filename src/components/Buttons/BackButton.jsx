@@ -1,13 +1,28 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
 
-export default function ReturnButton(props){
-    return (
-        <button 
-            className="waves-effect waves-light btn back-button"              
-            onClick={props.handleBackClick}
-        >
-            Back To Listing
-        </button>
-    );
+
+
+
+export default class ReturnButton extends Component{
+    constructor(props){
+        super(props);
+        this.handleBackClick = this.handleBackClick.bind(this);
+        this.history = props.history;
+    }
+
+    handleBackClick(){
+        this.history.goBack();
+    }
+
+    render(){
+        return (
+            <button 
+                className="waves-effect waves-light btn back-button"              
+                onClick={this.handleBackClick}
+            >
+                Back To Listing
+            </button>
+        );
+    }
+        
 }
