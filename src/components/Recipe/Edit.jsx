@@ -13,8 +13,7 @@ export class Edit extends Component{
     }
   
     constructor(props){
-        super(props);                
-        // this.recipe = null;      
+        super(props);                           
         this.recipeId = this.props.match.params.id;   
         this.history = this.props.history;   
         this.initialRecipeValues = {};        
