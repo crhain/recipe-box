@@ -9,12 +9,14 @@ import DeleteButton from "components/Buttons/DeleteButton";
 
 export class RecipeList extends Component{
     
-    componentDidMount(){
-        this.props.getRecipes();        
+    constructor(props){
+        super(props);
+        this.history = this.props.history;
+        this.deleteRecipe = this.props.deleteRecipe;
     }
 
-    handleDeleteClick(recipeId){      
-        this.props.deleteRecipe(recipeId, this.props.history);        
+    componentDidMount(){
+        this.props.getRecipes();        
     }
 
     createRecipeList(){ 
@@ -27,7 +29,7 @@ export class RecipeList extends Component{
                     >
                         <Link to={ "/recipe/" + recipe.id } className="collection-item recipe-list__item__name">{recipe.title}</Link>
                         <EditButton recipeId={ recipe.id } />
-                        <DeleteButton handleDeleteClick={this.handleDeleteClick.bind(this, recipe.id)} />
+                        <DeleteButton recipeId={ recipe.id } deleteRecipe={ this.deleteRecipe } history={ this.history } />                         
                     </li>
                 );
             });

@@ -17,7 +17,6 @@ export class RecipeView extends Component{
         super(props);                
         this.recipe = null;      
         this.recipeId = this.props.match.params.id;   
-        this.handleDeleteClick = this.handleDeleteClick.bind(this);              
         this.history = this.props.history;   
     }
 
@@ -30,11 +29,7 @@ export class RecipeView extends Component{
 
         return ingredients;
     }
-
-    handleDeleteClick(){      
-        this.props.deleteRecipe(this.props.selectedRecipe.id, this.history);        
-    }
-
+    
     render(){
         
         return (
@@ -44,7 +39,7 @@ export class RecipeView extends Component{
                     <img src={this.props.selectedRecipe ? this.props.selectedRecipe.image : ""} />    
                 </div>
                 <EditButton recipeId={ this.recipeId }/>
-                <DeleteButton handleDeleteClick={ this.handleDeleteClick } />                
+                <DeleteButton recipeId={ this.recipeId } deleteRecipe={ this.props.deleteRecipe } history={ this.history } />                
                 <BackButton history={ this.history }/>
                 <div>
                     <p className="description">{this.props.selectedRecipe ? this.props.selectedRecipe.description : ""}</p>
