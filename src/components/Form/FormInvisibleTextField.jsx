@@ -4,7 +4,7 @@ import React from 'react';
 
 export default ({ input, label, meta: { error, touched } }) => {    
     return (
-        <div>           
+        <div className="form__text-field--invisible">           
             <input {...input} style={{ marginBottom: '5px', display: 'none' }} />             
         </div>
     );

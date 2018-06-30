@@ -72,7 +72,7 @@ class Form extends Component {
                     
                    
                     <button 
-                        className="waves-effect waves-light btn"
+                        className="waves-effect waves-light btn form__submit-button"
                         style={{ marginBottom: "20px" }}
                         type="submit"                        
                     >

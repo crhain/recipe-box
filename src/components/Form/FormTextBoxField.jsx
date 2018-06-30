@@ -7,7 +7,7 @@ export default ({ input, label, meta: { error, touched } }) => {
         <div>
             <label>{label}</label>
             <textarea 
-                className="form__text-box"
+                className="form__textbox-field"
                 {...input} 
                 style={{ marginBottom: '5px' }}
             >
