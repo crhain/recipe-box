@@ -25,9 +25,9 @@ export class RecipeList extends Component{
                 return (
                     <li 
                         key={index} 
-                        className="recipe-list__item"
+                        className="recipe-list__recipe"
                     >
-                        <Link to={ "/recipe/" + recipe.id } className="collection-item recipe-list__item__name">{recipe.title}</Link>
+                        <Link to={ "/recipe/" + recipe.id } className="collection-item recipe-list__recipe__name">{recipe.title}</Link>
                         <EditButton recipeId={ recipe.id } />
                         <DeleteButton recipeId={ recipe.id } deleteRecipe={ this.deleteRecipe } history={ this.history } />                         
                     </li>
@@ -41,7 +41,7 @@ export class RecipeList extends Component{
     render(){        
         return (
             <div className="recipe-list">
-                <h1>Recipe List</h1>
+                <h1 className="recipe-list__heading">Recipe List</h1>
                 <AddButton />
                 <div>
                     <ul className="collection">

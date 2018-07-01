@@ -2,9 +2,9 @@
   display: inline-block;
   width: 75%;
   margin: 0 auto; }
-  .recipe-list__item {
+  .recipe-list__recipe {
     display: flex; }
-    .recipe-list__item__name {
+    .recipe-list__recipe__name {
       width: 90%; }
 
 .form {
