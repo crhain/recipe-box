@@ -24,7 +24,7 @@ export class RecipeView extends Component{
         let ingredients = "";
 
         if(this.props.selectedRecipe.ingredients) {
-            ingredients = this.props.selectedRecipe.ingredients.map( (ingredient, index) => <li className="collection-item" key={ index }>{ ingredient }</li> );            
+            ingredients = this.props.selectedRecipe.ingredients.map( (ingredient, index) => <li className="collection-item recipe__ingredient" key={ index }>{ ingredient }</li> );            
         }
 
         return ingredients;
@@ -33,18 +33,18 @@ export class RecipeView extends Component{
     render(){
         
         return (
-            <div>
-                <h1>{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
-                <div className="recipe-image">
+            <div className="recipe">
+                <h1 className="recipe__title">{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
+                <div className="recipe__image">
                     <img src={this.props.selectedRecipe ? this.props.selectedRecipe.image : ""} />    
                 </div>
                 <EditButton recipeId={ this.recipeId }/>
                 <DeleteButton recipeId={ this.recipeId } deleteRecipe={ this.props.deleteRecipe } history={ this.history } />                
                 <BackButton history={ this.history }/>
                 <div>
-                    <p className="description">{this.props.selectedRecipe ? this.props.selectedRecipe.description : ""}</p>
-                    <h3 className="servings">Servings: <span>{this.props.selectedRecipe ? this.props.selectedRecipe.servings : ""}</span></h3> 
-                    <div className="ingredientList">
+                    <p className="recipe__description">{this.props.selectedRecipe ? this.props.selectedRecipe.description : ""}</p>
+                    <h3 className="recipe__servings">Servings: <span>{this.props.selectedRecipe ? this.props.selectedRecipe.servings : ""}</span></h3> 
+                    <div className="recipe__ingredientList">
                         <h3 className="collection-header">Ingredients</h3>   
                         <ul className="collection with-header">                                                
                             { this.renderIngredients() }

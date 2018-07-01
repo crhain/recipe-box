@@ -7,13 +7,13 @@
     .recipe-list__recipe__name {
       width: 90%; }
 
+.recipe__image {
+  width: 60%;
+  margin: 0 auto; }
+
 .form {
   width: 75%;
   margin: 0 auto; }
   .form__text-box {
     resize: none;
     height: 100px; }
-
-.recipe-image {
-  width: 60%;
-  margin: 0 auto; }

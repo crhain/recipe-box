@@ -13,6 +13,13 @@
     }
 }
 
+.recipe {
+    &__image {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
 .form {
     width: 75%;
     margin: 0 auto;
@@ -23,8 +30,6 @@
     }
 }
 
-.recipe-image {
-    width: 60%;
-    margin: 0 auto;
-}
+
+
 
