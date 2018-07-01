@@ -63,12 +63,12 @@ describe("RecipeView", () => {
 
     it('shows a list of ingredient li elements with one element per ingredient', () => {
         
-        let ingredientListElements = component.find('.recipe__ingredientList li');                        
+        let ingredientListElements = component.find('.recipe__ingredient');                        
         expect(ingredientListElements.length).toEqual(mockRecipe.ingredients.length);                
     });
 
     it('shows a list of igredient li elements that show the text for each ingredient passed from state', () =>{
-        let ingredientListElements = component.find('.recipe__ingredientList li');                        
+        let ingredientListElements = component.find('.recipe__ingredient');                        
         expect(ingredientListElements.everyWhere((el, i) => el.text() === mockRecipe.ingredients[i])).toEqual(true);
     });
 
