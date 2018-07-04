@@ -36,12 +36,12 @@ export class Edit extends Component{
         
         return (
             <div className="recipe-edit">
-                <h1 className="recipe-edit__title">Edit: { this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
+                <h1 className="recipe-edit__heading">Edit: { this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
                 <div>
                     
                 </div>                
                 <BackButton history={ this.history }/>
-                <div>
+                <div className="recipe-edit__form">
                     <Form 
                         fields={fields}
                         formHandler={ this.props.editRecipe } 

@@ -36,8 +36,8 @@ describe('Edit', () => {
         expect(component.exists()).toEqual(true);
     });
 
-    it('renders a h1 tag, a Form, and a BackButton', () => { 
-        expect(component.find('h1').length).toEqual(1);  
+    it('renders a heading, a Form, and a BackButton', () => { 
+        expect(component.find('.recipe-edit__heading').length).toEqual(1);  
         expect(component.containsMatchingElement(<Form />)).toEqual(true);  
         expect(component.containsMatchingElement(<BackButton />)).toEqual(true);  
     });
