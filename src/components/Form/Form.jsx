@@ -89,7 +89,8 @@ function validate(values, form){
     const errors = {};
     const fields = form.fields;
     _.each(fields, ({ name }) => {
-        if(name === "id"){
+        //fields that do not need to be filled
+        if(name === "id" || name === "image"){
             return errors;
         }
 
