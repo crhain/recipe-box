@@ -1,17 +1,14 @@
-import recipes from "model/seed.js";
+import seed from "model/seed.js";
 
 let Model = {};
+let recipes = seed;
 
 Model.getAllRecipes = function(){
-    //1. check to see if recipes has items in it
     
-    //1a. if not, get recipes key from local storage
-    
-    //1a. convert them to JSON
-    
-    //1a. iterate over keys and add to Model
+    if(shouldGetRecipesFromStorage()){
+        recipes = getRecipesFromStorage();
+    }
 
-    //2. return recipes
     return recipes;
 };
 
@@ -23,9 +20,9 @@ Model.addRecipe = function(recipe){
 
     //push recipe to recipes
     recipes.push(recipe);  
-
-    //*** call function to transfer recipes held in Model to localstorage recipes
-
+        
+    addRecipesToStorage();
+    
     return recipes;
 };
 
@@ -37,6 +34,9 @@ Model.editRecipe = function(recipe){
     }
 
     recipes[matchPosition] = recipe;   
+
+    addRecipesToStorage();
+
     return recipes;
 };
 
@@ -57,15 +57,33 @@ Model.deleteRecipeById = function(id){
 
     //splice it out
     recipes.splice(matchPosition, 1);
+
+    addRecipesToStorage();
+
     return recipes;
 };
 
+//Function that checks to see if recipes state should be retrieved from localstorage or not
+function shouldGetRecipesFromStorage(){
+    return false;
+}
+
+//Function to check if recipes state should be added to localstorage
+function shouldAddRecipesToStorage(){
+    return false;
+}
+
+//Function to retireve recipes state from localstorage and convert to appropriate format for
+// in memory storage
 function getRecipesFromStorage(){
     return recipes;
 }
 
+//Function to add recipes to localstorage in appropriate format
 function addRecipesToStorage(){
-
+    if(shouldAddRecipesToStorage()){
+        //do something
+    }
 }
 
 export default Model;
