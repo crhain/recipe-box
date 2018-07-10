@@ -88,9 +88,9 @@ class Form extends Component {
 function validate(values, form){
     const errors = {};
     const fields = form.fields;
-    _.each(fields, ({ name }) => {
-        //fields that do not need to be filled
-        if(name === "id" || name === "image"){
+    _.each(fields, ({ name, required }) => {
+        //fields that do not need to be filled        
+        if(!required){
             return errors;
         }
 
