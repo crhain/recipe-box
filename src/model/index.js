@@ -1,7 +1,18 @@
 import seed from "model/seed.js";
 
-let Model = {};
 let recipes = [];
+let testMode = false;
+let Model = {};
+
+Model.toggleTestMode = function(){
+    testMode = !testMode;
+    if(testMode){
+        recipes = seed;
+    } else {
+        recipes = [];
+    }    
+}
+
 
 Model.getAllRecipes = function(){
     
@@ -65,12 +76,12 @@ Model.deleteRecipeById = function(id){
 
 //Function that checks to see if recipes state should be retrieved from localstorage or not
 function shouldGetRecipesFromStorage(){
-    return recipes.length <= 0;
+    return recipes.length <= 0 && !testMode;
 }
 
 //Function to check if recipes state should be added to localstorage
 function shouldAddRecipesToStorage(){
-    return false;
+    return !testMode;
 }
 
 //Function to retireve recipes state from localstorage and convert to appropriate format for

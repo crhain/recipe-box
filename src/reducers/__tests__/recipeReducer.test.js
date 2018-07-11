@@ -1,6 +1,6 @@
 import recipeReducer from "reducers/recipeReducer";
 import { GET_RECIPE } from "actions/types";
-import model  from "model/seed.js";
+import Model from "model";
 
 const beef = {
     id: "beefstrogonoff", 
@@ -26,6 +26,7 @@ describe("recipeReducer", () => {
     // it("Should return initial state of null when no action type passed and inital state not set", () => {
     //     expect(recipeReducer(undefined, {type: null, payload: null})).toEqual(null);
     // });
+    Model.toggleTestMode();
 
     describe("GET_RECIPE", () => {
                    
