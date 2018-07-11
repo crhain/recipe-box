@@ -1,14 +1,14 @@
 import seed from "model/seed.js";
 
 let Model = {};
-let recipes = seed;
+let recipes = [];
 
 Model.getAllRecipes = function(){
     
     if(shouldGetRecipesFromStorage()){
-        recipes = getRecipesFromStorage();
+        recipes = getRecipesFromStorage();    
     }
-
+    
     return recipes;
 };
 
@@ -65,7 +65,7 @@ Model.deleteRecipeById = function(id){
 
 //Function that checks to see if recipes state should be retrieved from localstorage or not
 function shouldGetRecipesFromStorage(){
-    return false;
+    return recipes.length <= 0;
 }
 
 //Function to check if recipes state should be added to localstorage
@@ -76,7 +76,7 @@ function shouldAddRecipesToStorage(){
 //Function to retireve recipes state from localstorage and convert to appropriate format for
 // in memory storage
 function getRecipesFromStorage(){
-    return recipes;
+    return seed;
 }
 
 //Function to add recipes to localstorage in appropriate format
