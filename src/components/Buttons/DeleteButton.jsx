@@ -4,14 +4,12 @@ export default class DeleteButton extends Component{
 
     constructor(props){
         super(props);
-        this.handleDeleteClick = this.handleDeleteClick.bind(this);
-        this.recipeId = this.props.recipeId;        
-        this.history = this.props.history;
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);                     
         this.deleteRecipe = this.props.deleteRecipe;
     }
 
     handleDeleteClick(){      
-        this.deleteRecipe(this.recipeId, this.history);        
+        this.deleteRecipe(this.props.recipeId, this.props.history);        
     }
 
     render(){
