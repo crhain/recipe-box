@@ -87,13 +87,15 @@ function shouldAddRecipesToStorage(){
 //Function to retireve recipes state from localstorage and convert to appropriate format for
 // in memory storage
 function getRecipesFromStorage(){
-    return seed;
+    // return seed;
+    let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
+    return storedRecipes ? storedRecipes : [];
 }
 
 //Function to add recipes to localstorage in appropriate format
 function addRecipesToStorage(){
     if(shouldAddRecipesToStorage()){
-        //do something
+        localStorage.setItem('recipes', JSON.stringify(recipes));
     }
 }
 
