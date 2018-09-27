@@ -99,4 +99,9 @@ function addRecipesToStorage(){
     }
 }
 
+//Function to clear local storage
+function clearStorage(){
+    localStorage.removeItem('recipes');
+}
+
 export default Model;
