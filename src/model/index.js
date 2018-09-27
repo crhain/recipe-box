@@ -104,4 +104,11 @@ function clearStorage(){
     localStorage.removeItem('recipes');
 }
 
+//populates premade recipes to storage if storage is empty
+function populateSeedDataToStorage(){
+    if(getRecipesFromStorage().lenth < 1){
+        localStorage.setItem('recipes', JSON.stringify(seed));
+    }
+}
+
 export default Model;
