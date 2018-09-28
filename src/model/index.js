@@ -75,7 +75,12 @@ Model.deleteRecipeById = function(id){
 };
 
 Model.initialize = function(){
-    populateSeedDataToStorage();
+
+    if(!testMode && !localStorage.getItem(recipesInitialized)){
+        populateSeedDataToStorage();
+        localStorage.setItem(recipesInitialized, true);
+    }
+    
 }
 
 //Function that checks to see if recipes state should be retrieved from localstorage or not
