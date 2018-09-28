@@ -74,6 +74,10 @@ Model.deleteRecipeById = function(id){
     return recipes;
 };
 
+Model.initialize = function(){
+    populateSeedDataToStorage();
+}
+
 //Function that checks to see if recipes state should be retrieved from localstorage or not
 function shouldGetRecipesFromStorage(){
     return recipes.length <= 0 && !testMode;
@@ -110,5 +114,7 @@ function populateSeedDataToStorage(){
         localStorage.setItem('recipes', JSON.stringify(seed));
     }
 }
+
+
 
 export default Model;
