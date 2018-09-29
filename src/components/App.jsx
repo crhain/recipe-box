@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Model from 'model/'
 import Root from 'components/Root';
 import RecipeList from 'components/RecipeList';
 import RecipeView from 'components/Recipe/RecipeView';
@@ -8,6 +9,9 @@ import RecipeNew from 'components/Recipe/New';
 import 'components/App.css';
 
 class App extends Component {
+  componentWillMount(){
+    Model.initialize();        
+  }
   render() {
     return (          
         <Root>

@@ -75,12 +75,12 @@ Model.deleteRecipeById = function(id){
 };
 
 Model.initialize = function(){
-
-    if(!testMode && !localStorage.getItem(recipesInitialized)){
+    let recipesInitialized = localStorage.getItem('recipesInitialized');         
+    if(!testMode && !recipesInitialized){
+        console.log("populating data...");
         populateSeedDataToStorage();
-        localStorage.setItem(recipesInitialized, true);
-    }
-    
+        localStorage.setItem('recipesInitialized', true);
+    }    
 }
 
 //Function that checks to see if recipes state should be retrieved from localstorage or not
@@ -115,7 +115,9 @@ function clearStorage(){
 
 //populates premade recipes to storage if storage is empty
 function populateSeedDataToStorage(){
-    if(getRecipesFromStorage().lenth < 1){
+    let retrievedRecipes = getRecipesFromStorage();    
+    if(retrievedRecipes.length < 1){
+        console.log('adding recipes...');
         localStorage.setItem('recipes', JSON.stringify(seed));
     }
 }
