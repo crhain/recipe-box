@@ -9,9 +9,7 @@ import RecipeNew from 'components/Recipe/New';
 import 'components/App.css';
 
 class App extends Component {
-  componentWillMount(){
-    Model.initialize();        
-  }
+
   render() {
     return (          
         <Root>

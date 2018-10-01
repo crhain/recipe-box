@@ -3,6 +3,7 @@ import seed from "model/seed.js";
 let recipes = [];
 let testMode = false;
 let Model = {};
+let recipesInitialized = false;
 
 Model.toggleTestMode = function(){
     testMode = !testMode;
@@ -17,6 +18,7 @@ Model.toggleTestMode = function(){
 Model.getAllRecipes = function(){
     
     if(shouldGetRecipesFromStorage()){
+        initialize();
         recipes = getRecipesFromStorage();    
     }
     
@@ -74,8 +76,8 @@ Model.deleteRecipeById = function(id){
     return recipes;
 };
 
-Model.initialize = function(){
-    let recipesInitialized = localStorage.getItem('recipesInitialized');         
+function initialize(){
+    recipesInitialized = localStorage.getItem('recipesInitialized');         
     if(!testMode && !recipesInitialized){
         console.log("populating data...");
         populateSeedDataToStorage();
