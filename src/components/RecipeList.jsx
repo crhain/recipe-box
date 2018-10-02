@@ -34,7 +34,7 @@ export class RecipeList extends Component{
                 );
             });
         } else {
-            return <li>Loading...</li>;
+            return <li></li>;
         }                                                            
     }
 
