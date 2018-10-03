@@ -5,8 +5,9 @@ let testMode = false;
 let Model = {};
 let recipesInitialized = false;
 
-Model.toggleTestMode = function(){
-    testMode = !testMode;
+
+Model.toggleTestMode = function(state){
+    testMode = state;
     if(testMode){
         recipes = seed;
     } else {

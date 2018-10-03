@@ -2,6 +2,8 @@ import recipeReducer from "reducers/recipeReducer";
 import { GET_RECIPE } from "actions/types";
 import Model from "model";
 
+Model.toggleTestMode(true);
+
 const beef = {
     id: "beefstrogonoff", 
     title: "Beef Strogonoff", 

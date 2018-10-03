@@ -1,7 +1,9 @@
 import recipeListReducer from "reducers/recipeListReducer";
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
 import model  from "model/seed.js";
+import Model from "model/";
 
+Model.toggleTestMode(true);
 
 const newBeef = {
     id: "beefstrogonoff", 

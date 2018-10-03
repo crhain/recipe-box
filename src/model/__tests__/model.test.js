@@ -1,6 +1,7 @@
 import model  from "model/seed.js";
 import Model from "model/";
 
+Model.toggleTestMode(true);
 
 const beef =   {
     id: "beefstrogonoff", 
