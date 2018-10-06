@@ -7,7 +7,7 @@ export default function AddButton(props){
             className="waves-effect waves-light btn add-button" 
             to="/recipe/new"
         >
-            <i className="material-icons">add</i> New Recipe
+            <i className="material-icons right">add</i>New Recipe
             
         </Link>
     );    
