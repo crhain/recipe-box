@@ -16,7 +16,9 @@ export default class DeleteButton extends Component{
         return (
             <button 
                 onClick={ this.handleDeleteClick }
-                className="waves-effect waves-light btn delete-button" 
+                className="waves-effect waves-light btn delete-button tooltipped"
+                data-position="right"
+                data-tooltip="Delete" 
                 style={{marginRight: '1rem'}}
     
             >
