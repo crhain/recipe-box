@@ -7,9 +7,8 @@ import RecipeEdit from 'components/Recipe/Edit';
 import RecipeNew from 'components/Recipe/New';
 import 'components/App.css';
 import '../../node_modules/materialize-css/dist/css/materialize.min.css';
-import '../../node_modules/materialize-css/dist/js/materialize.min.js';
 
-class App extends Component {  
+class App extends Component { 
   render() {
     return (          
         <Root>
