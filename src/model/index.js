@@ -57,7 +57,12 @@ Model.editRecipe = function(recipe){
 Model.getRecipeById = function(id){
     let recipe = recipes.filter( recipe => recipe.id === id);
     if(recipe.length < 1){
-        return { error: "Recipe does not exist" };
+        //this could mean the app was refreshed, so we will try to retrieve recipes from
+        //localstorage
+        recipe = getRecipesFromStorage().filter( recipe => recipe.id === id);
+        if(recipe.length < 1){
+            return { error: "Recipe does not exist" };
+        }        
     }    
     return recipe[0];    
 };

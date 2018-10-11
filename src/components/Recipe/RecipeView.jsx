@@ -9,15 +9,28 @@ import DeleteButton from "components/Buttons/DeleteButton";
 
 
 export class RecipeView extends Component{
-    componentDidMount(){             
-        this.props.getRecipe(this.props.match.params.id);                                                                
+    componentDidMount(){              
+        // let recipe = this.props.getRecipe(this.props.match.params.id);                                                                
+        // console.log(recipe);
+        console.log('runing componentDidMount');
+        console.log(this.props.selectedRecipe);
+    }
+
+    componentWillMount(){
+        // let recipe = this.props.getRecipe(this.props.match.params.id);                                                                
+        // console.log(recipe);
+        console.log('runing componentWillMount');
+        console.log(this.props.selectedRecipe);
     }
   
     constructor(props){
         super(props);                
-        this.recipe = null;      
+        // this.recipe = null;      
         this.recipeId = this.props.match.params.id;   
-        this.history = this.props.history;   
+        this.history = this.props.history;  
+        console.log('running constuctor');    
+        this.props.getRecipe(this.props.match.params.id);     
+        console.log(this.props.selectedRecipe);
     }
 
     renderIngredients(){
@@ -31,7 +44,7 @@ export class RecipeView extends Component{
     }
     
     render(){
-        
+        console.log(this.props.selectedRecipe);
         return (
             <div className="recipe">
                 <h1 className="recipe__title">{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
