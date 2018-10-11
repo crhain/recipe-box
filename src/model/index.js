@@ -41,6 +41,12 @@ Model.addRecipe = function(recipe){
 };
 
 Model.editRecipe = function(recipe){
+
+    //if recipes length is less than one, it may mean that we need to get them from localstorage
+    if(recipes.length < 1){
+        recipes = getRecipesFromStorage();
+    }
+
     //find recipe in recipes
     let matchPosition = recipes.findIndex( matchingRecipe => matchingRecipe.id === recipe.id  );
     if(matchPosition === -1){
@@ -68,9 +74,12 @@ Model.getRecipeById = function(id){
 };
 
 Model.deleteRecipeById = function(id){
-    //find recipe in recipes
+    //if recipes length is less than one, it may mean that we need to get them from localstorage
+    if(recipes.length < 1){
+        recipes = getRecipesFromStorage();
+    }
     let matchPosition = recipes.findIndex( recipe => recipe.id === id );
-    if(matchPosition === -1){
+    if(matchPosition === -1){        
         return { error: "Recipe does not exist" };
     }
 

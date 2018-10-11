@@ -8,19 +8,9 @@ import DeleteButton from "components/Buttons/DeleteButton";
 
 
 
-export class RecipeView extends Component{
-    componentDidMount(){              
-        // let recipe = this.props.getRecipe(this.props.match.params.id);                                                                
-        // console.log(recipe);
-        console.log('runing componentDidMount');
-        console.log(this.props.selectedRecipe);
-    }
-
+export class RecipeView extends Component{    
     componentWillMount(){
-        // let recipe = this.props.getRecipe(this.props.match.params.id);                                                                
-        // console.log(recipe);
-        console.log('runing componentWillMount');
-        console.log(this.props.selectedRecipe);
+        //nothing here for right now
     }
   
     constructor(props){
@@ -29,8 +19,10 @@ export class RecipeView extends Component{
         this.recipeId = this.props.match.params.id;   
         this.history = this.props.history;  
         console.log('running constuctor');    
+
+        //get recipe to be displayed
         this.props.getRecipe(this.props.match.params.id);     
-        console.log(this.props.selectedRecipe);
+        
     }
 
     renderIngredients(){

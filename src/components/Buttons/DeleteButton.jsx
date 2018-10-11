@@ -11,7 +11,7 @@ export default class DeleteButton extends Component{
         var elems = document.querySelectorAll('.tooltipped');        
         M.Tooltip.init(elems, {enterDelay: 800});             
       }   
-    handleDeleteClick(){      
+    handleDeleteClick(){   
         this.deleteRecipe(this.props.recipeId, this.props.history);        
     }
 
