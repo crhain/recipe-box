@@ -27,7 +27,9 @@ Model.getAllRecipes = function(){
 };
 
 Model.addRecipe = function(recipe){
-    //look for recipe in recipes and if it exists, then return error
+    
+    refreshRecipes();
+
     if(recipes.findIndex( item => item.id === recipe.id ) > -1){    
         return { error: "Already exists" };
     }   
@@ -43,9 +45,7 @@ Model.addRecipe = function(recipe){
 Model.editRecipe = function(recipe){
 
     //if recipes length is less than one, it may mean that we need to get them from localstorage
-    if(recipes.length < 1){
-        recipes = getRecipesFromStorage();
-    }
+    refreshRecipes();
 
     //find recipe in recipes
     let matchPosition = recipes.findIndex( matchingRecipe => matchingRecipe.id === recipe.id  );
@@ -61,23 +61,19 @@ Model.editRecipe = function(recipe){
 };
 
 Model.getRecipeById = function(id){
+    refreshRecipes();
     let recipe = recipes.filter( recipe => recipe.id === id);
+    
     if(recipe.length < 1){
-        //this could mean the app was refreshed, so we will try to retrieve recipes from
-        //localstorage
-        recipe = getRecipesFromStorage().filter( recipe => recipe.id === id);
-        if(recipe.length < 1){
-            return { error: "Recipe does not exist" };
-        }        
-    }    
+        return { error: "Recipe does not exist" };
+    }        
+        
     return recipe[0];    
 };
 
 Model.deleteRecipeById = function(id){
     //if recipes length is less than one, it may mean that we need to get them from localstorage
-    if(recipes.length < 1){
-        recipes = getRecipesFromStorage();
-    }
+    refreshRecipes();
     let matchPosition = recipes.findIndex( recipe => recipe.id === id );
     if(matchPosition === -1){        
         return { error: "Recipe does not exist" };
@@ -116,6 +112,12 @@ function getRecipesFromStorage(){
     // return seed;
     let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
     return storedRecipes ? storedRecipes : [];
+}
+
+function refreshRecipes(){
+    if(shouldGetRecipesFromStorage()){
+        recipes = getRecipesFromStorage();
+    }
 }
 
 //Function to add recipes to localstorage in appropriate format
