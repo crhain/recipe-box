@@ -39,9 +39,8 @@ export class RecipeList extends Component{
     }
 
     render(){        
-        return (
-            
-            <div className="recipe-list">
+        return (            
+            <div className="recipe-list">                                 
                 <h1 className="recipe-list__heading">Recipe List</h1>
                 <AddButton />
                 <div>
@@ -49,7 +48,8 @@ export class RecipeList extends Component{
                         {this.createRecipeList()}
                     </ul>
                 </div>
-                                
+                <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+                <Modal></Modal>
             </div>
         );
     }
