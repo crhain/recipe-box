@@ -49,7 +49,10 @@ export class RecipeList extends Component{
                     </ul>
                 </div>
                 <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-                <Modal></Modal>
+                <Modal>
+                    <h4>Test Modal</h4>
+                    <p>Some text here</p>
+                </Modal>
             </div>
         );
     }
