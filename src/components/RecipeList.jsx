@@ -47,9 +47,8 @@ export class RecipeList extends Component{
                     <ul className="collection">
                         {this.createRecipeList()}
                     </ul>
-                </div>
-                <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-                <Modal>
+                </div>                
+                <Modal acceptHandler={this.deleteRecipe} >
                     <h4>Test Modal</h4>
                     <p>Some text here</p>
                 </Modal>

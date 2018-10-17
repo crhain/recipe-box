@@ -17,13 +17,12 @@ export default class DeleteButton extends Component{
 
     render(){
         return (
-            <button 
-                onClick={ this.handleDeleteClick }
-                className="waves-effect waves-light btn delete-button tooltipped"
+            <button                 
+                className="waves-effect waves-light btn delete-button tooltipped modal-trigger"
+                data-target="modal1"
                 data-position="bottom"
                 data-tooltip="Delete" 
-                style={{marginRight: '1rem'}}
-    
+                style={{marginRight: '1rem'}}    
             >
                     <i className="material-icons">delete</i>
             </button>
@@ -31,3 +30,5 @@ export default class DeleteButton extends Component{
     }
         
 }
+
+// onClick={ this.handleDeleteClick }

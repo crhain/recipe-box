@@ -64,8 +64,7 @@ export default (state = [], action) => {
         case DELETE_RECIPE:
             // exists = state.find( recipe => {
             //     return recipe.id === action.id;
-            // });
-                        
+            // });               
             let deleted = Model.deleteRecipeById(action.id);
                         
             if(deleted.error){

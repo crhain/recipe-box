@@ -17,6 +17,6 @@ export const editRecipe = ( recipe, history ) => {
     return { type: EDIT_RECIPE, recipe, history };
 }
 
-export const deleteRecipe = ( id, history ) => {    
+export const deleteRecipe = ( id, history ) => {        
     return { type: DELETE_RECIPE, id, history };
 }
