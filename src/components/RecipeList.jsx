@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { getRecipes, deleteRecipe } from "actions/";
-import AddButton from "components/Buttons/AddButton";
 import EditButton from "components/Buttons/EditButton";
 import DeleteButton from "components/Buttons/DeleteButton";
 import Modal from "components/Modal";
@@ -41,8 +40,7 @@ export class RecipeList extends Component{
     render(){        
         return (            
             <div className="recipe-list">                                 
-                <h1 className="recipe-list__heading">Recipe List</h1>
-                <AddButton />
+                <h1 className="recipe-list__heading">Recipe List</h1>                
                 <div>
                     <ul className="collection">
                         {this.createRecipeList()}
