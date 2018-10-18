@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { getRecipes, deleteRecipe } from "actions/";
 import EditButton from "components/Buttons/EditButton";
 import DeleteButton from "components/Buttons/DeleteButton";
-import Modal from "components/Modal";
+
 
 export class RecipeList extends Component{
     
@@ -46,10 +46,7 @@ export class RecipeList extends Component{
                         {this.createRecipeList()}
                     </ul>
                 </div>                
-                <Modal acceptHandler={this.deleteRecipe} >
-                    <h4>Test Modal</h4>
-                    <p>Some text here</p>
-                </Modal>
+               
             </div>
         );
     }
