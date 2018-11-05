@@ -12,14 +12,13 @@ class Modal extends Component {
     constructor(props){
       super(props);
       this.handleAcceptClick = this.handleAcceptClick.bind(this);
-      this.acceptHandler = this.props.deleteRecipe.bind(this);
-      this.recipeToDelete = this.props.recipeToDelete;
+      this.acceptHandler = this.props.deleteRecipe.bind(this);      
       this.history = this.props.history;
     } 
 
     handleAcceptClick(){   
       console.log('clicked delete accept button');
-      this.acceptHandler(this.recipeToDelete, this.history); 
+      this.acceptHandler(this.props.recipeToDelete, this.history); 
     }
 
     render() {

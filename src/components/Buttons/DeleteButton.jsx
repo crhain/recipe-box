@@ -13,12 +13,8 @@ class DeleteButton extends Component{
         var elems = document.querySelectorAll('.tooltipped');        
         M.Tooltip.init(elems, {enterDelay: 800});             
     }   
-    handleDeleteClick(){   
-        // this.deleteRecipe(this.props.recipeId, this.props.history);        
-        console.log('delete button clicked!');
-        console.log(this.props.recipeId);
-        this.setRecipeToDelete(this.props.recipeId)
-        
+    handleDeleteClick(){                   
+        this.setRecipeToDelete(this.props.recipeId)        
     }
 
     render(){
