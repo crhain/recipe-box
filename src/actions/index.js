@@ -21,6 +21,6 @@ export const deleteRecipe = ( id, history ) => {
     return { type: DELETE_RECIPE, id, history };
 }
 
-export const setRecipeToDelete = (id ) => {
+export const setRecipeToDelete = ( id ) => {    
     return { type: SET_RECIPE_TO_DELETE, id };
 }

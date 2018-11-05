@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { setRecipeToDelete } from "actions/";
 import M from '../../../node_modules/materialize-css/dist/js/materialize.min.js';
 
-export default class DeleteButton extends Component{
+class DeleteButton extends Component{
     constructor(props){
         super(props);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);                     
-        this.deleteRecipe = this.props.deleteRecipe;
+        this.setRecipeToDelete = this.props.setRecipeToDelete.bind(this);        
     }
     componentDidMount(){        
         var elems = document.querySelectorAll('.tooltipped');        
@@ -14,7 +16,9 @@ export default class DeleteButton extends Component{
     handleDeleteClick(){   
         // this.deleteRecipe(this.props.recipeId, this.props.history);        
         console.log('delete button clicked!');
-        //set state of recipeToDelete to recipeID
+        console.log(this.props.recipeId);
+        this.setRecipeToDelete(this.props.recipeId)
+        
     }
 
     render(){
@@ -34,4 +38,9 @@ export default class DeleteButton extends Component{
         
 }
 
-// onClick={ this.handleDeleteClick }
+function mapStateToProps({ recipeToDelete }){
+    return { recipeToDelete };
+}
+
+export default connect(mapStateToProps, { setRecipeToDelete })(DeleteButton);
+

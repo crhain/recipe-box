@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { getRecipes, deleteRecipe } from "actions/";
+import { getRecipes } from "actions/";
 import EditButton from "components/Buttons/EditButton";
 import DeleteButton from "components/Buttons/DeleteButton";
 
