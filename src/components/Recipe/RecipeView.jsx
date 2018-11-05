@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { getRecipe, deleteRecipe } from "actions/";
+import { getRecipe } from "actions/";
 import BackButton from "components/Buttons/BackButton";
 import EditButton from "components/Buttons/EditButton";
 import DeleteButton from "components/Buttons/DeleteButton";
@@ -44,7 +44,7 @@ export class RecipeView extends Component{
                     <img src={this.props.selectedRecipe ? this.props.selectedRecipe.image : ""} />    
                 </div>
                 <EditButton recipeId={ this.recipeId }/>
-                <DeleteButton recipeId={ this.recipeId } deleteRecipe={ this.props.deleteRecipe } history={ this.history } />                
+                <DeleteButton recipeId={ this.recipeId } history={ this.history } />                
                 <BackButton history={ this.history }/>
                 <div>
                     <p className="recipe__description">{this.props.selectedRecipe ? this.props.selectedRecipe.description : ""}</p>
@@ -67,5 +67,5 @@ function mapStateToProps({ selectedRecipe }){
     return { selectedRecipe };
 }
 
-export default withRouter(connect(mapStateToProps, { getRecipe, deleteRecipe })(RecipeView));
+export default withRouter(connect(mapStateToProps, { getRecipe })(RecipeView));
 
