@@ -1,4 +1,4 @@
-import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
+import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE, SET_RECIPE_TO_DELETE } from "actions/types";
 import { model } from "model/"
 
 export const getRecipes = () => {
@@ -19,4 +19,8 @@ export const editRecipe = ( recipe, history ) => {
 
 export const deleteRecipe = ( id, history ) => {        
     return { type: DELETE_RECIPE, id, history };
+}
+
+export const setRecipeToDelete = (id ) => {
+    return { type: SET_RECIPE_TO_DELETE, id };
 }
