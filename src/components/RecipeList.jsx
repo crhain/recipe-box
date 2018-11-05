@@ -28,7 +28,7 @@ export class RecipeList extends Component{
                     >
                         <Link to={ "/recipe/" + recipe.id } className="collection-item recipe-list__recipe__name">{recipe.title}</Link>
                         <EditButton recipeId={ recipe.id } />
-                        <DeleteButton recipeId={ recipe.id } deleteRecipe={ this.deleteRecipe } history={ this.history } />                         
+                        <DeleteButton recipeId={ recipe.id } history={ this.history } />                         
                     </li>
                 );
             });
@@ -57,5 +57,5 @@ function mapStateToProps({ recipes }){
     return { recipes };
 }
 
-export default withRouter(connect(mapStateToProps, { getRecipes, deleteRecipe })(RecipeList));
+export default withRouter(connect(mapStateToProps, { getRecipes })(RecipeList));
 
