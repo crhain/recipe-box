@@ -14,7 +14,7 @@ class Modal extends Component {
 
     handleAcceptClick(){   
       console.log('clicked delete accept button');
-      this.acceptHandler(this.props.recipeId, this.props.history);        
+      // this.acceptHandler(this.props.recipeId, this.props.history);        
     }
 
     render() {

@@ -12,13 +12,16 @@ export default class DeleteButton extends Component{
         M.Tooltip.init(elems, {enterDelay: 800});             
     }   
     handleDeleteClick(){   
-        this.deleteRecipe(this.props.recipeId, this.props.history);        
+        // this.deleteRecipe(this.props.recipeId, this.props.history);        
+        console.log('delete button clicked!');
+        //set state of recipeToDelete to recipeID
     }
 
     render(){
         return (
             <button                 
                 className="waves-effect waves-light btn delete-button tooltipped modal-trigger"
+                onClick={this.handleDeleteClick}
                 data-target="modal1"
                 data-position="bottom"
                 data-tooltip="Delete" 
