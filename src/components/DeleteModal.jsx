@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { deleteRecipe } from "actions/";
 import M from '../../node_modules/materialize-css/dist/js/materialize.min.js';
 
-class Modal extends Component {
+class DeleteModal extends Component {
     componentDidMount(){              
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);      
@@ -49,5 +49,5 @@ function mapStateToProps({ recipeToDelete }){
     return { recipeToDelete };
 }
 
-export default withRouter(connect(mapStateToProps, { deleteRecipe })(Modal));
+export default withRouter(connect(mapStateToProps, { deleteRecipe })(DeleteModal));
 
