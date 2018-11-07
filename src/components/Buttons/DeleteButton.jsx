@@ -6,14 +6,14 @@ import M from '../../../node_modules/materialize-css/dist/js/materialize.min.js'
 class DeleteButton extends Component{
     constructor(props){
         super(props);
-        this.handleDeleteClick = this.handleDeleteClick.bind(this);                     
+        this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);                     
         this.setRecipeToDelete = this.props.setRecipeToDelete.bind(this);        
     }
     componentDidMount(){        
         var elems = document.querySelectorAll('.tooltipped');        
         M.Tooltip.init(elems, {enterDelay: 800});             
     }   
-    handleDeleteClick(){                   
+    handleDeleteButtonClick(){                   
         this.setRecipeToDelete(this.props.recipeId)        
     }
 
@@ -21,7 +21,7 @@ class DeleteButton extends Component{
         return (
             <button                 
                 className="waves-effect waves-light btn delete-button tooltipped modal-trigger"
-                onClick={this.handleDeleteClick}
+                onClick={this.handleDeleteButtonClick}
                 data-target="modal1"
                 data-position="bottom"
                 data-tooltip="Delete" 
