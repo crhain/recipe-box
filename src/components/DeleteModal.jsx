@@ -7,7 +7,7 @@ import M from '../../node_modules/materialize-css/dist/js/materialize.min.js';
 class DeleteModal extends Component {
     componentDidMount(){              
         var elems = document.querySelectorAll('.modal');
-        var instances = M.Modal.init(elems);      
+        M.Modal.init(elems);      
     } 
     constructor(props){
       super(props);
@@ -21,11 +21,7 @@ class DeleteModal extends Component {
       this.acceptHandler(this.props.recipeToDelete, this.history); 
     }
 
-    render() {
-      // Render nothing if the "show" prop is false
-      // if(!this.props.show) {
-      //   return null;
-      // }      
+    render() {         
       return (                
         <div id="modal1" className="modal">
           <div className="modal-content">

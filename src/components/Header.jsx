@@ -8,8 +8,8 @@ class Header extends Component {
             <div>
                 <AddButton />
                 <DeleteModal acceptHandler={this.deleteRecipe} >
-                    <h4>Test Modal</h4>
-                    <p>Some text here</p>
+                    <h4>Delete Confirmation</h4>
+                    <p>Do you wish to delete this recipe?</p>
                 </DeleteModal>
             </div>
         );        
