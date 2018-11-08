@@ -24,9 +24,8 @@ describe('RecipeList', () => {
         expect(component.exists()).toEqual(true);
     });
 
-    it('shows a page title, and add new recipe button, and a list of recipes', () => {
-        expect(component.find('h1').length).toEqual(1); 
-        expect(component.containsMatchingElement(<AddButton />)).toEqual(true); 
+    it('shows a page title and a list of recipes', () => {
+        expect(component.find('h1').length).toEqual(1);         
         expect(component.find('ul').length).toEqual(1); 
     });
 
