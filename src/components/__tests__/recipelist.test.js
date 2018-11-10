@@ -1,10 +1,9 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { Link } from 'react-router-dom';
+import { mount } from 'enzyme';
 import model  from "model/seed.js";
 import { RecipeList } from 'components/RecipeList';
 import Root from 'components/Root';
-import AddButton from 'components/Buttons/AddButton';
+
 
 describe('RecipeList', () => {
   
