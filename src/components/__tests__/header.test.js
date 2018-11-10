@@ -1,8 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import Header  from "components/Header";
-import AddButton from 'components/Buttons/AddButton';
-import DeleteModal from 'components/DeleteModal';
+
 
 var component;
 
