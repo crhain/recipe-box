@@ -19,9 +19,11 @@ describe("DeleteModal", () =>{
         expect(component.exists()).toEqual(true);
     });
 
-    it('shows an add button', () => {
-        // expect(component.find('AddButton').length).toEqual(1);                 
-        expect(true).toEqual(true);
+    it('shows an accept and a cancel button', () => {
+        let buttons = component.find('button.modal-close');
+        expect(buttons.length).toEqual(2);
+        expect(buttons.get(0).textContent).toEqual('Accept');
+        expect(buttons.get(1).textContent).toEqual('Cancel');        
     });
     
 });

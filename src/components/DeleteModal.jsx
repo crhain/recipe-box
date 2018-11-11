@@ -32,7 +32,7 @@ class DeleteModal extends Component {
               className="modal-close waves-effect waves-green btn-flat"
               onClick={this.handleAcceptClick}
             >
-              Agree
+              Accept
             </button>
             <button className="modal-close waves-effect waves-green btn-flat">Cancel</button>
           </div>

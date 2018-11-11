@@ -17,8 +17,7 @@ export class RecipeView extends Component{
         super(props);                
         // this.recipe = null;      
         this.recipeId = this.props.match.params.id;   
-        this.history = this.props.history;  
-        console.log('running constuctor');    
+        this.history = this.props.history;          
 
         //get recipe to be displayed
         this.props.getRecipe(this.props.match.params.id);     
@@ -35,8 +34,7 @@ export class RecipeView extends Component{
         return ingredients;
     }
     
-    render(){
-        console.log(this.props.selectedRecipe);
+    render(){        
         return (
             <div className="recipe">
                 <h1 className="recipe__title">{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
