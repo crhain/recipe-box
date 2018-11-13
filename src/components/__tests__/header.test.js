@@ -20,4 +20,7 @@ describe("Header", () =>{
         expect(component.find('AddButton').length).toEqual(1);                 
     });
     
+    it('shows a home button', () => {
+        expect(component.find('HomeButton').length).toEqual(1);                 
+    });
 });
