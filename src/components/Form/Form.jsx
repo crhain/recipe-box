@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { Link } from 'react-router-dom';
 import FormTextField from 'components/Form/FormTextField';
 import FormInvisibleTextField from 'components/Form/FormInvisibleTextField';
 import FormTextBoxField from 'components/Form/FormTextBoxField';
@@ -13,9 +12,7 @@ class Form extends Component {
         let recipe = this.props.intialRecipeValues;
         if(recipe){
             this.props.initialize(recipe);
-        }        
-        // set the value individually
-        // this.props.dispatch(change("recipeForm", 'anotherField', 'value'));
+        }                
     }
     renderFields(){        
         let fields = this.props.fields || [];
@@ -56,8 +53,7 @@ class Form extends Component {
             }
             
         });
-    }
-    //onSubmit={ () => this.props.addRecipe(this.props.formValues, this.props.history) }
+    }    
     render(){
         const { handleSubmit, formHandler, history } = this.props;
         return (
