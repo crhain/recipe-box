@@ -25,10 +25,10 @@ export class RecipeView extends Component{
     }
 
     renderIngredients(){
-        let ingredients = "";
+        let ingredients = [];
 
         if(this.props.selectedRecipe.ingredients) {
-            ingredients = this.props.selectedRecipe.ingredients.map( (ingredient, index) => <li className="collection-item recipe__ingredient" key={ index }>{ ingredient }</li> );            
+            ingredients = this.props.selectedRecipe.ingredients.map( (item, index) => <li className="collection-item recipe__ingredient" key={ index }>{ item.ingredient }</li> );            
         }
 
         return ingredients;
