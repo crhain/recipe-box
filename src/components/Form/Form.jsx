@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm, Field, FieldArray } from 'redux-form';
 import FormTextField from 'components/Form/FormTextField';
 import FormInvisibleTextField from 'components/Form/FormInvisibleTextField';
 import FormTextBoxField from 'components/Form/FormTextBoxField';
