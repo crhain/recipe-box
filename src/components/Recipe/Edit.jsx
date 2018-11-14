@@ -19,8 +19,10 @@ export class Edit extends Component{
         this.initialRecipeValues = {};        
     }
         
-    convertIngredientListToForm(ingredientsList){        
-        return ingredientsList ? ingredientsList.join("\n") : "";
+    convertIngredientListToForm(ingredientsList){ 
+        //map over list and extract object data into new list
+        let flattenedIngredientsList = ingredientsList.map( item => item.ingredient );       
+        return flattenedIngredientsList ? flattenedIngredientsList.join("\n") : "";
     }
 
     render(){
