@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import { addRecipe } from "actions/";
 import fields from "components/Form/fields";
-import Form from "components/Form/Form";
+import RecipeForm from "components/Form/RecipeForm";
 import BackButton from "components/Buttons/BackButton";
 
  export class New extends Component {
@@ -18,7 +18,7 @@ import BackButton from "components/Buttons/BackButton";
         return (        
             <div className="recipe-new">
                 <h1 className="recipe-new__heading">Create A New Recipe</h1>        
-                <Form fields={fields} formHandler={ addRecipe } history={ history } />
+                <RecipeForm fields={fields} formHandler={ addRecipe } history={ history } />
                 <BackButton history={ this.history }/>
             </div>        
         );

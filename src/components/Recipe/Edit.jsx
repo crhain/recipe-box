@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getRecipe, editRecipe } from "actions/";
 import fields from "components/Form/fields";
-import Form from "components/Form/Form";
+import RecipeForm from "components/Form/RecipeForm";
 import BackButton from "components/Buttons/BackButton";
 
 
@@ -44,7 +44,7 @@ export class Edit extends Component{
                 </div>                
                 <BackButton history={ this.history }/>
                 <div className="recipe-edit__form">
-                    <Form 
+                    <RecipeForm 
                         fields={fields}
                         formHandler={ this.props.editRecipe } 
                         history={ this.history }

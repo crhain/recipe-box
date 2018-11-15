@@ -7,7 +7,7 @@ import FormTextBoxField from 'components/Form/FormTextBoxField';
 
 // import fields from './fields';
 
-class Form extends Component {
+class RecipeForm extends Component {
     componentDidMount() {
         let recipe = this.props.intialRecipeValues;
         if(recipe){
@@ -103,4 +103,4 @@ export default reduxForm({
     validate,
     form: "recipeForm",    
     enableReintialization: true
-})(Form);
+})(RecipeForm);
