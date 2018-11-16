@@ -8,17 +8,17 @@ const beef =   {
     title: "Beef Strogonoff", 
     servings: 4,
     ingredients: [
-        "1 1/2 pounds beef sirloin steak", 
-        "8 ounces fresh mushrooms",
-        "2 medium onions, thinly sliced",
-        "1 garlic clove, finely chopped",
-        "1/2 cup butter",
-        "1 1/2 cups Progresso, beef flavored broth",
-        "1/2 teaspoon salt",
-        "1 teaspoon Worcestshire sauce",
-        "1/4 cup Gold Medal all-purpose flour",
-        "1 1/2 cups sour cream",
-        "3 cups hot cooked egg noodles"
+        {ingredient: "1 1/2 pounds beef sirloin steak"}, 
+        {ingredient: "8 ounces fresh mushrooms"},
+        {ingredient: "2 medium onions, thinly sliced"},
+        {ingredient: "1 garlic clove, finely chopped"},
+        {ingredient: "1/2 cup butter"},
+        {ingredient: "1 1/2 cups Progresso, beef flavored broth"},
+        {ingredient: "1/2 teaspoon salt"},
+        {ingredient: "1 teaspoon Worcestshire sauce"},
+        {ingredient: "1/4 cup Gold Medal all-purpose flour"},
+        {ingredient: "1 1/2 cups sour cream"},
+        {ingredient: "3 cups hot cooked egg noodles"}                                                        
     ]
 };
 
@@ -27,12 +27,12 @@ const newRecipe = {
     title: "Tuna Fish Casserole",
     servings: 2,
     ingredients: [
-        "10-16 ounces egg noodles",
-        "1 (10 ounce) can cream of mushroom soup",
-        "1 (10 ounce) can peas",
-        "2 (6 ounce) cans tuna in water",
-        "5-6 ounces milk (1/2 of soup can)",
-        "1 teaspoon butter, pat"
+        {ingredient:"10-16 ounces egg noodles"},
+        {ingredient:"1 (10 ounce) can cream of mushroom soup"},
+        {ingredient:"1 (10 ounce) can peas"},
+        {ingredient:"2 (6 ounce) cans tuna in water"},
+        {ingredient:"5-6 ounces milk (1/2 of soup can)"},
+        {ingredient:"1 teaspoon butter, pat"}
     ]
 };
 
@@ -41,17 +41,17 @@ const editedRecipe = {
     servings: 4,
     title: "Beef Strogonoff Deluxe", 
     ingredients: [
-        "1 1/2 pounds beef sirloin steak", 
-        "8 ounces fresh mushrooms",
-        "2 medium onions, thinly sliced",
-        "1 garlic clove, finely chopped",
-        "1/2 cup butter",
-        "1 1/2 cups Progresso, beef flavored broth",
-        "1/2 teaspoon salt",
-        "1 teaspoon Worcestshire sauce",
-        "1/4 cup Gold Medal all-purpose flour",
-        "1 1/2 cups sour cream",
-        "3 cups hot cooked egg noodles"
+        {ingredient:"1 1/2 pounds beef sirloin steak"},
+        {ingredient:"8 ounces fresh mushrooms"},
+        {ingredient:"2 medium onions, thinly sliced"},
+        {ingredient:"1 garlic clove, finely chopped"},
+        {ingredient:"1/2 cup butter"},
+        {ingredient:"1 1/2 cups Progresso, beef flavored broth"},
+        {ingredient:"1/2 teaspoon salt"},
+        {ingredient:"1 teaspoon Worcestshire sauce"},
+        {ingredient:"1/4 cup Gold Medal all-purpose flour"},
+        {ingredient:"1 1/2 cups sour cream"},
+        {ingredient:"3 cups hot cooked egg noodles"}                                        
     ]
 };
 
