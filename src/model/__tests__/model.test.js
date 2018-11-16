@@ -1,26 +1,10 @@
 import model  from "model/seed.js";
 import Model from "model/";
+import seed from "model/seed";
 
 Model.toggleTestMode(true);
 
-const beef =   {
-    id: "beefstrogonoff", 
-    title: "Beef Strogonoff", 
-    servings: 4,
-    ingredients: [
-        {ingredient: "1 1/2 pounds beef sirloin steak"}, 
-        {ingredient: "8 ounces fresh mushrooms"},
-        {ingredient: "2 medium onions, thinly sliced"},
-        {ingredient: "1 garlic clove, finely chopped"},
-        {ingredient: "1/2 cup butter"},
-        {ingredient: "1 1/2 cups Progresso, beef flavored broth"},
-        {ingredient: "1/2 teaspoon salt"},
-        {ingredient: "1 teaspoon Worcestshire sauce"},
-        {ingredient: "1/4 cup Gold Medal all-purpose flour"},
-        {ingredient: "1 1/2 cups sour cream"},
-        {ingredient: "3 cups hot cooked egg noodles"}                                                        
-    ]
-};
+const beef = seed[0];   
 
 const newRecipe = {
     id: "tunafishcasserole",
