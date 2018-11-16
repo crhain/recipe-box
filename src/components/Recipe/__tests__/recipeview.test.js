@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import { RecipeView } from "components/Recipe/RecipeView";
-import model  from "model/seed.js";
+import seed  from "model/seed.js";
 import BackButton from 'components/Buttons/BackButton';
 import DeleteButton from 'components/Buttons/DeleteButton';
 import EditButton from 'components/Buttons/EditButton';
@@ -17,7 +17,7 @@ describe("RecipeView", () => {
             id: "xyz"
         }
     }
-    let mockRecipe = model[0];
+    let mockRecipe = seed[0];
     
     beforeEach(() => {
         component = shallow(
@@ -63,13 +63,13 @@ describe("RecipeView", () => {
 
     it('shows a list of ingredient li elements with one element per ingredient', () => {
         
-        let ingredientListElements = component.find('.recipe__ingredient');                        
+        let ingredientListElements = component.find('.recipe__ingredient');                     
         expect(ingredientListElements.length).toEqual(mockRecipe.ingredients.length);                
     });
 
     it('shows a list of igredient li elements that show the text for each ingredient passed from state', () =>{
         let ingredientListElements = component.find('.recipe__ingredient');                        
-        expect(ingredientListElements.everyWhere((el, i) => el.text() === mockRecipe.ingredients[i])).toEqual(true);
+        expect(ingredientListElements.everyWhere((el, i) => el.text() === mockRecipe.ingredients[i]["ingredient"])).toEqual(true);
     });
 
     
