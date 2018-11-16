@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Form from "components/Form/Form";
+import RecipeForm from "components/Form/RecipeForm";
 import FormTextField from "components/Form/FormTextField";
 import FormTextBoxField from "components/Form/FormTextBoxField";
 import FormInvisibleTextField from "components/Form/FormInvisibleTextField";
@@ -18,7 +18,7 @@ describe("Form", () => {
         
     beforeEach(() => {
         component = shallow(
-            <Form 
+            <RecipeForm 
                 fields={ fields }
                 formHandler={ mockFormHandler } 
                 history={ mockHistory }

@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import model  from "model/seed.js";
 import { Edit } from 'components/Recipe/Edit.jsx';
 import BackButton from 'components/Buttons/BackButton';
-import Form from 'components/Form/Form';
+import RecipeForm from 'components/Form/RecipeForm';
 
 describe('Edit', () => {
   
@@ -38,7 +38,7 @@ describe('Edit', () => {
 
     it('renders a heading, a Form, and a BackButton', () => { 
         expect(component.find('.recipe-edit__heading').length).toEqual(1);  
-        expect(component.containsMatchingElement(<Form />)).toEqual(true);  
+        expect(component.containsMatchingElement(<RecipeForm />)).toEqual(true);  
         expect(component.containsMatchingElement(<BackButton />)).toEqual(true);  
     });
     
