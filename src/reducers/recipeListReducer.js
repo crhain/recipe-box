@@ -36,7 +36,7 @@ export default (state = [], action) => {
             recipe.image = action.recipe.image;
             recipe.servings = action.recipe.servings;
             recipe.id = getRecipeId(action.recipe.title);
-            recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);
+            recipe.ingredients = action.recipe.ingredients;
                          
             let added = Model.addRecipe(recipe);
             if(added.error){
