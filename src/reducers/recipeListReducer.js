@@ -52,7 +52,7 @@ export default (state = [], action) => {
             recipe.image = action.recipe.image;
             recipe.servings = action.recipe.servings;
             recipe.id = action.recipe.id;
-            recipe.ingredients = getRecipeIngredients(action.recipe.ingredients);                                    
+            recipe.ingredients = action.recipe.ingredients;                                    
             let edited = Model.editRecipe(recipe);
             if(edited.error){           
                 return state;
