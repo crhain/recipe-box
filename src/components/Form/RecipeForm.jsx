@@ -4,6 +4,7 @@ import { reduxForm, Field, FieldArray } from 'redux-form';
 import FormTextField from 'components/Form/FormTextField';
 import FormInvisibleTextField from 'components/Form/FormInvisibleTextField';
 import FormTextBoxField from 'components/Form/FormTextBoxField';
+import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 
 // import fields from './fields';
 
@@ -46,7 +47,19 @@ class RecipeForm extends Component {
                             label=""
                             name={name}
                         />
-                    );    
+                    ); 
+                case "ingredient":
+                    return (
+                        <FieldArray
+                            component={RecipeFormIngredientEntry}
+                            name="ingredients"
+                            type="ingredient"
+                            key={name}
+                            label={label}
+                            name={name}
+                        />
+                    );
+
                 default:
                     return (<div>ERROR!</div>);
 
