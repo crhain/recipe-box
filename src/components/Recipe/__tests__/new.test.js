@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import { RecipeView } from "components/Recipe/RecipeView";
 import RecipeForm from 'components/Form/RecipeForm';
 import BackButton from 'components/Buttons/BackButton';
 import { New } from 'components/Recipe/New';
