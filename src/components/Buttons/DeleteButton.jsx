@@ -20,7 +20,7 @@ class DeleteButton extends Component{
     render(){
         return (
             <button                 
-                className="waves-effect waves-light btn delete-button tooltipped modal-trigger"
+                className="waves-effect waves-light btn red delete-button tooltipped modal-trigger"
                 onClick={this.handleDeleteButtonClick}
                 data-target="modal1"
                 data-position="bottom"

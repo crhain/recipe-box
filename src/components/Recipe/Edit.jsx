@@ -19,12 +19,6 @@ export class Edit extends Component{
         this.initialRecipeValues = {};        
     }
         
-    convertIngredientListToForm(ingredientsList){ 
-        //map over list and extract object data into new list
-        let flattenedIngredientsList = ingredientsList.map( item => item.ingredient );       
-        return flattenedIngredientsList ? flattenedIngredientsList.join("\n") : "";
-    }
-
     render(){
         
         if(this.props.selectedRecipe.id){
@@ -33,7 +27,7 @@ export class Edit extends Component{
             this.initialRecipeValues.description = this.props.selectedRecipe.description;
             this.initialRecipeValues.image = this.props.selectedRecipe.image;
             this.initialRecipeValues.servings = this.props.selectedRecipe.servings;
-            this.initialRecipeValues.ingredients = this.convertIngredientListToForm(this.props.selectedRecipe.ingredients);    
+            this.initialRecipeValues.ingredients = this.props.selectedRecipe.ingredients;    
         }
         
         return (

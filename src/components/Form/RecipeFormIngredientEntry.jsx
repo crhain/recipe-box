@@ -27,7 +27,7 @@ export default ({ fields }) => {
             {fields.map( (ingredient, index) => (
                 <li key={index}>
                     <button
-                        className="waves-effect waves-light btn delete-button"
+                        className="waves-effect waves-light btn red delete-button"
                         onClick={ () => fields.remove(index) }
                      >
                         <i className="material-icons">delete</i>

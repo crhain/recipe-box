@@ -13,15 +13,7 @@ function getRecipeId(title){
     return value;
 }
 
-function getRecipeIngredients(ingredients){
-    
-    let value = ingredients.split("\n");                  
-    return value;
-}
-
-
-export default (state = [], action) => {
-    let exists;
+export default (state = [], action) => {    
     let recipe = {};
     switch (action.type) {
         case GET_RECIPES:
