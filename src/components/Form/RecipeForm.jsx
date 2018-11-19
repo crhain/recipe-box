@@ -71,17 +71,16 @@ class RecipeForm extends Component {
         const { handleSubmit, formHandler, history } = this.props;
         return (
             <div className="form">
-                <form 
-                    onSubmit={ handleSubmit((values, dispatch) => {                                                
-                        //must use dispatch with redux-form or it does not fire action handler
-                        dispatch(formHandler(values, history));                                                  
-                    }) }              
-                >
-                    { this.renderFields(this.props.onSubmit) }
+                <form>
+                    { this.renderFields() }
                     
                    
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
+                        onClick={ handleSubmit((values, dispatch) => {                                                
+                            //must use dispatch with redux-form or it does not fire action handler
+                            dispatch(formHandler(values, history));                                                  
+                        }) } 
                         style={{ marginBottom: "20px" }}
                         type="submit"                        
                     >
