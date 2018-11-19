@@ -16,8 +16,7 @@ class DeleteModal extends Component {
       this.history = this.props.history;
     } 
 
-    handleAcceptClick(){   
-      console.log('clicked delete accept button');
+    handleAcceptClick(){         
       this.acceptHandler(this.props.recipeToDelete, this.history); 
     }
 
