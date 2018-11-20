@@ -96,16 +96,27 @@ class RecipeForm extends Component {
 function validate(values, form){
     const errors = {};
     const fields = form.fields;
+    
     _.each(fields, ({ name, required }) => {
-        //fields that do not need to be filled        
+        //fields that do not need to be filled   
         if(!required){
             return errors;
         }
 
-        if(!values[name]){
-            errors[name] = "You must provide a value";
+        if(!values[name] || !values[name].length){
+            if(name === 'ingredients'){                
+                errors[name] = 'At least one ingredient must be entered';
+            } else {
+                errors[name] = "You must provide a value";
+            }            
+        } else {
+            if(name === 'ingredients'){
+                _.each(values['ingredients'], (ingredient) => {
+                    //???
+                });
+            }
         }
-    });
+    });  
     return errors;    
 }
 

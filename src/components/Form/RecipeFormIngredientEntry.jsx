@@ -2,17 +2,17 @@ import React from 'react';
 import { Field } from 'redux-form';
 import FormTextField from 'components/Form/FormTextField';
 
-const renderField = ( { input, label, type, meta: {touched, error } }) => {
+const renderField = ( { input, label, type, meta: {error, submitFailed } }) => {
     return (<div className="form__text-field">
         <label>{label}</label>
         <input {...input} style={{ marginBottom: '5px' }} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
-            {touched && error} 
+            {submitFailed && error} 
         </div>    
     </div>);
 };
 
-export default ({ fields }) => {    
+export default ({ fields, meta: {error, submitFailed } }) => {    
     return (
         <ul>
             <li>
@@ -22,7 +22,10 @@ export default ({ fields }) => {
                     onClick={ () => fields.push({}) }
                 >
                     Add Ingredient
-                </button>                
+                </button>   
+                <div style={{ marginBottom: '20px', color: 'red' }}>  
+                    { submitFailed && error } 
+                </div>               
             </li>
             {fields.map( (ingredient, index) => (
                 <li key={index}>
