@@ -5,7 +5,7 @@ import FormTextField from 'components/Form/FormTextField';
 const renderField = ( { input, label, type, meta: {error, submitFailed } }) => {
     return (<div className="form__text-field">
         <label>{label}</label>
-        <input {...input} style={{ marginBottom: '5px' }} /> 
+        <input {...input} type="text" style={{ marginBottom: '5px' }} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
