@@ -35,11 +35,11 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                      >
                         <i className="material-icons">delete</i>
                      </button>
+                     <h4>Ingredient #{index + 1}</h4>
                      <Field 
                         name={`${ingredient}.ingredient`}
                         type="text"
-                        component={renderField}
-                        label={`ingredient #${index+1}`}                        
+                        component={renderField}                                           
                      />
                 </li>                
             ) )}
