@@ -39,7 +39,7 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                         name={`${ingredient}.ingredient`}
                         type="text"
                         component={renderField}
-                        label="Ingredient"
+                        label={`ingredient #${index+1}`}                        
                      />
                 </li>                
             ) )}

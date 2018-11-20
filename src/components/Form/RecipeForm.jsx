@@ -51,8 +51,7 @@ class RecipeForm extends Component {
                 case "ingredient":
                     return (
                         <FieldArray
-                            component={RecipeFormIngredientEntry}
-                            name="ingredients"
+                            component={RecipeFormIngredientEntry}                            
                             type="ingredient"
                             key={name}
                             label={label}
@@ -105,7 +104,7 @@ function validate(values, form){
 
         if(!values[name] || !values[name].length){
             if(name === 'ingredients'){                
-                errors[name] = 'At least one ingredient must be entered';
+                errors['ingredients'] = 'At least one ingredient must be entered';
             } else {
                 errors[name] = "You must provide a value";
             }            
@@ -116,7 +115,9 @@ function validate(values, form){
                 });
             }
         }
-    });  
+    }); 
+    console.log('these are errors on the form:'); 
+    console.log(errors);
     return errors;    
 }
 
