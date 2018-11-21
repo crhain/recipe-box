@@ -2,7 +2,7 @@ import React from 'react';
 import { Field } from 'redux-form';
 import FormTextField from 'components/Form/FormTextField';
 
-const renderField = ( { input, label, type, meta: {error, submitFailed } }) => {
+const renderField = ( { input, label, meta: {error, submitFailed } }) => {
     return (<div className="form__text-field">
         <label>{label}</label>
         <input {...input} type="text" style={{ marginBottom: '5px' }} /> 

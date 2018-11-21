@@ -72,8 +72,6 @@ class RecipeForm extends Component {
             <div className="form">
                 <form>
                     { this.renderFields() }
-                    
-                   
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
                         onClick={ handleSubmit((values, dispatch) => {                                                
@@ -115,9 +113,7 @@ function validate(values, form){
                 });
             }
         }
-    }); 
-    console.log('these are errors on the form:'); 
-    console.log(errors);
+    });   
     return errors;    
 }
 

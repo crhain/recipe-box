@@ -6,17 +6,17 @@ export default  [
         image: "https://tiphero.com/wp-content/uploads/2017/05/easy-beef-stroganoff-FI-750x364.jpg",
         servings: 4,
         ingredients: [
-            {ingredient: "1 1/2 pounds beef sirloin steak"},
-            {ingredient: "8 ounces fresh mushrooms"},
-            {ingredient: "2 medium onions, thinly sliced"},
-            {ingredient: "1 garlic clove, finely chopped"},
-            {ingredient: "1/2 cup butter"},
-            {ingredient: "1 1/2 cups Progresso, beef flavored broth"},
-            {ingredient: "1/2 teaspoon salt"},
-            {ingredient: "1 teaspoon Worcestshire sauce"},
-            {ingredient: "1/4 cup Gold Medal all-purpose flour"},
-            {ingredient: "1 1/2 cups sour cream"},
-            {ingredient: "3 cups hot cooked egg noodles"}            
+            {quantity: 1.5, measure: "pounds", ingredient: "beef sirloin steak"},
+            {quantity: 8, measure: "ounces", ingredient: "fresh mushrooms"},
+            {quantity: 2, measure: "medium", ingredient: "onions, thinly sliced"},
+            {quantity: 1, measure: "", ingredient: "garlic clove, finely chopped"},
+            {quantity: 0.5, measure: "cup", ingredient: "butter"},
+            {quantity: 1.5, measure: "cups", ingredient: "Progresso, beef flavored broth"},
+            {quantity: 0.5, measure: "teaspoon", ingredient: "salt"},
+            {quantity: 1, measure: "teaspoon", ingredient: "Worcestshire sauce"},
+            {quantity: 0.25, measure: "cup", ingredient: "Gold Medal all-purpose flour"},
+            {quantity: 1.5, measure: "cups", ingredient: "sour cream"},
+            {quantity: 3, measure: "cups", ingredient: "hot cooked egg noodles"}            
         ]
     },
     {
@@ -26,23 +26,25 @@ export default  [
         image: "https://www.cscassets.com/recipes/wide_cknew/wide_60207.jpg",
         servings: 4,
         ingredients: [
-            {ingredient: "1 1/4 pounds Johnsonville Ground Mild Italian sausage"},
-            {ingredient: "3/4 pound ground beef"},
-            {ingredient: "1 medium onion, diced"},
-            {ingredient: "3 garlic cloves, minced"},
-            {ingredient: "2 cans (one 28 ounces, one 15 ounces) crushed tomatoes"},
-            {ingredient: "2 cans (6 ounces each) tomato paste"},
-            {ingredient: "2/3 cup water"},
-            {ingredient: "2 to 3 tablespoons sugar"},
-            {ingredient: "3 tablespoons plus 1/4 cup minced fresh parsley, divided"},
-            {ingredient: "2 teasponns dried basil"},
-            {ingredient: "3/4 teaspoon fennel seed"},
-            {ingredient: "3/4 teaspoon salt, divided"},
-            {ingredient: "1/4 teaspoon coarsely ground pepper"},
-            {ingredient: "1 large egg, lightly beaten"},
-            {ingredient: "1 carton (15 ounces) ricotta cheese"},
-            {ingredient: "4 cups shredded part-skim mozzarella cheese"},
-            {ingredient: "3/4 cup grated Parmesan cheese"}                                                            
+            {quantity: 1.25, measure: "pounds", ingredient: "Johnsonville Ground Mild Italian sausage"},
+            {quantity: 0.75, measure: "pound", ingredient: "ground beef"},
+            {quantity: 1, measure: "medium", ingredient: "onion, diced"},
+            {quantity: 3, measure: "", ingredient: "garlic cloves, minced"},
+            {quantity: 1, measure: "can (28 ounces)", ingredient: "crushed tomatoes"},
+            {quantity: 1, measure: "can (15 ounces)", ingredient: "crushed tomatoes"},
+            {quantity: 2, measure: "6 ounce cans", ingredient: "tomato paste"},
+            {quantity: 1, measure: "cup", ingredient: "water"},
+            {quantity: 2, measure: "tablespoons", ingredient: "sugar"},
+            {quantity: 3, measure: "tablespoons", ingredient: "minced fresh parsley, divided"},
+            {quantity: 0.25, measure: "cup", ingredient: "minced fresh parsley, divided"}
+            {quantity: 2, measure: "teaspoons", ingredient: "dried basil"},
+            {quantity: 0.75, measure: "teaspoon", ingredient: "fennel seed"},
+            {quantity: 0.75, measure: "teaspoon", ingredient: "salt, divided"},
+            {quantity: 0.25, measure: "teaspoon", ingredient: "coarsely ground pepper"},
+            {quantity: 1, measure: "large", ingredient: "egg, lightly beaten"},
+            {quantity: 1, measure: "carton (15 ounces)", ingredient: "ricotta cheese"},
+            {quantity: 4, measure: "cups", ingredient: "shredded part-skim mozzarella cheese"},
+            {quantity: 0.75, measure: "cup", ingredient: "grated Parmesan cheese"}                                                            
         ]
     },
     {
@@ -52,14 +54,14 @@ export default  [
         image: "",
         servings: 4,
         ingredients: [
-            {ingredient: "2 tablespoons olive oil"},
-            {ingredient: "1 onion, finely chopped (about 1 cup)"},
-            {ingredient: "1 garlic clove, minced"},
-            {ingredient: "2 cups of medium or long-grain white rice"},
-            {ingredient: "3 cups chicken stock"},
-            {ingredient: "1 heaping tablespoon tomato paste or 1 cup of diced fresh or cooked tomatoes, strained"},
-            {ingredient: "Pinch of oregano"},
-            {ingredient: "1 teaspoon salt"}            
+            {quantity: 2, measure: "tablespoons", ingredient: "olive oil"},
+            {quantity: 1, measure: "", ingredient: "onion, finely chopped"},
+            {quantity: 1, measure: "", ingredient: "garlic clove, minced"},
+            {quantity: 2, measure: "cups", ingredient: "medium or long-grain white rice"},
+            {quantity: 3, measure: "cups", ingredient: "3 cups chicken stock"},
+            {quantity: 1, measure: "tablespoon", ingredient: "tomato paste"},
+            {quantity: 1, measure: "", ingredient: "Pinch of oregano"},
+            {quantity: 1, measure: "teaspoon", ingredient: "salt"}            
         ]
     }
 ];
