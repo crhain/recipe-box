@@ -28,7 +28,9 @@ export class RecipeView extends Component{
         let ingredients = [];
 
         if(this.props.selectedRecipe.ingredients) {
-            ingredients = this.props.selectedRecipe.ingredients.map( (item, index) => <li className="collection-item recipe__ingredient" key={ index }>{ item.ingredient }</li> );            
+            ingredients = this.props.selectedRecipe.ingredients.map( 
+                (item, index) => <li className="collection-item recipe__ingredient" key={ index }>{ item.quantity + " " + item.measure + " " + item.ingredient }</li> 
+            );            
         }
 
         return ingredients;

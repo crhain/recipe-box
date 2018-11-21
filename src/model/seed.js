@@ -9,7 +9,7 @@ export default  [
             {quantity: 1.5, measure: "pounds", ingredient: "beef sirloin steak"},
             {quantity: 8, measure: "ounces", ingredient: "fresh mushrooms"},
             {quantity: 2, measure: "medium", ingredient: "onions, thinly sliced"},
-            {quantity: 1, measure: "", ingredient: "garlic clove, finely chopped"},
+            {quantity: 1, measure: "regular", ingredient: "garlic clove, finely chopped"},
             {quantity: 0.5, measure: "cup", ingredient: "butter"},
             {quantity: 1.5, measure: "cups", ingredient: "Progresso, beef flavored broth"},
             {quantity: 0.5, measure: "teaspoon", ingredient: "salt"},
@@ -55,12 +55,12 @@ export default  [
         servings: 4,
         ingredients: [
             {quantity: 2, measure: "tablespoons", ingredient: "olive oil"},
-            {quantity: 1, measure: "", ingredient: "onion, finely chopped"},
-            {quantity: 1, measure: "", ingredient: "garlic clove, minced"},
+            {quantity: 1, measure: "regular", ingredient: "onion, finely chopped"},
+            {quantity: 1, measure: "regular", ingredient: "garlic clove, minced"},
             {quantity: 2, measure: "cups", ingredient: "medium or long-grain white rice"},
             {quantity: 3, measure: "cups", ingredient: "3 cups chicken stock"},
             {quantity: 1, measure: "tablespoon", ingredient: "tomato paste"},
-            {quantity: 1, measure: "", ingredient: "Pinch of oregano"},
+            {quantity: 1, measure: "pinch", ingredient: "oregano"},
             {quantity: 1, measure: "teaspoon", ingredient: "salt"}            
         ]
     }
