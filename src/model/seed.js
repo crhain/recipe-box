@@ -36,7 +36,7 @@ export default  [
             {quantity: 1, measure: "cup", ingredient: "water"},
             {quantity: 2, measure: "tablespoons", ingredient: "sugar"},
             {quantity: 3, measure: "tablespoons", ingredient: "minced fresh parsley, divided"},
-            {quantity: 0.25, measure: "cup", ingredient: "minced fresh parsley, divided"}
+            {quantity: 0.25, measure: "cup", ingredient: "minced fresh parsley, divided"},
             {quantity: 2, measure: "teaspoons", ingredient: "dried basil"},
             {quantity: 0.75, measure: "teaspoon", ingredient: "fennel seed"},
             {quantity: 0.75, measure: "teaspoon", ingredient: "salt, divided"},
