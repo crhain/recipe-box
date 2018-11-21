@@ -2,7 +2,27 @@ import React from 'react';
 import { Field } from 'redux-form';
 import FormTextField from 'components/Form/FormTextField';
 
-const renderField = ( { input, label, meta: {error, submitFailed } }) => {
+const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
+    return (<div className="form__text-field">
+        <label>{label}</label>
+        <input {...input} type="number" style={{ marginBottom: '5px' }} /> 
+        <div style={{ marginBottom: '20px', color: 'red' }}>  
+            {submitFailed && error} 
+        </div>    
+    </div>);
+};
+
+const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
+    return (<div className="form__text-field">
+        <label>{label}</label>
+        <input {...input} type="text" style={{ marginBottom: '5px' }} /> 
+        <div style={{ marginBottom: '20px', color: 'red' }}>  
+            {submitFailed && error} 
+        </div>    
+    </div>);
+};
+
+const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (<div className="form__text-field">
         <label>{label}</label>
         <input {...input} type="text" style={{ marginBottom: '5px' }} /> 
@@ -37,9 +57,20 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                      </button>
                      <h4>Ingredient #{index + 1}</h4>
                      <Field 
+                        name={`${ingredient}.quantity`}
+                        label="Quantity"                        
+                        component={quantityInput}                                           
+                     />
+
+                     <Field 
+                        name={`${ingredient}.measure`}
+                        label="Measure"                        
+                        component={measureInput}                                           
+                     />
+                     <Field 
                         name={`${ingredient}.ingredient`}
-                        type="text"
-                        component={renderField}                                           
+                        label="Ingredient"
+                        component={ingredientInput}                                           
                      />
                 </li>                
             ) )}
