@@ -3,7 +3,8 @@ import { Field } from 'redux-form';
 import FormTextField from 'components/Form/FormTextField';
 
 const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
-    return (<div className="form__text-field">
+    return (
+    <div className="input-field col s1">
         <label>{label}</label>
         <input {...input} type="number" style={{ marginBottom: '5px' }} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
@@ -13,7 +14,8 @@ const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
 };
 
 const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
-    return (<div className="form__text-field">
+    return (
+    <div className="input-field col s2">
         <label>{label}</label>
         <input {...input} type="text" style={{ marginBottom: '5px' }} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
@@ -23,7 +25,8 @@ const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
 };
 
 const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
-    return (<div className="form__text-field">
+    return (
+    <div className="input-field col s8">
         <label>{label}</label>
         <input {...input} type="text" style={{ marginBottom: '5px' }} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
@@ -49,29 +52,38 @@ export default ({ fields, meta: {error, submitFailed } }) => {
             </li>
             {fields.map( (ingredient, index) => (
                 <li key={index}>
-                    <button
-                        className="waves-effect waves-light btn red delete-button"
-                        onClick={ () => fields.remove(index) }
-                     >
-                        <i className="material-icons">delete</i>
-                     </button>
-                     <h4>Ingredient #{index + 1}</h4>
-                     <Field 
-                        name={`${ingredient}.quantity`}
-                        label="Quantity"                        
-                        component={quantityInput}                                           
-                     />
+                    <div className="row">
+                        <h4 className="col s8">Ingredient #{index + 1}</h4>
+                                         
+                    </div>
+                                         
+                    <div className="row">
+                        <div className="col s1">
+                            <button
+                                className="waves-effect waves-light btn red delete-button"
+                                onClick={ () => fields.remove(index) }                              
+                            >
+                                <i className="material-icons">delete</i>
+                            </button>
+                        </div>       
+                        <Field 
+                            name={`${ingredient}.quantity`}
+                            label="Quantity"                        
+                            component={quantityInput}                                           
+                        />
 
-                     <Field 
-                        name={`${ingredient}.measure`}
-                        label="Measure"                        
-                        component={measureInput}                                           
-                     />
-                     <Field 
-                        name={`${ingredient}.ingredient`}
-                        label="Ingredient"
-                        component={ingredientInput}                                           
-                     />
+                        <Field 
+                            name={`${ingredient}.measure`}
+                            label="Measure"                        
+                            component={measureInput}                                           
+                        />
+                        <Field 
+                            name={`${ingredient}.ingredient`}
+                            label="Ingredient"
+                            component={ingredientInput}                                           
+                        />
+                    </div>
+                     
                 </li>                
             ) )}
         </ul>     
