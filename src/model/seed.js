@@ -17,6 +17,9 @@ export default  [
             {quantity: 0.25, measure: "cup", ingredient: "Gold Medal all-purpose flour"},
             {quantity: 1.5, measure: "cups", ingredient: "sour cream"},
             {quantity: 3, measure: "cups", ingredient: "hot cooked egg noodles"}            
+        ],
+        preparation: [
+            "Cook it real good!"
         ]
     },
     {
@@ -45,6 +48,9 @@ export default  [
             {quantity: 1, measure: "carton (15 ounces)", ingredient: "ricotta cheese"},
             {quantity: 4, measure: "cups", ingredient: "shredded part-skim mozzarella cheese"},
             {quantity: 0.75, measure: "cup", ingredient: "grated Parmesan cheese"}                                                            
+        ],
+        preparation: [
+            "Cook it real good!"
         ]
     },
     {
@@ -62,6 +68,9 @@ export default  [
             {quantity: 1, measure: "tablespoon", ingredient: "tomato paste"},
             {quantity: 1, measure: "pinch", ingredient: "oregano"},
             {quantity: 1, measure: "teaspoon", ingredient: "salt"}            
+        ],
+        preparation: [
+            "Cook it real good!"
         ]
     }
 ];

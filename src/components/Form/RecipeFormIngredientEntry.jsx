@@ -5,7 +5,7 @@ import FormTextField from 'components/Form/FormTextField';
 const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="input-field col s1">        
-        <input {...input} type="number" placeholder={label} style={{ marginBottom: '5px' }} /> 
+        <input {...input} type="number" placeholder={label} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
@@ -15,7 +15,7 @@ const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
 const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="input-field col s2">        
-        <input {...input} type="text" placeholder={label} style={{ marginBottom: '5px' }} /> 
+        <input {...input} type="text" placeholder={label} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
@@ -25,7 +25,7 @@ const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
 const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="input-field col s8">        
-        <input {...input} type="text" placeholder={label} style={{ marginBottom: '5px' }} /> 
+        <input {...input} type="text" placeholder={label} /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
