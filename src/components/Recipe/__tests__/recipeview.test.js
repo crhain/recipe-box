@@ -60,16 +60,12 @@ describe("RecipeView", () => {
     it('shows a description that matches recipe passed to component as state', () => {        
         expect(component.find('.recipe__description').text()).toEqual(mockRecipe.description); 
     });
-
-    it('shows a list of ingredient li elements with one element per ingredient', () => {
-        
-        let ingredientListElements = component.find('.recipe__ingredient');                     
-        expect(ingredientListElements.length).toEqual(mockRecipe.ingredients.length);                
-    });
-
-    it('shows a list of igredient li elements that show the text for each ingredient passed from state', () =>{
+    
+    it('shows a list of ingredient li elements that show the text for each ingredient passed from state', () =>{
         let ingredientListElements = component.find('.recipe__ingredient');        
         let ingredients = mockRecipe.ingredients;
+
+        expect(ingredientListElements.length).toEqual(mockRecipe.ingredients.length); 
         expect(ingredientListElements.everyWhere(
             (el, i) => { 
                 let ingredientMatchText = ingredients[i]["quantity"] + " " + ingredients[i]["measure"] + " " + ingredients[i]["ingredient"];                                
@@ -79,15 +75,13 @@ describe("RecipeView", () => {
     });
 
     
-
     it('shows a list of instruction li elements that show the text for each instruction from state', () =>{            
         let instructionListElements = component.find('.recipe__instruction');        
         let instructions = mockRecipe.preparation;
         expect(instructionListElements.length).toEqual(mockRecipe.preparation.length);                
         expect(instructionListElements.everyWhere(
             (el, i) => { 
-                let instructionMatchText = i + 1 + ". " + instructions[i];  
-                console.log(el.text() + " = " + instructionMatchText);                              
+                let instructionMatchText = i + 1 + ". " + instructions[i];                                               
                 return el.text() === instructionMatchText;
             })                        
         ).toEqual(true);
