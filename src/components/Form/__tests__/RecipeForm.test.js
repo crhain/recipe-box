@@ -4,6 +4,7 @@ import RecipeForm from "components/Form/RecipeForm";
 import FormTextField from "components/Form/FormTextField";
 import FormTextBoxField from "components/Form/FormTextBoxField";
 import FormInvisibleTextField from "components/Form/FormInvisibleTextField";
+import RecipeFormIngredientEntry from "components/Form/RecipeFormIngredientEntry";
 
 
 let component; 
@@ -79,6 +80,25 @@ describe("FormInvisibleTextField", () => {
                 label={"test"}
                 meta={ meta } 
             />
+        );
+    });
+
+    it('renders correctly', () => {
+        expect(component.exists()).toEqual(true);
+    });
+    
+});
+
+describe("RecipeFormIngredientEntry", () => {
+        
+    beforeEach(() => {
+        component = shallow(
+            <RecipeFormIngredientEntry 
+                input={input}
+                label={"test"}
+                meta={ meta } 
+                fields={[]}
+            />          
         );
     });
 

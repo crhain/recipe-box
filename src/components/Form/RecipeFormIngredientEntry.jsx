@@ -33,6 +33,8 @@ const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
 };
 
 export default ({ fields, meta: {error, submitFailed } }) => {    
+    console.log("my fields are:");
+    console.log(fields);
     return (
         <ul>
             <li>
