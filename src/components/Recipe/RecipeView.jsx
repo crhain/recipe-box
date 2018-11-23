@@ -65,12 +65,14 @@ export class RecipeView extends Component{
                         <h3 className="collection-header">Ingredients</h3>   
                         <ul className="collection with-header">                                                
                             { this.renderIngredients() }
-                        </ul>
+                        </ul>                        
+                    </div> 
+                    <div className="recipe_instructionList">
                         <h3 className="collection-header">Preparation</h3>   
                         <ul className="collection with-header">
                             { this.renderInstructions() }
                         </ul>
-                    </div>                    
+                    </div>                   
                 </div>
             </div>
         );
