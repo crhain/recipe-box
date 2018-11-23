@@ -32,9 +32,7 @@ const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
     </div>);
 };
 
-export default ({ fields, meta: {error, submitFailed } }) => {    
-    console.log("my fields are:");
-    console.log(fields);
+export default ({ fields, meta: {error, submitFailed } }) => {     
     return (
         <ul>
             <li>
@@ -50,12 +48,8 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                 </div>               
             </li>
             {fields.map( (ingredient, index) => (
-                <li key={index}>
-                    <div className="row">
-                        <h4 className="col s8">Ingredient #{index + 1}</h4>
-                                         
-                    </div>
-                                         
+                <li key={index}>                    
+                    <h4>Ingredient #{index + 1}</h4>                     
                     <div className="row">
                         <div className="col s1">
                             <button
