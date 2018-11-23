@@ -20,7 +20,7 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                 <button 
                     className="waves-effect waves-light btn"
                     type="button" 
-                    onClick={ () => fields.push({}) }
+                    onClick={ () => fields.push() }
                 >
                     Add Instruction
                 </button>   
