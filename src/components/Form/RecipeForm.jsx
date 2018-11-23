@@ -5,6 +5,7 @@ import FormTextField from 'components/Form/FormTextField';
 import FormInvisibleTextField from 'components/Form/FormInvisibleTextField';
 import FormTextBoxField from 'components/Form/FormTextBoxField';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
+import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
 // import fields from './fields';
 
@@ -58,7 +59,16 @@ class RecipeForm extends Component {
                             name={name}
                         />
                     );
-
+                case "instruction":
+                    return (
+                        <FieldArray
+                            component={RecipeFormInstructionEntry}                            
+                            type="instruction"
+                            key={name}
+                            label={label}
+                            name={name}
+                        />
+                    );                        
                 default:
                     return (<div>ERROR!</div>);
 
