@@ -76,5 +76,20 @@ describe("RecipeView", () => {
                 return el.text() === ingredientMatchText;
             })                        
         ).toEqual(true);
-    });    
+    });
+
+    
+
+    it('shows a list of instruction li elements that show the text for each instruction from state', () =>{            
+        let instructionListElements = component.find('.recipe__instruction');        
+        let instructions = mockRecipe.preparation;
+        expect(instructionListElements.length).toEqual(mockRecipe.preparation.length);                
+        expect(instructionListElements.everyWhere(
+            (el, i) => { 
+                let instructionMatchText = i + 1 + ". " + instructions[i];  
+                console.log(el.text() + " = " + instructionMatchText);                              
+                return el.text() === instructionMatchText;
+            })                        
+        ).toEqual(true);
+    });
 });
