@@ -77,8 +77,8 @@ describe("RecipeView", () => {
     
     it('shows a list of instruction li elements that show the text for each instruction from state', () =>{            
         let instructionListElements = component.find('.recipe__instruction');        
-        let instructions = mockRecipe.preparation;
-        expect(instructionListElements.length).toEqual(mockRecipe.preparation.length);                
+        let instructions = mockRecipe.instructions;
+        expect(instructionListElements.length).toEqual(mockRecipe.instructions.length);                
         expect(instructionListElements.everyWhere(
             (el, i) => { 
                 let instructionMatchText = i + 1 + ". " + instructions[i];                                               

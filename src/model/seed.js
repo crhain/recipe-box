@@ -18,7 +18,7 @@ export default  [
             {quantity: 1.5, measure: "cups", ingredient: "sour cream"},
             {quantity: 3, measure: "cups", ingredient: "hot cooked egg noodles"}            
         ],
-        preparation: [
+        instructions: [
             "Cook it real good!"
         ]
     },
@@ -49,7 +49,7 @@ export default  [
             {quantity: 4, measure: "cups", ingredient: "shredded part-skim mozzarella cheese"},
             {quantity: 0.75, measure: "cup", ingredient: "grated Parmesan cheese"}                                                            
         ],
-        preparation: [
+        instructions: [
             "Cook it real good!"
         ]
     },
@@ -69,7 +69,7 @@ export default  [
             {quantity: 1, measure: "pinch", ingredient: "oregano"},
             {quantity: 1, measure: "teaspoon", ingredient: "salt"}            
         ],
-        preparation: [
+        instructions: [
             "Cook it real good!"
         ]
     }

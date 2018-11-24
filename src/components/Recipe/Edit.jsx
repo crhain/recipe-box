@@ -28,7 +28,7 @@ export class Edit extends Component{
             this.initialRecipeValues.image = this.props.selectedRecipe.image;
             this.initialRecipeValues.servings = this.props.selectedRecipe.servings;
             this.initialRecipeValues.ingredients = this.props.selectedRecipe.ingredients;  
-            this.initialRecipeValues.preparation = this.props.selectedRecipe.preparation;  
+            this.initialRecipeValues.instructions = this.props.selectedRecipe.instructions;  
         }
         
         return (

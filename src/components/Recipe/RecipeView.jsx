@@ -39,8 +39,8 @@ export class RecipeView extends Component{
     renderInstructions(){
         let instructions = [];
 
-        if(this.props.selectedRecipe.preparation){
-            instructions = this.props.selectedRecipe.preparation.map(
+        if(this.props.selectedRecipe.instructions){
+            instructions = this.props.selectedRecipe.instructions.map(
                 (instruction, index) => <li className="collection-item recipe__instruction" key={ index }>{ index + 1 + ". " + instruction}</li>
             );
         }

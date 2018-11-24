@@ -29,7 +29,7 @@ export default (state = [], action) => {
             recipe.servings = action.recipe.servings;
             recipe.id = getRecipeId(action.recipe.title);
             recipe.ingredients = action.recipe.ingredients;
-            recipe.preparation = action.recipe.preparation;
+            recipe.instructions = action.recipe.instructions;
                          
             let added = Model.addRecipe(recipe);
             if(added.error){
@@ -46,7 +46,7 @@ export default (state = [], action) => {
             recipe.servings = action.recipe.servings;
             recipe.id = action.recipe.id;
             recipe.ingredients = action.recipe.ingredients;
-            recipe.preparation = action.recipe.preparation;
+            recipe.instructions = action.recipe.instructions;
             
             let edited = Model.editRecipe(recipe);
             if(edited.error){           
