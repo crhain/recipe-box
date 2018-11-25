@@ -1,7 +1,5 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import FormTextField from 'components/Form/FormTextField';
-
 
 const instructionInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (

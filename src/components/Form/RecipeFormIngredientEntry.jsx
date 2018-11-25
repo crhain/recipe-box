@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import FormTextField from 'components/Form/FormTextField';
 
 const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (

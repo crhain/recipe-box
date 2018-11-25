@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field, FieldArray } from 'redux-form';
-import FormTextField from 'components/Form/FormTextField';
-import FormInvisibleTextField from 'components/Form/FormInvisibleTextField';
-import FormTextBoxField from 'components/Form/FormTextBoxField';
+import RecipeFormTextField from 'components/Form/RecipeFormTextField';
+import RecipeFormInvisibleTextField from 'components/Form/RecipeFormInvisibleTextField';
+import RecipeFormTextBoxField from 'components/Form/RecipeFormTextBoxField';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
@@ -23,7 +23,7 @@ class RecipeForm extends Component {
                 case "text":
                 return (
                     <Field 
-                        component={FormTextField}                     
+                        component={RecipeFormTextField}                     
                         type="text" 
                         key={name}
                         label={label} 
@@ -33,7 +33,7 @@ class RecipeForm extends Component {
                 case "textbox":
                     return (
                         <Field 
-                            component={FormTextBoxField}                     
+                            component={RecipeFormTextBoxField}                     
                             key={name}
                             label={label} 
                             name={name} 
@@ -42,7 +42,7 @@ class RecipeForm extends Component {
                 case "invisible":
                     return (
                         <Field 
-                            component={FormInvisibleTextField}
+                            component={RecipeFormInvisibleTextField}
                             type="text"
                             key={name}
                             label=""
