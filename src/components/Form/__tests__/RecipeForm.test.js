@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import RecipeForm from "components/Form/RecipeForm";
-import FormTextField from "components/Form/FormTextField";
-import FormTextBoxField from "components/Form/FormTextBoxField";
-import FormInvisibleTextField from "components/Form/FormInvisibleTextField";
+import RecipeFormTextField from "components/Form/RecipeFormTextField";
+import RecipeFormTextBoxField from "components/Form/RecipeFormTextBoxField";
+import RecipeFormInvisibleTextField from "components/Form/RecipeFormInvisibleTextField";
 import RecipeFormIngredientEntry from "components/Form/RecipeFormIngredientEntry";
 import RecipeFormInstructionEntry from "components/Form/RecipeFormInstructionEntry";
 
@@ -33,11 +33,11 @@ describe("Form", () => {
     
 });
 
-describe("FormTextField", () => {
+describe("RecipeFormTextField", () => {
         
     beforeEach(() => {
         component = shallow(
-            <FormTextField 
+            <RecipeFormTextField 
                 input={input}
                 label={"test"}
                 meta={ meta }            
@@ -52,11 +52,11 @@ describe("FormTextField", () => {
 });
 
 
-describe("FormTextBoxField", () => {
+describe("RecipeFormTextBoxField", () => {
         
     beforeEach(() => {
         component = shallow(
-            <FormTextBoxField 
+            <RecipeFormTextBoxField 
                 input={input}
                 label={"test"}
                 meta={ meta } 
@@ -71,11 +71,11 @@ describe("FormTextBoxField", () => {
 });
 
 
-describe("FormInvisibleTextField", () => {
+describe("RecipeFormInvisibleTextField", () => {
         
     beforeEach(() => {
         component = shallow(
-            <FormInvisibleTextField 
+            <RecipeFormInvisibleTextField 
                 input={input}
                 label={"test"}
                 meta={ meta } 
