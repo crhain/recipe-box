@@ -18,7 +18,10 @@ import BackButton from "components/Buttons/BackButton";
         return (        
             <div className="recipe-new">
                 <h1 className="recipe-new__heading">Create A New Recipe</h1>        
-                <RecipeForm fields={fields} formHandler={ addRecipe } history={ history } />
+                <RecipeForm                 
+                    formHandler={ addRecipe } 
+                    history={ history } 
+                />
                 <BackButton history={ this.history }/>
             </div>        
         );

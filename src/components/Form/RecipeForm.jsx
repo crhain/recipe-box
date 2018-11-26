@@ -22,13 +22,10 @@ class RecipeForm extends Component {
             switch(type) {
                 case "text":
                 return (
-                    <Field 
-                        component={RecipeFormTextField}                     
-                        type="text" 
-                        key={name}
-                        label={label} 
-                        name={name} 
-                    />
+                    <div className="row">
+                        
+                    </div>
+                    
                 );
                 case "textbox":
                     return (
@@ -80,8 +77,55 @@ class RecipeForm extends Component {
         const { handleSubmit, formHandler, history } = this.props;
         return (
             <div className="row">
-                <form class="col s12">
-                    { this.renderFields() }
+                <form className="col s12">
+                    <Field 
+                        component={ RecipeFormInvisibleTextField }
+                        label="id"
+                        name="id"                        
+                    />
+                    <div className="row">
+                        <Field 
+                            component={RecipeFormTextField}                                                                         
+                            label="Recipe Title" 
+                            name="title"
+                        />
+                    </div>
+                    <div className="row">
+                        <Field 
+                            component={RecipeFormTextField}                                                                         
+                            label="Recipe Description" 
+                            name="description"                            
+                        />
+                    </div>
+                    <div className="row">
+                        <Field 
+                            component={RecipeFormTextField}                                                                         
+                            label="Recipe Image URL" 
+                            name="image"                            
+                        />
+                    </div>
+                    <div className="row">
+                        <Field 
+                            component={RecipeFormTextField}                                                                         
+                            label="Recipe Servings" 
+                            name="servings"                                                        
+                        />
+                    </div>
+                    <div className="row">
+                        <FieldArray
+                            component={RecipeFormIngredientEntry}                                                                                
+                            label="Recipe Ingredients"
+                            name="ingredients"                            
+                        />
+                    </div>
+                    <div className="row">
+                        <FieldArray
+                            component={RecipeFormInstructionEntry}                                                                                
+                            label="Recipe Instructions"
+                            name="instructions"                          
+                        />
+                    </div>
+                    
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
                         onClick={ handleSubmit((values, dispatch) => {                                                
@@ -93,6 +137,7 @@ class RecipeForm extends Component {
                     >
                         Submit                       
                     </button>                    
+                    
                 </form>
             </div>
         );
@@ -104,26 +149,26 @@ function validate(values, form){
     const errors = {};
     const fields = form.fields;
     
-    _.each(fields, ({ name, required }) => {
-        //fields that do not need to be filled   
-        if(!required){
-            return errors;
-        }
+    // _.each(fields, ({ name, required }) => {
+    //     //fields that do not need to be filled   
+    //     if(!required){
+    //         return errors;
+    //     }
 
-        if(!values[name] || !values[name].length){
-            if(name === 'ingredients'){                
-                errors['ingredients'] = 'At least one ingredient must be entered';
-            } else {
-                errors[name] = "You must provide a value";
-            }            
-        } else {
-            if(name === 'ingredients'){
-                _.each(values['ingredients'], (ingredient) => {
-                    //???
-                });
-            }
-        }
-    });   
+    //     if(!values[name] || !values[name].length){
+    //         if(name === 'ingredients'){                
+    //             errors['ingredients'] = 'At least one ingredient must be entered';
+    //         } else {
+    //             errors[name] = "You must provide a value";
+    //         }            
+    //     } else {
+    //         if(name === 'ingredients'){
+    //             _.each(values['ingredients'], (ingredient) => {
+    //                 //???
+    //             });
+    //         }
+    //     }
+    // });   
     return errors;    
 }
 

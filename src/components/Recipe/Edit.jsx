@@ -39,8 +39,7 @@ export class Edit extends Component{
                 </div>                
                 <BackButton history={ this.history }/>
                 <div className="recipe-edit__form">
-                    <RecipeForm 
-                        fields={fields}
+                    <RecipeForm                         
                         formHandler={ this.props.editRecipe } 
                         history={ this.history }
                         intialRecipeValues={ this.initialRecipeValues ? this.initialRecipeValues : "" }
