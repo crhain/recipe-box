@@ -16,63 +16,7 @@ class RecipeForm extends Component {
             this.props.initialize(recipe);
         }                
     }
-    renderFields(){        
-        let fields = this.props.fields || [];
-        return _.map(fields, ({ label, name, type }) => {
-            switch(type) {
-                case "text":
-                return (
-                    <div className="row">
-                        
-                    </div>
-                    
-                );
-                case "textbox":
-                    return (
-                        <Field 
-                            component={RecipeFormTextBoxField}                     
-                            key={name}
-                            label={label} 
-                            name={name} 
-                        />
-                    );
-                case "invisible":
-                    return (
-                        <Field 
-                            component={RecipeFormInvisibleTextField}
-                            type="text"
-                            key={name}
-                            label=""
-                            name={name}
-                        />
-                    ); 
-                case "ingredient":
-                    return (
-                        <FieldArray
-                            component={RecipeFormIngredientEntry}                            
-                            type="ingredient"
-                            key={name}
-                            label={label}
-                            name={name}
-                        />
-                    );
-                case "instruction":
-                    return (
-                        <FieldArray
-                            component={RecipeFormInstructionEntry}                            
-                            type="instruction"
-                            key={name}
-                            label={label}
-                            name={name}
-                        />
-                    );                        
-                default:
-                    return (<div>ERROR!</div>);
-
-            }
-            
-        });
-    }    
+        
     render(){
         const { handleSubmit, formHandler, history } = this.props;
         return (
