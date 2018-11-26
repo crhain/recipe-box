@@ -9,6 +9,17 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 
 // import fields from './fields';
 
+const servingsInput = ( { input, label, meta: {error, submitFailed } }) => {
+    return (
+    <div className="col s1">   
+        <label>{label}</label>     
+        <input {...input} type="number" /> 
+        <div style={{ marginBottom: '20px', color: 'red' }}>  
+            {submitFailed && error} 
+        </div>    
+    </div>);
+};
+
 class RecipeForm extends Component {
     componentDidMount() {
         let recipe = this.props.intialRecipeValues;
@@ -16,7 +27,7 @@ class RecipeForm extends Component {
             this.props.initialize(recipe);
         }                
     }
-        
+            
     render(){
         const { handleSubmit, formHandler, history } = this.props;
         return (
@@ -50,7 +61,7 @@ class RecipeForm extends Component {
                     </div>
                     <div className="row">
                         <Field 
-                            component={RecipeFormTextField}                                                                         
+                            component={servingsInput}                                                                         
                             label="Recipe Servings" 
                             name="servings"                                                        
                         />
