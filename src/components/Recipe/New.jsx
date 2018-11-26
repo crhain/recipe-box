@@ -15,7 +15,7 @@ import BackButton from "components/Buttons/BackButton";
         let history = this.props.history;
         let addRecipe = this.props.addRecipe;        
         return (        
-            <div className="recipe-new">
+            <div className="recipe-new container">
                 <h1 className="recipe-new__heading">Create A New Recipe</h1>        
                 <RecipeForm                 
                     formHandler={ addRecipe } 

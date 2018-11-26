@@ -50,7 +50,7 @@ export class RecipeView extends Component{
     
     render(){        
         return (
-            <div className="recipe">
+            <div className="recipe container">
                 <h1 className="recipe__title">{ this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
                 <div className="recipe__image">
                     <img src={this.props.selectedRecipe ? this.props.selectedRecipe.image : ""} />    

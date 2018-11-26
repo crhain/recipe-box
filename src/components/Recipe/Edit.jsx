@@ -31,7 +31,7 @@ export class Edit extends Component{
         }
         
         return (
-            <div className="recipe-edit">
+            <div className="recipe-edit container">
                 <h1 className="recipe-edit__heading">Edit: { this.props.selectedRecipe ? this.props.selectedRecipe.title : "" }</h1>                
                 <div>
                     

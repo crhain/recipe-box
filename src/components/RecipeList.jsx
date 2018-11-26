@@ -39,7 +39,7 @@ export class RecipeList extends Component{
 
     render(){        
         return (            
-            <div className="recipe-list">                                 
+            <div className="recipe-list container">                                 
                 <h1 className="recipe-list__heading">Recipe List</h1>                
                 <div>
                     <ul className="collection">
