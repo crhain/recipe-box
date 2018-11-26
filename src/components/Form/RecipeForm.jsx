@@ -79,8 +79,8 @@ class RecipeForm extends Component {
     render(){
         const { handleSubmit, formHandler, history } = this.props;
         return (
-            <div className="form">
-                <form>
+            <div className="row">
+                <form class="col s12">
                     { this.renderFields() }
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
