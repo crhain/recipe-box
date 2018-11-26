@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { addRecipe } from "actions/";
-import fields from "components/Form/fields";
 import RecipeForm from "components/Form/RecipeForm";
 import BackButton from "components/Buttons/BackButton";
 
