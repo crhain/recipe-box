@@ -9,7 +9,51 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 
 // import fields from './fields';
 
-const servingsInput = ( { input, label, meta: {error, submitFailed } }) => {
+const renderIdField = ({ input } ) => {    
+    return (
+        <div className="form__text-field--invisible">           
+            <input {...input} style={{ marginBottom: '5px', display: 'none' }} />             
+        </div>
+    );
+};
+
+const renderTitleField = ({ input, label, meta: { error, touched } }) => {    
+    return (
+        <div className="form__text-field">
+            <label>{label}</label>
+            <input {...input} style={{ marginBottom: '5px' }} /> 
+            <div style={{ marginBottom: '20px', color: 'red' }}>  
+                {touched && error} 
+            </div>    
+        </div>
+    );
+};
+
+const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {    
+    return (
+        <div className="form__text-field">
+            <label>{label}</label>
+            <input {...input} style={{ marginBottom: '5px' }} /> 
+            <div style={{ marginBottom: '20px', color: 'red' }}>  
+                {touched && error} 
+            </div>    
+        </div>
+    );
+};
+
+const renderImageField = ({ input, label, meta: { error, touched } }) => {    
+    return (
+        <div className="form__text-field">
+            <label>{label}</label>
+            <input {...input} style={{ marginBottom: '5px' }} /> 
+            <div style={{ marginBottom: '20px', color: 'red' }}>  
+                {touched && error} 
+            </div>    
+        </div>
+    );
+};
+
+const renderServingsField = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="col s1">   
         <label>{label}</label>     
@@ -34,48 +78,48 @@ class RecipeForm extends Component {
             <div className="row">
                 <form className="col s12">
                     <Field 
-                        component={ RecipeFormInvisibleTextField }
+                        component={ renderIdField }
                         label="id"
                         name="id"                        
                     />
                     <div className="row">
                         <Field 
-                            component={RecipeFormTextField}                                                                         
+                            component={ renderTitleField }                                                                         
                             label="Recipe Title" 
                             name="title"
                         />
                     </div>
                     <div className="row">
                         <Field 
-                            component={RecipeFormTextField}                                                                         
+                            component={ renderDescriptionField }                                                                         
                             label="Recipe Description" 
                             name="description"                            
                         />
                     </div>
                     <div className="row">
                         <Field 
-                            component={RecipeFormTextField}                                                                         
+                            component={ renderImageField }                                                                         
                             label="Recipe Image URL" 
                             name="image"                            
                         />
                     </div>
                     <div className="row">
                         <Field 
-                            component={servingsInput}                                                                         
+                            component={ renderServingsField }                                                                         
                             label="Recipe Servings" 
                             name="servings"                                                        
                         />
                     </div>
                     <div className="row">
                         <FieldArray
-                            component={RecipeFormIngredientEntry}                                                                                
+                            component={ RecipeFormIngredientEntry }                                                                                
                             label="Recipe Ingredients"
                             name="ingredients"                            
                         />
                     </div>
                     <div className="row">
                         <FieldArray
-                            component={RecipeFormInstructionEntry}                                                                                
+                            component={ RecipeFormInstructionEntry }                                                                                
                             label="Recipe Instructions"
                             name="instructions"                          
                         />
