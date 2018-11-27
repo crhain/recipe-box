@@ -1,9 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field, FieldArray } from 'redux-form';
-import RecipeFormTextField from 'components/Form/RecipeFormTextField';
-import RecipeFormInvisibleTextField from 'components/Form/RecipeFormInvisibleTextField';
-import RecipeFormTextBoxField from 'components/Form/RecipeFormTextBoxField';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
