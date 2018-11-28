@@ -182,6 +182,20 @@ const validate = values => {
         }
     }
 
+    if(!values.instructions || !values.instructions.length){
+        errors.instructions = { _error: 'At least one instruction must be entered'};
+    } else {
+        const instructionsArrayErrors = [];
+        values.instructions.forEach( (instruction, instructionIndex) => {           
+            if(!instruction || !instruction.length){
+                instructionsArrayErrors[instructionIndex] = 'Required';                
+            }            
+        } );
+        if(instructionsArrayErrors.length) {
+            errors.instructions = instructionsArrayErrors;
+        }
+    }
+
     // if(!values.instructions || !values.instructions.length){
     //     errors.instructions = { _error: 'At least one instruction must be entered' };
     // }
