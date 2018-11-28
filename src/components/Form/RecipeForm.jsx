@@ -4,8 +4,10 @@ import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
-// import fields from './fields';
 
+/////////////////////////////////////////////////////////////////////////////////////
+// renderIDField - function to render hidden id field component
+/////////////////////////////////////////////////////////////////////////////////////
 const renderIdField = ({ input } ) => {    
     return (
         <div className="form__text-field--invisible">           
@@ -14,6 +16,9 @@ const renderIdField = ({ input } ) => {
     );
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
+// renderTitleField - function to render title field component
+/////////////////////////////////////////////////////////////////////////////////////
 const renderTitleField = ({ input, label, meta: { error, touched } }) => {    
     return (
         <div className="form__text-field">
@@ -26,6 +31,9 @@ const renderTitleField = ({ input, label, meta: { error, touched } }) => {
     );
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
+// renderDescriptionField - function to render description field component
+/////////////////////////////////////////////////////////////////////////////////////
 const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {    
     return (
         <div className="form__text-field">
@@ -38,6 +46,9 @@ const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
     );
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
+// renderImageField - function to render image url field component
+/////////////////////////////////////////////////////////////////////////////////////
 const renderImageField = ({ input, label, meta: { error, touched } }) => {    
     return (
         <div className="form__text-field">
@@ -50,6 +61,9 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
     );
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
+// renderServingsField - function to render servings field component
+/////////////////////////////////////////////////////////////////////////////////////
 const renderServingsField = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="col s1">   
@@ -61,6 +75,9 @@ const renderServingsField = ( { input, label, meta: {error, submitFailed } }) =>
     </div>);
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
+// RecipeForm - React class component for form used by New and Edit components
+/////////////////////////////////////////////////////////////////////////////////////
 class RecipeForm extends Component {
     componentDidMount() {
         let recipe = this.props.intialRecipeValues;
@@ -140,7 +157,9 @@ class RecipeForm extends Component {
     }
 }
 
-//form validation function
+/////////////////////////////////////////////////////////////////////////////////////
+// validate - function used by Redux Form to validate fields on form
+/////////////////////////////////////////////////////////////////////////////////////
 const validate = values => {
     const errors = {};
     
@@ -195,16 +214,12 @@ const validate = values => {
             errors.instructions = instructionsArrayErrors;
         }
     }
-
-    // if(!values.instructions || !values.instructions.length){
-    //     errors.instructions = { _error: 'At least one instruction must be entered' };
-    // }
-    
+        
     return errors;    
 };
 
-//wire up redux Form to component using reduxForm 
-//reducer provided by reddux-form
+
+//Export a reduxForm using RecipeForm component
 export default reduxForm({
     validate,    
     form: "recipeForm",    
