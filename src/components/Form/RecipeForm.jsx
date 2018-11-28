@@ -141,37 +141,44 @@ class RecipeForm extends Component {
 }
 
 //form validation function
-function validate(values, form){
+const validate = values => {
     const errors = {};
-    const fields = form.fields;
     
-    // _.each(fields, ({ name, required }) => {
-    //     //fields that do not need to be filled   
-    //     if(!required){
-    //         return errors;
-    //     }
+    if(!values.title){
+        errors.title = 'Required';
+    }  
 
-    //     if(!values[name] || !values[name].length){
-    //         if(name === 'ingredients'){                
-    //             errors['ingredients'] = 'At least one ingredient must be entered';
-    //         } else {
-    //             errors[name] = "You must provide a value";
-    //         }            
-    //     } else {
-    //         if(name === 'ingredients'){
-    //             _.each(values['ingredients'], (ingredient) => {
-    //                 //???
-    //             });
+    if(!values.description){
+        errors.description = 'Required';
+    }
+
+    if(!values.servings){
+        errors.servings = 'Required';
+    }
+
+    // if(!values.ingredients || !values.ingredients.length){
+    //     errors.ingredients = { _error: 'At least one ingredient must be entered'};
+    // } else {
+    //     const ingredientsArrayErrors = [];
+    //     values.ingredients.forEach( (ingredient, ingredientIndex) => {
+    //         const ingredientErrors = {};
+    //         if(!ingredient || !ingredient.quantity){
+
     //         }
-    //     }
-    // });   
+    //     } );
+    // }
+
+    // if(!values.instructions || !values.instructions.length){
+    //     errors.instructions = { _error: 'At least one instruction must be entered' };
+    // }
+    
     return errors;    
-}
+};
 
 //wire up redux Form to component using reduxForm 
 //reducer provided by reddux-form
 export default reduxForm({
-    validate,
+    validate,    
     form: "recipeForm",    
     enableReintialization: true
 })(RecipeForm);
