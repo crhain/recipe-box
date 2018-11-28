@@ -156,17 +156,31 @@ const validate = values => {
         errors.servings = 'Required';
     }
 
-    // if(!values.ingredients || !values.ingredients.length){
-    //     errors.ingredients = { _error: 'At least one ingredient must be entered'};
-    // } else {
-    //     const ingredientsArrayErrors = [];
-    //     values.ingredients.forEach( (ingredient, ingredientIndex) => {
-    //         const ingredientErrors = {};
-    //         if(!ingredient || !ingredient.quantity){
+    if(!values.ingredients || !values.ingredients.length){
+        errors.ingredients = { _error: 'At least one ingredient must be entered'};
+    } else {
+        const ingredientsArrayErrors = [];
+        values.ingredients.forEach( (ingredient, ingredientIndex) => {
+            const ingredientErrors = {};
+            if(!ingredient || !ingredient.quantity){
+                ingredientErrors.quantity = 'Required';
+                ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
+            }
 
-    //         }
-    //     } );
-    // }
+            if(!ingredient || !ingredient.measure){
+                ingredientErrors.measure = 'Required';
+                ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
+            }
+
+            if(!ingredient || !ingredient.ingredient){
+                ingredientErrors.ingredient = 'Required';
+                ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
+            }
+        } );
+        if(ingredientsArrayErrors.length) {
+            errors.ingredients = ingredientsArrayErrors;
+        }
+    }
 
     // if(!values.instructions || !values.instructions.length){
     //     errors.instructions = { _error: 'At least one instruction must be entered' };
