@@ -33,11 +33,8 @@ Model.getAllRecipes = function(){
 Model.addRecipe = function(recipe){
     
     refreshRecipes();
-
-    if(recipes.findIndex( item => item.id === recipe.id ) > -1){    
-        return { error: "Already exists" };
-    }   
-
+       
+    recipe.id = getRecipeID();
     //push recipe to recipes
     recipes.push(recipe);  
         

@@ -2,17 +2,6 @@ import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/typ
 import { model } from "model/index";
 import Model from "model/index";
 
-function getRecipeId(title){
-    //convert to lower case
-    let value = title
-        .toLowerCase()
-        .split("")
-        .filter( letter => letter !== " ")
-        .join("");
-    
-    return value;
-}
-
 export default (state = [], action) => {    
     let recipe = {};
     switch (action.type) {
@@ -26,15 +15,12 @@ export default (state = [], action) => {
             recipe.title = action.recipe.title;
             recipe.description = action.recipe.description;
             recipe.image = action.recipe.image;
-            recipe.servings = action.recipe.servings;
-            recipe.id = getRecipeId(action.recipe.title);
+            recipe.servings = action.recipe.servings;            
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
                          
             let added = Model.addRecipe(recipe);
-            if(added.error){
-                return state;
-            }
+            
             action.history.push("/");
             return added;
 
