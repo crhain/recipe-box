@@ -1,7 +1,11 @@
 import React from 'react';
 import { Field } from 'redux-form';
 
-const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
+
+/////////////////////////////////////////////////////////////////////////////////////
+// renderQuantityInput - function to render quantity input
+/////////////////////////////////////////////////////////////////////////////////////
+const renderQuantityInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="input-field col s1">        
         <input {...input} type="number" placeholder={label} /> 
@@ -11,7 +15,10 @@ const quantityInput = ( { input, label, meta: {error, submitFailed } }) => {
     </div>);
 };
 
-const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
+/////////////////////////////////////////////////////////////////////////////////////
+// rendermeasureInput - function to render measure input
+/////////////////////////////////////////////////////////////////////////////////////
+const renderMeasureInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="input-field col s2">        
         <input {...input} type="text" placeholder={label} /> 
@@ -21,7 +28,10 @@ const measureInput = ( { input, label, meta: {error, submitFailed } }) => {
     </div>);
 };
 
-const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
+/////////////////////////////////////////////////////////////////////////////////////
+// renderIngredientInput - function to render ingredient input
+/////////////////////////////////////////////////////////////////////////////////////
+const renderIngredientInput = ( { input, label, meta: {error, submitFailed } }) => {
     return (
     <div className="input-field col s8">        
         <input {...input} type="text" placeholder={label} /> 
@@ -31,6 +41,10 @@ const ingredientInput = ( { input, label, meta: {error, submitFailed } }) => {
     </div>);
 };
 
+/////////////////////////////////////////////////////////////////////////////////////
+// RecipeFormIngredientEntry - functional component for RecipeFormIngredientEntry  
+//                              used in RecipeForm 
+/////////////////////////////////////////////////////////////////////////////////////
 export default ({ fields, meta: {error, submitFailed } }) => {     
     return (
         <ul>
@@ -61,18 +75,18 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                         <Field 
                             name={`${ingredient}.quantity`}
                             label="Quantity"                        
-                            component={quantityInput}                                           
+                            component={renderQuantityInput}                                           
                         />
 
                         <Field 
                             name={`${ingredient}.measure`}
                             label="Measure"                        
-                            component={measureInput}                                           
+                            component={renderMeasureInput}                                           
                         />
                         <Field 
                             name={`${ingredient}.ingredient`}
                             label="Ingredient"
-                            component={ingredientInput}                                           
+                            component={renderIngredientInput}                                           
                         />
                     </div>
                      
