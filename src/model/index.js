@@ -6,6 +6,10 @@ let Model = {};
 let recipesInitialized = false;
 
 
+const getRecipeID = () => {
+    return Date.now().toString() + "_" + Math.random().toString(32).slice(2, 9);
+};
+
 Model.toggleTestMode = function(state){
     testMode = state;
     if(testMode){
