@@ -1,5 +1,4 @@
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
-import { model } from "model/index";
 import Model from "model/index";
 
 export default (state = [], action) => {    
@@ -19,10 +18,10 @@ export default (state = [], action) => {
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
                          
-            let added = Model.addRecipe(recipe);
+            Model.addRecipe(recipe);
             
             action.history.push("/");
-            return added;
+            return state;
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
@@ -34,25 +33,20 @@ export default (state = [], action) => {
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
             
-            let edited = Model.editRecipe(recipe);
-            if(edited.error){           
-                return state;
-            }            
+            Model.editRecipe(recipe);
+                        
             action.history.push("/");
-            return edited;
+            return state;
 
         //action continas the **id** of a recipe to be deleted    
         case DELETE_RECIPE:
             // exists = state.find( recipe => {
             //     return recipe.id === action.id;
             // });               
-            let deleted = Model.deleteRecipeById(action.id);
-                        
-            if(deleted.error){
-                return state;        
-            }            
+            Model.deleteRecipeById(action.id);
+                                        
             action.history.push("/");
-            return deleted;
+            return state;
         default:
             return state;
     }
