@@ -1,12 +1,12 @@
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
 import Model from "model/index";
 
-export default (state = [], action) => {    
+export default (state = [], action, model = Model) => {    
     let recipe = {};
     switch (action.type) {
         case GET_RECIPES:
             if(state.length < 1){
-                return Model.getAllRecipes();      
+                return model.getAllRecipes();      
             }            
             return state;
         //action contains **recipe** to be added                                              
@@ -18,7 +18,7 @@ export default (state = [], action) => {
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
                          
-            Model.addRecipe(recipe);
+            model.addRecipe(recipe);
             
             action.history.push("/");
             return state;
@@ -33,7 +33,7 @@ export default (state = [], action) => {
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
             
-            Model.editRecipe(recipe);
+            model.editRecipe(recipe);
                         
             action.history.push("/");
             return state;
@@ -43,7 +43,7 @@ export default (state = [], action) => {
             // exists = state.find( recipe => {
             //     return recipe.id === action.id;
             // });               
-            Model.deleteRecipeById(action.id);
+            model.deleteRecipeById(action.id);
                                         
             action.history.push("/");
             return state;
