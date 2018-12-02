@@ -51,7 +51,7 @@ Model.editRecipe = function(recipe){
     //find recipe in recipes
     let matchPosition = recipes.findIndex( matchingRecipe => matchingRecipe.id === recipe.id  );
     if(matchPosition === -1){
-        return { error: "Does not exist" };    
+        throw new Error("Recipe does not exist!");    
     }
 
     recipes[matchPosition] = recipe;   

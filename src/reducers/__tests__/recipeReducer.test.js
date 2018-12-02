@@ -4,6 +4,7 @@ import Model from "model";
 
 
 Model.toggleTestMode(true);
+
 const mockModel = {
     getRecipeById: (recipeId) => {
         return {actionType: "GET_RECIPE"}

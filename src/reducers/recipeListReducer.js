@@ -18,7 +18,7 @@ export default (state = [], action, model = Model) => {
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
                          
-            model.addRecipe(recipe);
+            state = model.addRecipe(recipe);
             
             action.history.push("/");
             return state;
@@ -33,7 +33,7 @@ export default (state = [], action, model = Model) => {
             recipe.ingredients = action.recipe.ingredients;
             recipe.instructions = action.recipe.instructions;
             
-            model.editRecipe(recipe);
+            state = model.editRecipe(recipe);
                         
             action.history.push("/");
             return state;
@@ -42,9 +42,10 @@ export default (state = [], action, model = Model) => {
         case DELETE_RECIPE:
             // exists = state.find( recipe => {
             //     return recipe.id === action.id;
-            // });               
-            model.deleteRecipeById(action.id);
-                                        
+            // }); 
+                        
+            state = model.deleteRecipeById(action.id);
+                                                                
             action.history.push("/");
             return state;
         default:
