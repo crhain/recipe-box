@@ -36,7 +36,7 @@ describe("Actions", () => {
         });
 
         it("Should return an action with recipeID equal to one passed in when called", () => {
-            expect(getRecipe(recipeID).id).toEqual(recipeID);
+            expect(getRecipe(recipeID).payload.id).toEqual(recipeID);
         });
     });
 
@@ -46,7 +46,7 @@ describe("Actions", () => {
         });
 
         it("Should return with recipe passed to action attached as recipe", () => {
-            expect(addRecipe(recipe).recipe).toEqual(recipe);
+            expect(addRecipe(recipe).payload.recipe).toEqual(recipe);
         });
     });
 
@@ -56,7 +56,7 @@ describe("Actions", () => {
         });
 
         it("Should return with recipe passed to action attached as recipe", () => {
-            expect(editRecipe(recipe).recipe).toEqual(recipe);
+            expect(editRecipe(recipe).payload.recipe).toEqual(recipe);
         });
     });
 
@@ -66,7 +66,7 @@ describe("Actions", () => {
         });
 
         it("Should return an action with recipeID = to recipeID passed to action", () => {
-            expect(deleteRecipe(recipeID).id).toEqual(recipeID);
+            expect(deleteRecipe(recipeID).payload.id).toEqual(recipeID);
         });
     });
     

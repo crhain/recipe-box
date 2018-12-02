@@ -34,14 +34,14 @@ describe("recipeListReducer", () => {
     });
 
     it("Should call ADD_RECIPE case when passed an action with ADD_RECIPE type", () => {
-        expect(recipeListReducer(undefined, {type: ADD_RECIPE, recipe: mockRecipe, history: mockHistory}, mockModel).actionType).toEqual("ADD_RECIPE");
+        expect(recipeListReducer(undefined, {type: ADD_RECIPE, payload: {recipe: mockRecipe}, history: mockHistory}, mockModel).actionType).toEqual("ADD_RECIPE");
     });
 
     it("Should call EDIT_RECIPE case when passed an action with EDIT_RECIPE type", () => {
-        expect(recipeListReducer(undefined, {type: EDIT_RECIPE, recipe: mockRecipe, history: mockHistory}, mockModel).actionType).toEqual("EDIT_RECIPE");
+        expect(recipeListReducer(undefined, {type: EDIT_RECIPE, payload: {recipe: mockRecipe} , history: mockHistory}, mockModel).actionType).toEqual("EDIT_RECIPE");
     });
 
     it("Should call DELETE_RECIPE case when passed an action with DELETE_RECIPE type", () => {
-        expect(recipeListReducer(undefined, {type: DELETE_RECIPE, id: mockRecipe.id, history: mockHistory}, mockModel).actionType).toEqual("DELETE_RECIPE");
+        expect(recipeListReducer(undefined, {type: DELETE_RECIPE, payload: {id: mockRecipe.id}, history: mockHistory}, mockModel).actionType).toEqual("DELETE_RECIPE");
     });
 });

@@ -17,6 +17,6 @@ describe("recipeReducer", () => {
     });
     
     it("Should call GET_RECIPE case when passed an action with GET_RECIPE type", () => {
-        expect(recipeReducer(undefined, {type: GET_RECIPE, payload: {}}, mockModel).actionType).toEqual("GET_RECIPE");
+        expect(recipeReducer(undefined, {type: GET_RECIPE, payload: {id: ""}}, mockModel).actionType).toEqual("GET_RECIPE");
     });
 });
