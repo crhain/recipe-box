@@ -11,12 +11,12 @@ export default (state = [], action, model = Model) => {
             return state;
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:                   
-            recipe.title = action.recipe.title;
-            recipe.description = action.recipe.description;
-            recipe.image = action.recipe.image;
-            recipe.servings = action.recipe.servings;            
-            recipe.ingredients = action.recipe.ingredients;
-            recipe.instructions = action.recipe.instructions;
+            recipe.title = action.payload.recipe.title;
+            recipe.description = action.payload.recipe.description;
+            recipe.image = action.payload.recipe.image;
+            recipe.servings = action.payload.recipe.servings;            
+            recipe.ingredients = action.payload.recipe.ingredients;
+            recipe.instructions = action.payload.recipe.instructions;
                          
             state = model.addRecipe(recipe);
             
@@ -25,13 +25,13 @@ export default (state = [], action, model = Model) => {
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
-            recipe.title = action.recipe.title;
-            recipe.description = action.recipe.description;
-            recipe.image = action.recipe.image;
-            recipe.servings = action.recipe.servings;
-            recipe.id = action.recipe.id;
-            recipe.ingredients = action.recipe.ingredients;
-            recipe.instructions = action.recipe.instructions;
+            recipe.title = action.payload.recipe.title;
+            recipe.description = action.payload.recipe.description;
+            recipe.image = action.payload.recipe.image;
+            recipe.servings = action.payload.recipe.servings;
+            recipe.id = action.payload.recipe.id;
+            recipe.ingredients = action.payload.recipe.ingredients;
+            recipe.instructions = action.payload.recipe.instructions;
             
             state = model.editRecipe(recipe);
                         
@@ -44,7 +44,7 @@ export default (state = [], action, model = Model) => {
             //     return recipe.id === action.id;
             // }); 
                         
-            state = model.deleteRecipeById(action.id);
+            state = model.deleteRecipeById(action.payload.id);
                                                                 
             action.history.push("/");
             return state;

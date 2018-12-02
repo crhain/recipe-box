@@ -4,7 +4,7 @@ import Model from "model/index";
 export default (state = {}, action, model = Model) => {
     switch (action.type) {
         case GET_RECIPE:                                                
-            let recipe = model.getRecipeById(action.id);                                                        
+            let recipe = model.getRecipeById(action.payload.id);                                                        
             return recipe;     
         default:
             return state;

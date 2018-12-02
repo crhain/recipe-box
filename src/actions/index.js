@@ -6,21 +6,21 @@ export const getRecipes = () => {
 }
 
 export const getRecipe = ( id ) => {
-    return { type: GET_RECIPE, id };
+    return { type: GET_RECIPE, payload: { id } };
 }
 
 export const addRecipe = ( recipe, history ) => {
-    return { type: ADD_RECIPE, recipe, history };
+    return { type: ADD_RECIPE, payload: { recipe }, history };
 }
 
 export const editRecipe = ( recipe, history ) => { 
-    return { type: EDIT_RECIPE, recipe, history };
+    return { type: EDIT_RECIPE, payload: { recipe }, history };
 }
 
 export const deleteRecipe = ( id, history ) => {        
-    return { type: DELETE_RECIPE, id, history };
+    return { type: DELETE_RECIPE, payload: { id }, history };
 }
 
 export const setRecipeToDelete = ( id ) => {    
-    return { type: SET_RECIPE_TO_DELETE, id };
+    return { type: SET_RECIPE_TO_DELETE, payload: { id } };
 }
