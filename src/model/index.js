@@ -33,13 +33,17 @@ Model.getAllRecipes = function(){
 Model.addRecipe = function(recipe){
     
     refreshRecipes();
-       
+    
+
     recipe.id = getRecipeID();
     //push recipe to recipes
-    recipes.push(recipe);  
-        
-    addRecipesToStorage();
-    
+    if(recipes.length < 50){
+        recipes.push(recipe);  
+        addRecipesToStorage();
+    } else {
+        // TODO: throw a specific error indicating max number of recipes reached
+    }
+                    
     return recipes;
 };
 
