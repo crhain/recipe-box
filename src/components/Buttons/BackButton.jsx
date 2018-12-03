@@ -17,7 +17,7 @@ export default class ReturnButton extends Component{
                 className="waves-effect waves-light btn back-button"              
                 onClick={this.handleBackClick}
             >
-                Back To Listing
+                Back
             </button>
         );
     }
