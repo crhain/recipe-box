@@ -1,6 +1,7 @@
 import model  from "model/seed.js";
 import Model from "model/";
 import seed from "model/seed";
+import { publicDecrypt } from "crypto";
 
 Model.toggleTestMode(true);
 
@@ -53,6 +54,18 @@ describe("Model", () => {
             Model.addRecipe(newRecipe);
             expect(Model.getAllRecipes()).toContainEqual(newRecipe);
 
+        });
+
+        it("will not add more than 50 recipes", () => {
+            //populate more than recipe limit into database
+            let numRecipesLimit = 50;
+            let numRecipesToAdd = numRecipesLimit + 1 - seed.length; 
+            for(let i = 0; i < numRecipesToAdd; i++){
+                Model.addRecipe(newRecipe);
+            }
+
+            //should return a recipes array with only 50 recipes
+            expect(Model.getAllRecipes().length).toEqual(50);
         });
     });
 
