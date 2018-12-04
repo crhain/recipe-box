@@ -10,7 +10,7 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 /////////////////////////////////////////////////////////////////////////////////////
 const renderIdField = ({ input } ) => {    
     return (
-        <div className="form__text-field--invisible">           
+        <div className="form__id-field">           
             <input {...input} style={{ marginBottom: '5px', display: 'none' }} />             
         </div>
     );
@@ -21,7 +21,7 @@ const renderIdField = ({ input } ) => {
 /////////////////////////////////////////////////////////////////////////////////////
 const renderTitleField = ({ input, label, meta: { error, touched } }) => {    
     return (
-        <div className="form__text-field">
+        <div className="form__title-field">
             <label>{label}</label>
             <input {...input} style={{ marginBottom: '5px' }} /> 
             <div style={{ marginBottom: '20px', color: 'red' }}>  
@@ -36,7 +36,7 @@ const renderTitleField = ({ input, label, meta: { error, touched } }) => {
 /////////////////////////////////////////////////////////////////////////////////////
 const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {    
     return (
-        <div className="form__text-field">
+        <div className="form__description-field">
             <label>{label}</label>
             <input {...input} style={{ marginBottom: '5px' }} /> 
             <div style={{ marginBottom: '20px', color: 'red' }}>  
@@ -51,7 +51,7 @@ const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
 /////////////////////////////////////////////////////////////////////////////////////
 const renderImageField = ({ input, label, meta: { error, touched } }) => {    
     return (
-        <div className="form__text-field">
+        <div className="form__image-field">
             <label>{label}</label>
             <input {...input} style={{ marginBottom: '5px' }} /> 
             <div style={{ marginBottom: '20px', color: 'red' }}>  
@@ -66,7 +66,7 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
 /////////////////////////////////////////////////////////////////////////////////////
 const renderServingsField = ( { input, label, meta: {error, submitFailed } }) => {
     return (
-    <div className="col s1">   
+    <div className="form__servings-field col s1">   
         <label>{label}</label>     
         <input {...input} type="number" /> 
         <div style={{ marginBottom: '20px', color: 'red' }}>  

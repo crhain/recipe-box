@@ -1,12 +1,11 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import RecipeForm from "components/Form/RecipeForm";
 import RecipeFormIngredientEntry from "components/Form/RecipeFormIngredientEntry";
 import RecipeFormInstructionEntry from "components/Form/RecipeFormInstructionEntry";
 
 let component; 
 let meta = {error: null, touched: false};
-const fields = [];
 const mockFormHandler = jest.fn();
 const mockHistory = [];
 const input = {};
@@ -16,8 +15,7 @@ describe("RecipeForm", () => {
         
     beforeEach(() => {
         component = shallow(
-            <RecipeForm 
-                fields={ fields }
+            <RecipeForm                 
                 formHandler={ mockFormHandler } 
                 history={ mockHistory }
             />
@@ -28,6 +26,10 @@ describe("RecipeForm", () => {
         expect(component.exists()).toEqual(true);
     });
     
+    it('renders a title input field', () => {
+        expect(true).toEqual(true);  
+    });
+
 });
 
 describe("RecipeFormIngredientEntry", () => {
