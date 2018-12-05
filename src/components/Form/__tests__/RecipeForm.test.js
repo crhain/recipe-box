@@ -51,6 +51,14 @@ describe("RecipeForm", () => {
         expect(component.find('div.form__servings-field').length).toEqual(1)          
     });
 
+    it('renders an ingredients field', () => {
+        expect(component.find('div.form__ingredients-field').length).toEqual(1)          
+    });
+
+    it('renders an instructions field', () => {
+        expect(component.find('div.form__instructions-field').length).toEqual(1)          
+    });
+
     it('renders a submit button', () => {
         expect(component.find('button.form__submit-button').length).toEqual(1)
     });
