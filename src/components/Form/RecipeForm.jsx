@@ -4,6 +4,16 @@ import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
+/////////////////////////////////////////////////////////////////////////////////////
+// renderErrorField - function to render erorr field sub component
+/////////////////////////////////////////////////////////////////////////////////////
+const renderErrorField = (error, touched) => {
+    return (
+        <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
+            {touched && error} 
+        </div>    
+    );
+};
 
 /////////////////////////////////////////////////////////////////////////////////////
 // renderIDField - function to render hidden id field component
@@ -12,7 +22,7 @@ const renderIdField = ({ input } ) => {
     return (
         <div className="form__id-field">           
             <input {...input} type='text' style={{ marginBottom: '5px', display: 'none' }} />             
-        </div>
+        </div>        
     );
 };
 
@@ -24,9 +34,7 @@ const renderTitleField = ({ input, label, meta: { error, touched } }) => {
         <div className="form__title-field">
             <label>{label}</label>
             <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
-            <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
-                {touched && error} 
-            </div>    
+            { renderErrorField(error, touched) }
         </div>
     );
 };
@@ -39,9 +47,7 @@ const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
         <div className="form__description-field">
             <label>{label}</label>
             <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
-            <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
-                {touched && error} 
-            </div>    
+            { renderErrorField(error, touched) }
         </div>
     );
 };
@@ -54,9 +60,7 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
         <div className="form__image-field">
             <label>{label}</label>
             <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
-            <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
-                {touched && error} 
-            </div>    
+            { renderErrorField(error, touched) }
         </div>
     );
 };
@@ -64,14 +68,12 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
 /////////////////////////////////////////////////////////////////////////////////////
 // renderServingsField - function to render servings field component
 /////////////////////////////////////////////////////////////////////////////////////
-const renderServingsField = ( { input, label, meta: {error, submitFailed } }) => {
+const renderServingsField = ( { input, label, meta: {error, touched } }) => {
     return (
     <div className="form__servings-field col s1">   
         <label>{label}</label>     
         <input {...input} type="number" /> 
-        <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
-            {submitFailed && error} 
-        </div>    
+        { renderErrorField(error, touched) }
     </div>);
 };
 
