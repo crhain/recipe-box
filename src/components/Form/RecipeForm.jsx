@@ -11,7 +11,7 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 const renderIdField = ({ input } ) => {    
     return (
         <div className="form__id-field">           
-            <input {...input} style={{ marginBottom: '5px', display: 'none' }} />             
+            <input {...input} type='text' style={{ marginBottom: '5px', display: 'none' }} />             
         </div>
     );
 };
@@ -23,7 +23,7 @@ const renderTitleField = ({ input, label, meta: { error, touched } }) => {
     return (
         <div className="form__title-field">
             <label>{label}</label>
-            <input {...input} style={{ marginBottom: '5px' }} /> 
+            <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
             <div style={{ marginBottom: '20px', color: 'red' }}>  
                 {touched && error} 
             </div>    
@@ -38,7 +38,7 @@ const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
     return (
         <div className="form__description-field">
             <label>{label}</label>
-            <input {...input} style={{ marginBottom: '5px' }} /> 
+            <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
             <div style={{ marginBottom: '20px', color: 'red' }}>  
                 {touched && error} 
             </div>    
@@ -53,7 +53,7 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
     return (
         <div className="form__image-field">
             <label>{label}</label>
-            <input {...input} style={{ marginBottom: '5px' }} /> 
+            <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
             <div style={{ marginBottom: '20px', color: 'red' }}>  
                 {touched && error} 
             </div>    
