@@ -24,7 +24,7 @@ const renderTitleField = ({ input, label, meta: { error, touched } }) => {
         <div className="form__title-field">
             <label>{label}</label>
             <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
-            <div style={{ marginBottom: '20px', color: 'red' }}>  
+            <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
                 {touched && error} 
             </div>    
         </div>
@@ -39,7 +39,7 @@ const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
         <div className="form__description-field">
             <label>{label}</label>
             <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
-            <div style={{ marginBottom: '20px', color: 'red' }}>  
+            <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
                 {touched && error} 
             </div>    
         </div>
@@ -54,7 +54,7 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
         <div className="form__image-field">
             <label>{label}</label>
             <input {...input} type='text' style={{ marginBottom: '5px' }} /> 
-            <div style={{ marginBottom: '20px', color: 'red' }}>  
+            <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
                 {touched && error} 
             </div>    
         </div>
@@ -69,7 +69,7 @@ const renderServingsField = ( { input, label, meta: {error, submitFailed } }) =>
     <div className="form__servings-field col s1">   
         <label>{label}</label>     
         <input {...input} type="number" /> 
-        <div style={{ marginBottom: '20px', color: 'red' }}>  
+        <div className="form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
     </div>);

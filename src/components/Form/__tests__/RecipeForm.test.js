@@ -33,32 +33,41 @@ describe("RecipeForm", () => {
     
     it('renders a id input field with correct components', () => {
         let element = component.find('div.form__id-field');
-        expect(element.length).toEqual(1)
-        expect(element.find("input[type='text']").length).toEqual(1)          
+        expect(element.length).toEqual(1);        
+        expect(element.find("input[type='text']").length).toEqual(1);
+        
     });
 
     it('renders a title input field with correct components', () => {
-        let element = component.find('div.form__title-field');
+        let element = component.find('div.form__title-field');        
         expect(element.length).toEqual(1);
-        expect(element.find("input[type='text']").length).toEqual(1)          
+        expect(element.find("label").length).toEqual(1);
+        expect(element.find("input[type='text']").length).toEqual(1);          
+        expect(element.find("div.form__error-field").length).toEqual(1);
     });
 
     it('renders a description input field', () => {
-        let element = component.find('div.form__description-field');
+        let element = component.find('div.form__description-field');        
         expect(element.length).toEqual(1);
-        expect(element.find("input[type='text']").length).toEqual(1)                    
+        expect(element.find("label").length).toEqual(1);
+        expect(element.find("input[type='text']").length).toEqual(1);
+        expect(element.find("div.form__error-field").length).toEqual(1);
     });
 
     it('renders an image input field', () => {
         let element = component.find('div.form__image-field');
         expect(element.length).toEqual(1);
-        expect(element.find("input[type='text']").length).toEqual(1)                    
+        expect(element.find("label").length).toEqual(1);
+        expect(element.find("input[type='text']").length).toEqual(1);
+        expect(element.find("div.form__error-field").length).toEqual(1);
     });
 
     it('renders a servings input field', () => {
-        let element = component.find('div.form__servings-field');
+        let element = component.find('div.form__servings-field');        
         expect(element.length).toEqual(1); 
-        expect(element.find("input[type='number']").length).toEqual(1);         
+        expect(element.find("label").length).toEqual(1);
+        expect(element.find("input[type='number']").length).toEqual(1);
+        expect(element.find("div.form__error-field").length).toEqual(1);        
     });
 
     it('renders an ingredients field', () => {
