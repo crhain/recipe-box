@@ -32,35 +32,43 @@ describe("RecipeForm", () => {
     });
     
     it('renders a id input field', () => {
-        expect(component.find('div.form__id-field').length).toEqual(1)          
+        let element = component.find('div.form__id-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders a title input field', () => {
-        expect(component.find('div.form__title-field').length).toEqual(1)          
+        let element = component.find('div.form__title-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders a description input field', () => {
-        expect(component.find('div.form__description-field').length).toEqual(1)          
+        let element = component.find('div.form__description-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders an image input field', () => {
-        expect(component.find('div.form__image-field').length).toEqual(1)          
+        let element = component.find('div.form__image-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders a servings input field', () => {
-        expect(component.find('div.form__servings-field').length).toEqual(1)          
+        let element = component.find('div.form__servings-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders an ingredients field', () => {
-        expect(component.find('div.form__ingredients-field').length).toEqual(1)          
+        let element = component.find('div.form__ingredients-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders an instructions field', () => {
-        expect(component.find('div.form__instructions-field').length).toEqual(1)          
+        let element = component.find('div.form__instructions-field');
+        expect(element.length).toEqual(1)          
     });
 
     it('renders a submit button', () => {
-        expect(component.find('button.form__submit-button').length).toEqual(1)
+        let element = component.find('button.form__submit-button');
+        expect(element.length).toEqual(1)
     });
     
 });
