@@ -9,7 +9,7 @@ const renderQuantityInput = ( { input, label, meta: {error, submitFailed } }) =>
     return (
     <div className="input-field col s1">        
         <input {...input} type="number" placeholder={label} /> 
-        <div style={{ marginBottom: '20px', color: 'red' }}>  
+        <div className= "form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
     </div>);
@@ -22,7 +22,7 @@ const renderMeasureInput = ( { input, label, meta: {error, submitFailed } }) => 
     return (
     <div className="input-field col s2">        
         <input {...input} type="text" placeholder={label} /> 
-        <div style={{ marginBottom: '20px', color: 'red' }}>  
+        <div className= "form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
     </div>);
@@ -35,7 +35,7 @@ const renderIngredientInput = ( { input, label, meta: {error, submitFailed } }) 
     return (
     <div className="input-field col s8">        
         <input {...input} type="text" placeholder={label} /> 
-        <div style={{ marginBottom: '20px', color: 'red' }}>  
+        <div className= "form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
     </div>);
@@ -57,7 +57,7 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                     >
                         Add Ingredient
                     </button>   
-                    <div style={{ marginBottom: '20px', color: 'red' }}>  
+                    <div className= "form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
                         { submitFailed && error } 
                     </div>               
                 </li>
