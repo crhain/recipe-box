@@ -8,7 +8,7 @@ const renderInstructionInput = ( { input, label, meta: {error, submitFailed } })
     return (
     <div className="input-field col s11">        
         <input {...input} type="text" placeholder={label} /> 
-        <div style={{ marginBottom: '20px', color: 'red' }}>  
+        <div className= "form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
             {submitFailed && error} 
         </div>    
     </div>);
@@ -29,7 +29,7 @@ export default ({ fields, meta: {error, submitFailed } }) => {
                     >
                         Add Instruction
                     </button>   
-                    <div style={{ marginBottom: '20px', color: 'red' }}>  
+                    <div className= "form__error-field" style={{ marginBottom: '20px', color: 'red' }}>  
                         { submitFailed && error } 
                     </div>               
                 </li>
