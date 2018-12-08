@@ -73,12 +73,13 @@ describe("RecipeForm", () => {
     it('renders an ingredients field', () => {
         let element = component.find('div.form__ingredients-field');
         expect(element.length).toEqual(1);  
-        expect(element.find('button').length).toEqual(1);        
+        expect(element.find('button').length).toEqual(1);                
     });
 
     it('renders an instructions field', () => {
         let element = component.find('div.form__instructions-field');
         expect(element.length).toEqual(1);          
+        expect(element.find('button').length).toEqual(1);          
     });
 
     it('renders a submit button', () => {
@@ -88,21 +89,4 @@ describe("RecipeForm", () => {
     
 });
 
-describe("RecipeFormInstructionEntry", () => {
-        
-    beforeEach(() => {
-        component = shallow(
-            <RecipeFormInstructionEntry 
-                input={input}
-                label={"test"}
-                meta={ meta } 
-                fields={[]}
-            />          
-        );
-    });
 
-    it('renders correctly', () => {
-        expect(component.exists()).toEqual(true);
-    });
-    
-});
