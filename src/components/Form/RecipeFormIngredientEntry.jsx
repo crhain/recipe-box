@@ -51,7 +51,7 @@ export default ({ fields, meta: {error, submitFailed } }) => {
             <ul>
                 <li>
                     <button 
-                        className="waves-effect waves-light btn form_ingredient-submit-btn"
+                        className="waves-effect waves-light btn form_ingredient-add-btn"
                         type="button" 
                         onClick={ () => fields.push({}) }
                     >
