@@ -1,7 +1,7 @@
 import model  from "model/seed.js";
 import Model from "model/";
 import seed from "model/seed";
-import { publicDecrypt } from "crypto";
+import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
 
 Model.toggleTestMode(true);
 
@@ -59,13 +59,13 @@ describe("Model", () => {
         it("will not add more than 50 recipes", () => {
             //populate more than recipe limit into database
             let numRecipesLimit = 50;
-            let numRecipesToAdd = numRecipesLimit + 1 - seed.length; 
+            let numRecipesToAdd = numRecipesLimit - seed.length; 
             for(let i = 0; i < numRecipesToAdd; i++){
                 Model.addRecipe(newRecipe);
             }
 
             //should return a recipes array with only 50 recipes
-            expect(Model.getAllRecipes().length).toEqual(50);
+            expect(() => Model.addRecipe(newRecipe)).toThrow(RecipeLimitReached);            
         });
     });
 
@@ -87,7 +87,7 @@ describe("Model", () => {
     describe("deleteRecipeById", () => {
         it("deletes a recipe by id from model", () => {
             Model.deleteRecipeById("beefstrogonoff");
-            expect(Model.getRecipeById("beefstrogonoff").error).toBeTruthy();
+            expect(() => {return Model.getRecipeById("beefstrogonoff")}).toThrowError(RecipeDoesNotExist);
         });
     });
 });
