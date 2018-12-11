@@ -42,7 +42,7 @@ Model.addRecipe = function(recipe){
         recipes.push(recipe);  
         addRecipesToStorage();
     } else {
-        // TODO: throw a specific error indicating max number of recipes reached
+        throw new RecipeLimitReached();
     }
                     
     return recipes;
@@ -56,7 +56,7 @@ Model.editRecipe = function(recipe){
     //find recipe in recipes
     let matchPosition = recipes.findIndex( matchingRecipe => matchingRecipe.id === recipe.id  );
     if(matchPosition === -1){
-        throw new Error("Recipe does not exist!");    
+        throw new RecipeDoesNotExist();    
     }
 
     recipes[matchPosition] = recipe;   
@@ -71,7 +71,7 @@ Model.getRecipeById = function(id){
     let recipe = recipes.filter( recipe => recipe.id === id);
     
     if(recipe.length < 1){
-        return { error: "Recipe does not exist" };
+        throw new RecipeDoesNotExist(); 
     }        
         
     return recipe[0];    
@@ -82,7 +82,7 @@ Model.deleteRecipeById = function(id){
     refreshRecipes();
     let matchPosition = recipes.findIndex( recipe => recipe.id === id );
     if(matchPosition === -1){        
-        return { error: "Recipe does not exist" };
+        throw new RecipeDoesNotExist(); 
     }
 
     //splice it out
