@@ -48,10 +48,10 @@ export default (state = [], action, model = Model) => {
             recipe.ingredients = action.payload.recipe.ingredients;
             recipe.instructions = action.payload.recipe.instructions;
             
-            state = model.editRecipe(recipe);
+            newState = model.editRecipe(recipe);
                         
             action.history.push("/");
-            return state;
+            return newState;
 
         //action continas the **id** of a recipe to be deleted    
         case DELETE_RECIPE:            
