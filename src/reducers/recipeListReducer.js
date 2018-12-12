@@ -7,10 +7,10 @@ export default (state = [], action, model = Model) => {
     let newState = state;
     switch (action.type) {
         case GET_RECIPES:
-            if(state.length < 1){
-                return model.getAllRecipes();      
+            if(newState.length < 1){
+                newState = model.getAllRecipes();      
             }            
-            return state;
+            return newState;
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:                   
             recipe.title = action.payload.recipe.title;
