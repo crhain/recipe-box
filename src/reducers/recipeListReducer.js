@@ -66,7 +66,7 @@ export default (state = [], action, model = Model) => {
             action.history.push("/");
             return newState;
         default:
-            return state;
+            return newState;
     }
     
 }
