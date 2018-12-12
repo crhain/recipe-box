@@ -1,8 +1,10 @@
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
+import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
 import Model from "model/index";
 
 export default (state = [], action, model = Model) => {    
     let recipe = {};
+    let newState = state;
     switch (action.type) {
         case GET_RECIPES:
             if(state.length < 1){
@@ -18,10 +20,23 @@ export default (state = [], action, model = Model) => {
             recipe.ingredients = action.payload.recipe.ingredients;
             recipe.instructions = action.payload.recipe.instructions;
                          
-            state = model.addRecipe(recipe);
-            
+            try {
+                newState = model.addRecipe(recipe);
+            }
+            catch(error){
+                if(error instanceof DuplicateRecipe){
+                    throw new DuplicateRecipe();
+                }
+
+                if(error instanceof RecipeLimitReached){
+                    throw new RecipeLimitReached();
+                }
+
+                console.log(error);
+            }
+                        
             action.history.push("/");
-            return state;
+            return newState;
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
