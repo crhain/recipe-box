@@ -54,9 +54,7 @@ export default (state = [], action, model = Model) => {
             return state;
 
         //action continas the **id** of a recipe to be deleted    
-        case DELETE_RECIPE:
-            let newState = state;
-
+        case DELETE_RECIPE:            
             try{
                 newState = model.deleteRecipeById(action.payload.id);
             } catch(error){
