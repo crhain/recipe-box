@@ -6,6 +6,7 @@ import RecipeView from 'components/Recipe/RecipeView';
 import RecipeEdit from 'components/Recipe/Edit';
 import RecipeNew from 'components/Recipe/New';
 import Header from 'components/Header';
+import MessageDisplay from 'components/MessageDisplay';
 import 'components/App.css';
 import '../../node_modules/materialize-css/dist/css/materialize.min.css';
 
@@ -15,6 +16,7 @@ class App extends Component {
         <Root>
           <div>
             <Header />
+            <MessageDisplay />
             <Switch>
               <Route exact path="/recipe/new" component={RecipeNew} />        
               <Route exact path="/recipe/:id" component={RecipeView} />              
