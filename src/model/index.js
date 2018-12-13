@@ -147,6 +147,4 @@ function populateSeedDataToStorage(){
     }
 }
 
-
-
 export default Model;

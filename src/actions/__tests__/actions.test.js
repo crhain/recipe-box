@@ -1,5 +1,5 @@
-import { getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe } from "actions/";
-import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
+import { getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe, setMessageDisplay } from "actions/";
+import { GET_RECIPES, GET_RECIPE, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE, SET_MESSAGE_DISPLAY } from "actions/types";
 
 const recipe = {
     id: "beefstrogonoff", 
@@ -67,6 +67,17 @@ describe("Actions", () => {
 
         it("Should return an action with recipeID = to recipeID passed to action", () => {
             expect(deleteRecipe(recipeID).payload.id).toEqual(recipeID);
+        });
+    });
+
+    describe("setMessageDisplay action", () => {
+        it("Should return an action with type SET_MESSAGE_DISPLAY", () => {
+            expect(setMessageDisplay("").type).toEqual(SET_MESSAGE_DISPLAY);
+        });
+
+        it("Should return an action with message = to message passed to action", () => {
+            let message = "This is just a testing of the emergency message service.";
+            expect(setMessageDisplay(message).payload.message).toEqual(message);
         });
     });
     
