@@ -1,14 +1,18 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
+import Root from "components/Root";
 import MessageDisplay from 'components/MessageDisplay';
+
 
 var component;
 
 describe("MessageDisplay", () => {
 
     beforeEach(() => {
-        component = shallow(
-            <MessageDisplay />        
+        component = mount(
+            <Root>
+                <MessageDisplay />        
+            </Root>            
         );
     });
 
