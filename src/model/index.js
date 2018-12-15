@@ -1,6 +1,8 @@
 import seed from "model/seed.js";
 import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
 
+const MAX_RECIPES = 50;
+
 let recipes = [];
 let testMode = false;
 let Model = {};
@@ -38,7 +40,7 @@ Model.addRecipe = function(recipe){
 
     recipe.id = getRecipeID();
     //push recipe to recipes
-    if(recipes.length < 50){
+    if(recipes.length < MAX_RECIPES){
         recipes.push(recipe);  
         addRecipesToStorage();
     } else {
