@@ -1,7 +1,7 @@
 import seed from "model/seed.js";
 import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
 
-const MAX_RECIPES = 50;
+let MAX_RECIPES = 50;
 
 let recipes = [];
 let testMode = false;
@@ -22,6 +22,9 @@ Model.toggleTestMode = function(state){
     }    
 }
 
+Model.setMaxRecipes = function(max){
+    MAX_RECIPES = max;
+}
 
 Model.getAllRecipes = function(){
     
