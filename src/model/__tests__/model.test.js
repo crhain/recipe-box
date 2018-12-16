@@ -58,14 +58,13 @@ describe("Model", () => {
 
         it("will not add more than 50 recipes", () => {
             //populate more than recipe limit into database
-            let numRecipesLimit = 50;
-            let numRecipesToAdd = numRecipesLimit - seed.length; 
-            for(let i = 0; i < numRecipesToAdd; i++){
-                Model.addRecipe(newRecipe);
-            }
-
+            let numRecipesLimit = seed.length;
+            Model.setMaxRecipes(numRecipesLimit);                                                
             //should return a recipes array with only 50 recipes
             expect(() => Model.addRecipe(newRecipe)).toThrow(RecipeLimitReached);            
+
+            Model.setMaxRecipes(50);
+
         });
     });
 
