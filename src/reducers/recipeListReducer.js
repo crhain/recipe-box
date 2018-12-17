@@ -2,6 +2,7 @@ import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/typ
 import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
 import Model from "model/index";
 
+
 export default (state = [], action, model = Model) => {    
     let recipe = {};
     let newState = state;
@@ -24,15 +25,15 @@ export default (state = [], action, model = Model) => {
                 newState = model.addRecipe(recipe);
             }
             catch(error){
-                if(error instanceof DuplicateRecipe){
-                    throw new DuplicateRecipe();
+                if(error instanceof DuplicateRecipe){                   
+                    throw new DuplicateRecipe();                    
                 }
 
                 if(error instanceof RecipeLimitReached){
                     throw new RecipeLimitReached();
                 }
-
-                console.log(error);
+                
+                throw new Error("An error has occured");
             }
                         
             action.history.push("/");

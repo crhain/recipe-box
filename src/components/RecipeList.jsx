@@ -5,7 +5,6 @@ import { getRecipes } from "actions/";
 import EditButton from "components/Buttons/EditButton";
 import DeleteButton from "components/Buttons/DeleteButton";
 
-
 export class RecipeList extends Component{
     
     constructor(props){
