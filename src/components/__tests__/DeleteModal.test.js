@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import Root from 'components/Root';
+import { Root } from 'components/Root';
 import DeleteModal  from "components/DeleteModal";
 
 var component;

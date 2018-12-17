@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import RecipeForm from "components/Form/RecipeForm";
 import RecipeFormIngredientEntry from "components/Form/RecipeFormIngredientEntry";
 import RecipeFormInstructionEntry from "components/Form/RecipeFormInstructionEntry";
-import Root from 'components/Root';
+import { Root } from 'components/Root';
 
 let component; 
 let meta = {error: null, touched: false};

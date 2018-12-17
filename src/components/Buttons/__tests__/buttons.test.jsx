@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Root from 'components/Root';
+import { Root } from 'components/Root';
 import AddButton from "components/Buttons/AddButton";
 import BackButton from "components/Buttons/BackButton";
 import DeleteButton from "components/Buttons/DeleteButton";

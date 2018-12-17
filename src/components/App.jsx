@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Root from 'components/Root';
+import { Root } from 'components/Root';
 import RecipeList from 'components/RecipeList';
 import RecipeView from 'components/Recipe/RecipeView';
 import RecipeEdit from 'components/Recipe/Edit';

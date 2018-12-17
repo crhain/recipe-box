@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import model  from "model/seed.js";
 import { RecipeList } from 'components/RecipeList';
-import Root from 'components/Root';
+import { Root } from 'components/Root';
 
 
 describe('RecipeList', () => {
