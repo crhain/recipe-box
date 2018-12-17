@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
+import { store } from 'components/Root';
+import { flashMessage } from 'redux-flash';
 
 /////////////////////////////////////////////////////////////////////////////////////
 // renderErrorField - function to render erorr field sub component
@@ -144,7 +146,11 @@ class RecipeForm extends Component {
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
                         onClick={ handleSubmit((values) => {                                                                                                                                                   
-                            formHandler(values, history);
+                            try {
+                                formHandler(values, history);
+                            } catch(error){
+                                store.dispatch(flashMessage("An error has occured!"));
+                            }
                         }) } 
                         style={{ marginBottom: "20px" }}
                         type="submit"                        
