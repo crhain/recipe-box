@@ -3,6 +3,7 @@ import { reducer as formReducer } from 'redux-form';
 import RecipeListReducer from 'reducers/recipeListReducer';
 import RecipeReducer from "reducers/recipeReducer";
 import ModalReducer from "reducers/modalReducer";
+import { reducer as flashReducer } from 'redux-flash';
 import MessageDisplayReducer from "reducers/messageDisplayReducer";
 
 
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   selectedRecipe: RecipeReducer,
   recipeToDelete: ModalReducer,
   messageDisplay: MessageDisplayReducer,
+  flash: flashReducer,
   form: formReducer
 });
 

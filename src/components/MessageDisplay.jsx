@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getLatestMessage } from 'redux-flash';
 
-class MessageDisplay extends Component{
-    render () {
-        return (
-            <div className="message-display"> 
-                {this.props.messageDisplay}         
-            </div>
-        );
-    };
+function MessageDisplay({ flash }) {
+    return (
+        <div className="message-display"> 
+            { 
+                flash && <div>{ flash.message } </div> 
+            }         
+        </div>
+    );
 }
 
-function mapStateToProps({ messageDisplay }){
-    return { messageDisplay };
+function mapStateToProps(state){
+    return { flash: getLatestMessage(state) };
 }
 
 export default connect(mapStateToProps)(MessageDisplay);
