@@ -11,7 +11,6 @@ const rootReducer = combineReducers({
   recipes: RecipeListReducer,
   selectedRecipe: RecipeReducer,
   recipeToDelete: ModalReducer,
-  messageDisplay: MessageDisplayReducer,
   flash: flashReducer,
   form: formReducer
 });
