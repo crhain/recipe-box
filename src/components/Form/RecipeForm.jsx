@@ -148,8 +148,8 @@ class RecipeForm extends Component {
                         onClick={ handleSubmit((values) => {                                                                                                                                                   
                             try {
                                 formHandler(values, history);
-                            } catch(error){
-                                store.dispatch(flashMessage("An error has occured!"));
+                            } catch(error){                                
+                                store.dispatch(flashMessage(error.message));
                             }
                         }) } 
                         style={{ marginBottom: "20px" }}

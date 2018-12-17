@@ -25,15 +25,13 @@ export default (state = [], action, model = Model) => {
                 newState = model.addRecipe(recipe);
             }
             catch(error){
-                if(error instanceof DuplicateRecipe){                   
+                if(error.name == 'DuplicateRecipe'){                   
                     throw new DuplicateRecipe();                    
-                }
-
-                if(error instanceof RecipeLimitReached){
+                } else if(error.name == 'RecipeLimitReached'){
                     throw new RecipeLimitReached();
-                }
-                
-                throw new Error("An error has occured");
+                } else {
+                    throw new Error("An error has occured");
+                }                
             }
                         
             action.history.push("/");
