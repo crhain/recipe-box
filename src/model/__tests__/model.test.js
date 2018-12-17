@@ -56,7 +56,7 @@ describe("Model", () => {
 
         });
 
-        it("will not add more than 50 recipes", () => {
+        it("will not add more than maximum allowed recipes", () => {
             //populate more than recipe limit into database
             let numRecipesLimit = seed.length;
             Model.setMaxRecipes(numRecipesLimit);                                                
