@@ -143,8 +143,7 @@ class RecipeForm extends Component {
                     
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
-                        onClick={ handleSubmit((values, dispatch) => {                                                
-                            //must use dispatch with redux-form or it does not fire action handler                                                                        
+                        onClick={ handleSubmit((values) => {                                                                                                                                                   
                             formHandler(values, history);
                         }) } 
                         style={{ marginBottom: "20px" }}

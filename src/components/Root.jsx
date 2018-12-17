@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { middleware as flashMiddleware } from 'redux-flash';
 import reducers from 'reducers';
 
-export const store = createStore(reducers, {}, applyMiddleware(flashMiddleware()));
+export const store = createStore(reducers, {}, applyMiddleware(flashMiddleware({timeout: 10000})));
 
 export const Root = function(props){
     return (
