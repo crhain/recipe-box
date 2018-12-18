@@ -5,6 +5,7 @@
   "homepage": "https://crhwebdev.github.io/fcc-recipe-box.git",
   "dependencies": {
     "axios": "^0.18.0",
+    "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.10",
     "materialize-css": "^1.0.0",
     "react": "^15.5.4",
