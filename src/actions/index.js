@@ -8,12 +8,7 @@ import {
     ADD_RECIPE, 
     EDIT_RECIPE, 
     DELETE_RECIPE, 
-    SET_RECIPE_TO_DELETE, 
-    SET_MESSAGE_DISPLAY } from "actions/types";
-
-export const setMessageDisplay = ( message ) => {    
-    return { type: SET_MESSAGE_DISPLAY, payload: { message }}
-}
+    SET_RECIPE_TO_DELETE } from "actions/types";
 
 export const getRecipes = () => {            
     const payload = model.getAllRecipes();             
