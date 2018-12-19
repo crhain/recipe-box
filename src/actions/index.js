@@ -1,3 +1,5 @@
+import { store } from 'components/Root';
+import { flashMessage } from 'redux-flash';
 import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
 import model from "model/index";
 import { 
@@ -9,7 +11,7 @@ import {
     SET_RECIPE_TO_DELETE, 
     SET_MESSAGE_DISPLAY } from "actions/types";
 
-export const setMessageDisplay = ( message ) => {
+export const setMessageDisplay = ( message ) => {    
     return { type: SET_MESSAGE_DISPLAY, payload: { message }}
 }
 
@@ -31,27 +33,28 @@ export const getRecipe = ( id ) => {
 }
 
 export const addRecipe = ( recipe, history ) => {
+    //TODO: The big one... move logic adding a new recipe from recipeListReducer here
+    //   and also move logic for triggering flash message here
     return { type: ADD_RECIPE, payload: { recipe }, history };
 }
 
 export const editRecipe = ( recipe, history ) => {             
-    let payload = model.editRecipe(recipe);                
-    history.push("/");
+    let payload = model.editRecipe(recipe);
+    store.dispatch(flashMessage("Recipe succesfully edited!"));                    
+    history.push("/");    
     return { type: EDIT_RECIPE, payload };
 }
 
 export const deleteRecipe = ( id, history ) => {   
-    let payload = [];
-
+    let payload = [];    
     try{
         payload = model.deleteRecipeById(id);
+        store.dispatch(flashMessage("Recipe succesfully deleted!"));                
         history.push("/");     
     } catch(error){
-        if(error instanceof RecipeDoesNotExist){
-            //TODO: if recipe does not exist, we need to just return existing
-            // state by calling getRecipes() and assigning to payload variable
-            // then flash a message. 
-            console.log(error.message);
+        if(error instanceof RecipeDoesNotExist){            
+            store.dispatch(flashMessage(error.message));
+            payload = model.getAllRecipes();                            
         }
     }
                                                                         
