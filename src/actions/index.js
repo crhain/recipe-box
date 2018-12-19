@@ -34,8 +34,10 @@ export const addRecipe = ( recipe, history ) => {
     return { type: ADD_RECIPE, payload: { recipe }, history };
 }
 
-export const editRecipe = ( recipe, history ) => { 
-    return { type: EDIT_RECIPE, payload: { recipe }, history };
+export const editRecipe = ( recipe, history ) => {             
+    let payload = model.editRecipe(recipe);                
+    history.push("/");
+    return { type: EDIT_RECIPE, payload };
 }
 
 export const deleteRecipe = ( id, history ) => {        

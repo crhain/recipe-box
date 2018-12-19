@@ -36,18 +36,8 @@ export default (state = [], action, model = Model) => {
 
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:
-            recipe.title = action.payload.recipe.title;
-            recipe.description = action.payload.recipe.description;
-            recipe.image = action.payload.recipe.image;
-            recipe.servings = action.payload.recipe.servings;
-            recipe.id = action.payload.recipe.id;
-            recipe.ingredients = action.payload.recipe.ingredients;
-            recipe.instructions = action.payload.recipe.instructions;
             
-            newState = model.editRecipe(recipe);
-                        
-            action.history.push("/");
-            return newState;
+            return action.payload;
 
         //action continas the **id** of a recipe to be deleted    
         case DELETE_RECIPE:            
