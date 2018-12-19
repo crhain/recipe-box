@@ -1,3 +1,5 @@
+import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
+import model from "model/index";
 import { 
     GET_RECIPES, 
     GET_RECIPE, 
@@ -7,8 +9,9 @@ import {
     SET_RECIPE_TO_DELETE, 
     SET_MESSAGE_DISPLAY } from "actions/types";
 
-export const getRecipes = () => {
-    return { type: GET_RECIPES, payload: null };
+export const getRecipes = () => {            
+    const payload = model.getAllRecipes();             
+    return { type: GET_RECIPES, payload };
 }
 
 export const getRecipe = ( id ) => {

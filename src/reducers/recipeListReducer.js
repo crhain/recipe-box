@@ -7,11 +7,8 @@ export default (state = [], action, model = Model) => {
     let recipe = {};
     let newState = state;
     switch (action.type) {
-        case GET_RECIPES:
-            if(newState.length < 1){
-                newState = model.getAllRecipes();      
-            }            
-            return newState;
+        case GET_RECIPES:                    
+            return action.payload;
         //action contains **recipe** to be added                                              
         case ADD_RECIPE:                   
             recipe.title = action.payload.recipe.title;
