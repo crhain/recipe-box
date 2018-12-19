@@ -29,28 +29,15 @@ export default (state = [], action, model = Model) => {
                 } else {
                     throw new Error("An error has occured");
                 }                
-            }
-                        
+            }                        
             action.history.push("/");
             return newState;
-
         //action contains **recipe** to be updated                           
-        case EDIT_RECIPE:
-            
+        case EDIT_RECIPE:            
             return action.payload;
-
         //action continas the **id** of a recipe to be deleted    
-        case DELETE_RECIPE:            
-            try{
-                newState = model.deleteRecipeById(action.payload.id);
-            } catch(error){
-                if(error instanceof RecipeDoesNotExist){
-                    throw new RecipeDoesNotExist();
-                }
-            }
-                                                                            
-            action.history.push("/");
-            return newState;
+        case DELETE_RECIPE:                        
+            return action.payload;
         default:
             return newState;
     }

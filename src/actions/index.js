@@ -40,8 +40,22 @@ export const editRecipe = ( recipe, history ) => {
     return { type: EDIT_RECIPE, payload };
 }
 
-export const deleteRecipe = ( id, history ) => {        
-    return { type: DELETE_RECIPE, payload: { id }, history };
+export const deleteRecipe = ( id, history ) => {   
+    let payload = [];
+
+    try{
+        payload = model.deleteRecipeById(id);
+        history.push("/");     
+    } catch(error){
+        if(error instanceof RecipeDoesNotExist){
+            //TODO: if recipe does not exist, we need to just return existing
+            // state by calling getRecipes() and assigning to payload variable
+            // then flash a message. 
+            console.log(error.message);
+        }
+    }
+                                                                        
+    return { type: DELETE_RECIPE, payload };
 }
 
 export const setRecipeToDelete = ( id ) => {    
