@@ -9,13 +9,25 @@ import {
     SET_RECIPE_TO_DELETE, 
     SET_MESSAGE_DISPLAY } from "actions/types";
 
+export const setMessageDisplay = ( message ) => {
+    return { type: SET_MESSAGE_DISPLAY, payload: { message }}
+}
+
 export const getRecipes = () => {            
     const payload = model.getAllRecipes();             
     return { type: GET_RECIPES, payload };
 }
 
 export const getRecipe = ( id ) => {
-    return { type: GET_RECIPE, payload: { id } };
+    let payload = {};
+    try{
+        payload = model.getRecipeById(id);                                                        
+    } catch(error){
+        if(error instanceof RecipeDoesNotExist){            
+            console.log(error.message);
+        }        
+    }      
+    return { type: GET_RECIPE, payload };
 }
 
 export const addRecipe = ( recipe, history ) => {
@@ -34,6 +46,4 @@ export const setRecipeToDelete = ( id ) => {
     return { type: SET_RECIPE_TO_DELETE, payload: { id } };
 }
 
-export const setMessageDisplay = ( message ) => {
-    return { type: SET_MESSAGE_DISPLAY, payload: { message }}
-}
+
