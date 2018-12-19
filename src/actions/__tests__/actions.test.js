@@ -69,16 +69,5 @@ describe("Actions", () => {
             expect(deleteRecipe(recipeID).payload.id).toEqual(recipeID);
         });
     });
-
-    describe("setMessageDisplay action", () => {
-        it("Should return an action with type SET_MESSAGE_DISPLAY", () => {
-            expect(setMessageDisplay("").type).toEqual(SET_MESSAGE_DISPLAY);
-        });
-
-        it("Should return an action with message = to message passed to action", () => {
-            let message = "This is just a testing of the emergency message service.";
-            expect(setMessageDisplay(message).payload.message).toEqual(message);
-        });
-    });
-    
+        
 });
