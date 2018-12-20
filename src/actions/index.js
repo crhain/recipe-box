@@ -30,7 +30,23 @@ export const getRecipe = ( id ) => {
 export const addRecipe = ( recipe, history ) => {
     //TODO: The big one... move logic adding a new recipe from recipeListReducer here
     //   and also move logic for triggering flash message here
-    return { type: ADD_RECIPE, payload: { recipe }, history };
+    let payload = {};
+                         
+    try {
+        payload = model.addRecipe(recipe);
+        history.push("/");
+    }
+    catch(error){
+        if(error.name == 'DuplicateRecipe'){                   
+            throw new DuplicateRecipe();                    
+        } else if(error.name == 'RecipeLimitReached'){
+            store.dispatch(flashMessage(error.message));
+        } else {
+            throw new Error(error.message);
+        }                
+    }                        
+        
+    return { type: ADD_RECIPE, payload };
 }
 
 export const editRecipe = ( recipe, history ) => {             

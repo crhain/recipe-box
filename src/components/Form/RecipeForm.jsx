@@ -145,13 +145,7 @@ class RecipeForm extends Component {
                     
                     <button 
                         className="waves-effect waves-light btn form__submit-button"
-                        onClick={ handleSubmit((values) => {                                                                                                                                                   
-                            try {
-                                formHandler(values, history);
-                            } catch(error){                                
-                                store.dispatch(flashMessage(error.message));
-                            }
-                        }) } 
+                        onClick={ handleSubmit((values) => formHandler(values, history)) } 
                         style={{ marginBottom: "20px" }}
                         type="submit"                        
                     >

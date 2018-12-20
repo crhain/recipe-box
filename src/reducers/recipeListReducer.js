@@ -10,28 +10,8 @@ export default (state = [], action, model = Model) => {
         case GET_RECIPES:                    
             return action.payload;
         //action contains **recipe** to be added                                              
-        case ADD_RECIPE:                   
-            recipe.title = action.payload.recipe.title;
-            recipe.description = action.payload.recipe.description;
-            recipe.image = action.payload.recipe.image;
-            recipe.servings = action.payload.recipe.servings;            
-            recipe.ingredients = action.payload.recipe.ingredients;
-            recipe.instructions = action.payload.recipe.instructions;
-                         
-            try {
-                newState = model.addRecipe(recipe);
-            }
-            catch(error){
-                if(error.name == 'DuplicateRecipe'){                   
-                    throw new DuplicateRecipe();                    
-                } else if(error.name == 'RecipeLimitReached'){
-                    throw new RecipeLimitReached();
-                } else {
-                    throw new Error("An error has occured");
-                }                
-            }                        
-            action.history.push("/");
-            return newState;
+        case ADD_RECIPE:                               
+            return action.payload;
         //action contains **recipe** to be updated                           
         case EDIT_RECIPE:            
             return action.payload;
