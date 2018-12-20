@@ -34,6 +34,7 @@ export const addRecipe = ( recipe, history ) => {
                          
     try {
         payload = model.addRecipe(recipe);
+        store.dispatch(flashMessage("Successfully added a new recipe!"));
         history.push("/");
     }
     catch(error){
