@@ -1,27 +1,8 @@
 import recipeListReducer from "reducers/recipeListReducer";
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
-import Model from "model/";
+import seed from 'model/seed';
 
 Model.toggleTestMode(true);
-
-const mockModel = {
-    getAllRecipes: () => { return {actionType: "GET_RECIPES"} },
-    addRecipe: (recipe) => { return {actionType: "ADD_RECIPE"} },
-    editRecipe: (recipe) => { return {actionType: "EDIT_RECIPE"} },
-    deleteRecipeById: (recipeId) => { return {actionType: "DELETE_RECIPE"} }
-}
-
-const mockRecipe = {
-    title: "",
-    description: "",
-    image: "",
-    servings: "",
-    id: "",
-    ingredients: [],
-    instructions: []
-}
-
-const mockHistory = [];
 
 describe("recipeListReducer", () => {
     
@@ -29,19 +10,10 @@ describe("recipeListReducer", () => {
         expect(recipeListReducer(undefined, {type: null, payload: null}).length).toEqual(0);
     });
     
-    it("Should call GET_RECIPES case when passed an action with GET_RECIPES type", () => {
-        expect(recipeListReducer(undefined, {type: GET_RECIPES, payload: [], history: mockHistory}, mockModel).actionType).toEqual("GET_RECIPES");
-    });
-
-    it("Should call ADD_RECIPE case when passed an action with ADD_RECIPE type", () => {
-        expect(recipeListReducer(undefined, {type: ADD_RECIPE, payload: {recipe: mockRecipe}, history: mockHistory}, mockModel).actionType).toEqual("ADD_RECIPE");
-    });
-
-    it("Should call EDIT_RECIPE case when passed an action with EDIT_RECIPE type", () => {
-        expect(recipeListReducer(undefined, {type: EDIT_RECIPE, payload: {recipe: mockRecipe} , history: mockHistory}, mockModel).actionType).toEqual("EDIT_RECIPE");
-    });
-
-    it("Should call DELETE_RECIPE case when passed an action with DELETE_RECIPE type", () => {
-        expect(recipeListReducer(undefined, {type: DELETE_RECIPE, payload: {id: mockRecipe.id}, history: mockHistory}, mockModel).actionType).toEqual("DELETE_RECIPE");
-    });
+    it("Should return a list of recipes passed as a payload", () => {
+        expect(recipeListReducer(undefined, {type: GET_RECIPES, payload: seed})).toMatchObject(seed);
+        expect(recipeListReducer(undefined, {type: ADD_RECIPE, payload: seed})).toMatchObject(seed);
+        expect(recipeListReducer(undefined, {type: EDIT_RECIPE, payload: seed})).toMatchObject(seed);
+        expect(recipeListReducer(undefined, {type: DELETE_RECIPE, payload: seed})).toMatchObject(seed);        
+    });    
 });
