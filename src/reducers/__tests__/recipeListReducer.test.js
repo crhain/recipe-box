@@ -2,7 +2,7 @@ import recipeListReducer from "reducers/recipeListReducer";
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
 import seed from 'model/seed';
 
-Model.toggleTestMode(true);
+// Model.toggleTestMode(true);
 
 describe("recipeListReducer", () => {
     
