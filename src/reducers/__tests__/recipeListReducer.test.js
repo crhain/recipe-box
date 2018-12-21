@@ -2,8 +2,6 @@ import recipeListReducer from "reducers/recipeListReducer";
 import { GET_RECIPES, ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE } from "actions/types";
 import seed from 'model/seed';
 
-// Model.toggleTestMode(true);
-
 describe("recipeListReducer", () => {
     
     it("Should return initial state of [] when no action type passed and inital state not set", () => {
