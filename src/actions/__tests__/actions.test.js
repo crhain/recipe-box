@@ -26,7 +26,6 @@ describe("Actions", () => {
     describe("getRecipes action", () => {
         it("Should return an action with type GET_RECIPES", () => {                            
             expect(getRecipes().type).toEqual(GET_RECIPES);
-    
         });
     });
     

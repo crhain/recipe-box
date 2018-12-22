@@ -1,7 +1,7 @@
 import { store } from 'components/Root';
 import { flashMessage } from 'redux-flash';
 import {  RecipeLimitReached, DuplicateRecipe, RecipeDoesNotExist } from "model/error.js";
-import model from "model/index";
+import Model from "model/index";
 import { 
     GET_RECIPES, 
     GET_RECIPE, 
@@ -10,12 +10,12 @@ import {
     DELETE_RECIPE, 
     SET_RECIPE_TO_DELETE } from "actions/types";
 
-export const getRecipes = () => {            
+export const getRecipes = (model = Model) => {            
     const payload = model.getAllRecipes();             
     return { type: GET_RECIPES, payload };
 }
 
-export const getRecipe = ( id ) => {
+export const getRecipe = ( id, model = Model ) => {
     let payload = {};
     try{
         payload = model.getRecipeById(id);                                                        
@@ -27,7 +27,7 @@ export const getRecipe = ( id ) => {
     return { type: GET_RECIPE, payload };
 }
 
-export const addRecipe = ( recipe, history ) => {
+export const addRecipe = ( recipe, history, model = Model ) => {
     //TODO: The big one... move logic adding a new recipe from recipeListReducer here
     //   and also move logic for triggering flash message here
     let payload = {};
@@ -50,14 +50,14 @@ export const addRecipe = ( recipe, history ) => {
     return { type: ADD_RECIPE, payload };
 }
 
-export const editRecipe = ( recipe, history ) => {             
+export const editRecipe = ( recipe, history, model = Model ) => {             
     let payload = model.editRecipe(recipe);
     store.dispatch(flashMessage("Recipe succesfully edited!"));                    
     history.push("/");    
     return { type: EDIT_RECIPE, payload };
 }
 
-export const deleteRecipe = ( id, history ) => {   
+export const deleteRecipe = ( id, history, model = Model ) => {   
     let payload = [];    
     try{
         payload = model.deleteRecipeById(id);
