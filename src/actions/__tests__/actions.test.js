@@ -21,7 +21,6 @@ const recipe = {
 
 const recipeID = "beefstrogonoff";
 
-
 describe("Actions", () => {
     describe("getRecipes action", () => {
         it("Should return an action with type GET_RECIPES", () => {                            

@@ -4,17 +4,17 @@ import HomeButton from "components/Buttons/HomeButton";
 import DeleteModal from "components/DeleteModal";
 
 class Header extends Component {
-    render(){
+    render() {
         return (
             <div>
                 <HomeButton />
-                <AddButton />                
+                <AddButton />
                 <DeleteModal acceptHandler={this.deleteRecipe} >
                     <h4>Delete Confirmation</h4>
                     <p>Do you wish to delete this recipe?</p>
                 </DeleteModal>
             </div>
-        );        
+        );
     }
 }
 

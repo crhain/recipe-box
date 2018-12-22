@@ -1,16 +1,16 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Root } from 'components/Root';
-import DeleteModal  from "components/DeleteModal";
+import DeleteModal from "components/DeleteModal";
 
 var component;
 let mockAcceptHandler = jest.fn();
 
-describe("DeleteModal", () =>{
+describe("DeleteModal", () => {
     beforeEach(() => {
         component = mount(
             <Root>
-                <DeleteModal  acceptHandler={ mockAcceptHandler } />
+                <DeleteModal acceptHandler={mockAcceptHandler} />
             </Root>
         );
     });
@@ -31,7 +31,7 @@ describe("DeleteModal", () =>{
         let buttons = component.find('button.modal-close');
         expect(buttons.length).toEqual(2);
         expect(buttons.get(0).textContent).toEqual('Accept');
-        expect(buttons.get(1).textContent).toEqual('Cancel');        
+        expect(buttons.get(1).textContent).toEqual('Cancel');
     });
-    
+
 });

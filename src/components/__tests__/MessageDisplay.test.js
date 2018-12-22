@@ -11,13 +11,13 @@ describe("MessageDisplay", () => {
     beforeEach(() => {
         component = mount(
             <Root>
-                <MessageDisplay />        
-            </Root>            
+                <MessageDisplay />
+            </Root>
         );
     });
 
-   it("renders correctly", () => {    
+    it("renders correctly", () => {
         expect(component.exists()).toEqual(true);
-   }); 
+    });
 });
 

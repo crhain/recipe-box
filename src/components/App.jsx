@@ -10,21 +10,21 @@ import MessageDisplay from 'components/MessageDisplay';
 import 'components/App.css';
 import '../../node_modules/materialize-css/dist/css/materialize.min.css';
 
-class App extends Component { 
+class App extends Component {
   render() {
-    return (          
-        <Root>
-          <div>
-            <Header />
-            <MessageDisplay />
-            <Switch>
-              <Route exact path="/recipe/new" component={RecipeNew} />        
-              <Route exact path="/recipe/:id" component={RecipeView} />              
-              <Route exact path="/recipe/:id/edit" component={RecipeEdit} />              
-              <Route exact path="/" component={RecipeList} />          
-            </Switch>                  
-          </div>      
-      </Root>   
+    return (
+      <Root>
+        <div>
+          <Header />
+          <MessageDisplay />
+          <Switch>
+            <Route exact path="/recipe/new" component={RecipeNew} />
+            <Route exact path="/recipe/:id" component={RecipeView} />
+            <Route exact path="/recipe/:id/edit" component={RecipeEdit} />
+            <Route exact path="/" component={RecipeList} />
+          </Switch>
+        </div>
+      </Root>
     );
   }
 }

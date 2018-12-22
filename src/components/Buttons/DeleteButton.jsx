@@ -38,5 +38,8 @@ function mapStateToProps({ recipeToDelete }){
     return { recipeToDelete };
 }
 
-export default connect(mapStateToProps, { setRecipeToDelete })(DeleteButton);
+export default connect(
+  mapStateToProps,
+  { setRecipeToDelete }
+)(DeleteButton);
 

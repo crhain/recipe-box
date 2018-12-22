@@ -1,36 +1,30 @@
-
 .recipe-list {
-    // display: inline-block;
-    // width: 75%;
-    // margin: 0 auto;
+  // display: inline-block;
+  // width: 75%;
+  // margin: 0 auto;
 
-    &__recipe {
-        display: flex;
-        
-        &__name {
-            width: 90%;
-        }
+  &__recipe {
+    display: flex;
+
+    &__name {
+      width: 90%;
     }
+  }
 }
 
 .recipe {
-    &__image {
-        width: 60%;
-        margin: 0 auto;
-    }
+  &__image {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
 .form {
-    // width: 75%;
-    // margin: 0 auto;
+  // width: 75%;
+  // margin: 0 auto;
 
-    &__text-box {
-        resize: none;
-        height: 100px;
-    }
+  &__text-box {
+    resize: none;
+    height: 100px;
+  }
 }
-
-
-
-
-

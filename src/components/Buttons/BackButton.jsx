@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 
-export default class ReturnButton extends Component{
-    constructor(props){
+export default class ReturnButton extends Component {
+    constructor(props) {
         super(props);
         this.handleBackClick = this.handleBackClick.bind(this);
         this.history = props.history;
     }
 
-    handleBackClick(){
+    handleBackClick() {
         this.history.goBack();
     }
 
-    render(){
+    render() {
         return (
-            <button 
-                className="waves-effect waves-light btn back-button"              
+            <button
+                className="waves-effect waves-light btn back-button"
                 onClick={this.handleBackClick}
             >
                 Back
             </button>
         );
     }
-        
+
 }
