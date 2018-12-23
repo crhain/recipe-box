@@ -12,6 +12,7 @@ import {
   EDIT_RECIPE,
   DELETE_RECIPE
 } from "actions/types";
+import Model from "model";
 
 const recipe = {
   id: "beefstrogonoff",
@@ -33,50 +34,58 @@ const recipe = {
 
 const recipeID = "beefstrogonoff";
 
+const modelStub = {
+  getAllRecipes: function() {
+    return [];
+  },
+  addRecipe: function(recipe) {
+    return [];
+  },
+  editRecipe: function(recipe) {
+    return [];
+  },
+  getRecipeById: function(id) {
+    return {};
+  },
+  deleteRecipeById: function(id) {
+    return [];
+  }
+};
+
+const historyStub = [];
+
 describe("Actions", () => {
   describe("getRecipes action", () => {
     it("Should return an action with type GET_RECIPES", () => {
-      expect(getRecipes().type).toEqual(GET_RECIPES);
+      expect(getRecipes(modelStub).type).toEqual(GET_RECIPES);
     });
   });
 
   describe("getRecipe action", () => {
     it("Should return an action with type GET_RECIPE", () => {
-      expect(getRecipe("beefstrogonoff").type).toEqual(GET_RECIPE);
-    });
-
-    it("Should return an action with recipeID equal to one passed in when called", () => {
-      expect(getRecipe(recipeID).payload.id).toEqual(recipeID);
+      expect(getRecipe("beefstrogonoff", modelStub).type).toEqual(GET_RECIPE);
     });
   });
 
   describe("addRecipe action", () => {
     it("Should return an action with type ADD_RECIPE", () => {
-      expect(addRecipe(recipe).type).toEqual(ADD_RECIPE);
-    });
-
-    it("Should return with recipe passed to action attached as recipe", () => {
-      expect(addRecipe(recipe).payload.recipe).toEqual(recipe);
+      expect(addRecipe(recipe, historyStub, modelStub).type).toEqual(
+        ADD_RECIPE
+      );
     });
   });
 
   describe("editRecipe action", () => {
     it("Should return an action with type EDIT_RECIPE", () => {
-      expect(editRecipe(recipe).type).toEqual(EDIT_RECIPE);
-    });
-
-    it("Should return with recipe passed to action attached as recipe", () => {
-      expect(editRecipe(recipe).payload.recipe).toEqual(recipe);
+      expect(editRecipe(recipe, historyStub, modelStub).type).toEqual(
+        EDIT_RECIPE
+      );
     });
   });
 
   describe("deleteRecipe action", () => {
     it("Should return an action with type DELETE_RECIPE", () => {
-      expect(deleteRecipe(recipeID).type).toEqual(DELETE_RECIPE);
-    });
-
-    it("Should return an action with recipeID = to recipeID passed to action", () => {
-      expect(deleteRecipe(recipeID).payload.id).toEqual(recipeID);
+      expect(deleteRecipe(recipeID, modelStub).type).toEqual(DELETE_RECIPE);
     });
   });
 });
