@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { getRecipe, editRecipe } from "actions/";
-import RecipeForm from "components/Form/RecipeForm";
-import BackButton from "components/Buttons/BackButton";
+//@nots-check
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getRecipe, editRecipe } from 'actions/';
+import RecipeForm from 'components/Form/RecipeForm';
+import BackButton from 'components/Buttons/BackButton';
 
 export class Edit extends Component {
   componentDidMount() {
@@ -31,8 +32,8 @@ export class Edit extends Component {
     return (
       <div className="recipe-edit container">
         <h1 className="recipe-edit__heading">
-          Edit:{" "}
-          {this.props.selectedRecipe ? this.props.selectedRecipe.title : ""}
+          Edit:{' '}
+          {this.props.selectedRecipe ? this.props.selectedRecipe.title : ''}
         </h1>
         <div />
         <BackButton history={this.history} />
@@ -41,7 +42,7 @@ export class Edit extends Component {
             formHandler={this.props.editRecipe}
             history={this.history}
             intialRecipeValues={
-              this.initialRecipeValues ? this.initialRecipeValues : ""
+              this.initialRecipeValues ? this.initialRecipeValues : ''
             }
           />
         </div>

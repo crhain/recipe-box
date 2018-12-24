@@ -4,8 +4,8 @@ import {
   ADD_RECIPE,
   EDIT_RECIPE,
   DELETE_RECIPE
-} from "actions/types";
-import Model from "model/index";
+} from 'actions/types';
+import Model from 'model/index';
 
 export default (state = [], action, model = Model) => {
   let recipe = {};

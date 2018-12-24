@@ -1,6 +1,6 @@
 // @nots-check
-import React from "react";
-import { Field } from "redux-form";
+import React from 'react';
+import { Field } from 'redux-form';
 
 /////////////////////////////////////////////////////////////////////////////////////
 // renderQuantityInput - function to render quantity input
@@ -15,7 +15,7 @@ const renderQuantityInput = ({
       <input {...input} type="number" placeholder={label} />
       <div
         className="form__error-field"
-        style={{ marginBottom: "20px", color: "red" }}
+        style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
       </div>
@@ -36,7 +36,7 @@ const renderMeasureInput = ({
       <input {...input} type="text" placeholder={label} />
       <div
         className="form__error-field"
-        style={{ marginBottom: "20px", color: "red" }}
+        style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
       </div>
@@ -57,7 +57,7 @@ const renderIngredientInput = ({
       <input {...input} type="text" placeholder={label} />
       <div
         className="form__error-field"
-        style={{ marginBottom: "20px", color: "red" }}
+        style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
       </div>
@@ -83,7 +83,7 @@ export default ({ fields, meta: { error, submitFailed } }) => {
           </button>
           <div
             className="form__error-field"
-            style={{ marginBottom: "20px", color: "red" }}
+            style={{ marginBottom: '20px', color: 'red' }}
           >
             {submitFailed && error}
           </div>

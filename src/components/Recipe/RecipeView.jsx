@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { getRecipe } from "actions/";
-import BackButton from "components/Buttons/BackButton";
-import EditButton from "components/Buttons/EditButton";
-import DeleteButton from "components/Buttons/DeleteButton";
+//@nots-check
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getRecipe } from 'actions/';
+import BackButton from 'components/Buttons/BackButton';
+import EditButton from 'components/Buttons/EditButton';
+import DeleteButton from 'components/Buttons/DeleteButton';
 
 export class RecipeView extends Component {
   componentWillMount() {
@@ -27,7 +28,7 @@ export class RecipeView extends Component {
     if (this.props.selectedRecipe.ingredients) {
       ingredients = this.props.selectedRecipe.ingredients.map((item, index) => (
         <li className="collection-item recipe__ingredient" key={index}>
-          {item.quantity + " " + item.measure + " " + item.ingredient}
+          {item.quantity + ' ' + item.measure + ' ' + item.ingredient}
         </li>
       ));
     }
@@ -42,7 +43,7 @@ export class RecipeView extends Component {
       instructions = this.props.selectedRecipe.instructions.map(
         (instruction, index) => (
           <li className="collection-item recipe__instruction" key={index}>
-            {index + 1 + ". " + instruction}
+            {index + 1 + '. ' + instruction}
           </li>
         )
       );
@@ -55,12 +56,12 @@ export class RecipeView extends Component {
     return (
       <div className="recipe container">
         <h1 className="recipe__title">
-          {this.props.selectedRecipe ? this.props.selectedRecipe.title : ""}
+          {this.props.selectedRecipe ? this.props.selectedRecipe.title : ''}
         </h1>
         <div className="recipe__image">
           <img
             src={
-              this.props.selectedRecipe ? this.props.selectedRecipe.image : ""
+              this.props.selectedRecipe ? this.props.selectedRecipe.image : ''
             }
           />
         </div>
@@ -71,14 +72,14 @@ export class RecipeView extends Component {
           <p className="recipe__description">
             {this.props.selectedRecipe
               ? this.props.selectedRecipe.description
-              : ""}
+              : ''}
           </p>
           <h3 className="recipe__servings">
-            Servings:{" "}
+            Servings:{' '}
             <span>
               {this.props.selectedRecipe
                 ? this.props.selectedRecipe.servings
-                : ""}
+                : ''}
             </span>
           </h3>
           <div className="recipe__ingredientList">

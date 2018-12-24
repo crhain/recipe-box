@@ -1,5 +1,5 @@
 // @nots-check
-import { GET_RECIPE } from "actions/types";
+import { GET_RECIPE } from 'actions/types';
 
 export default (state = {}, action) => {
   switch (action.type) {

@@ -1,6 +1,6 @@
 // @nots-check
-import React from "react";
-import { Field } from "redux-form";
+import React from 'react';
+import { Field } from 'redux-form';
 
 /////////////////////////////////////////////////////////////////////////////////////
 // renderInstructionInput - function to render instruction input component
@@ -15,7 +15,7 @@ const renderInstructionInput = ({
       <input {...input} type="text" placeholder={label} />
       <div
         className="form__error-field"
-        style={{ marginBottom: "20px", color: "red" }}
+        style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
       </div>
@@ -40,7 +40,7 @@ export default ({ fields, meta: { error, submitFailed } }) => {
           </button>
           <div
             className="form__error-field"
-            style={{ marginBottom: "20px", color: "red" }}
+            style={{ marginBottom: '20px', color: 'red' }}
           >
             {submitFailed && error}
           </div>

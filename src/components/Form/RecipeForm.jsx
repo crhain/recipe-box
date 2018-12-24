@@ -1,9 +1,9 @@
 // @nots-check
-import _ from "lodash";
-import React, { Component } from "react";
-import { reduxForm, Field, FieldArray } from "redux-form";
-import RecipeFormIngredientEntry from "components/Form/RecipeFormIngredientEntry";
-import RecipeFormInstructionEntry from "components/Form/RecipeFormInstructionEntry";
+import _ from 'lodash';
+import React, { Component } from 'react';
+import { reduxForm, Field, FieldArray } from 'redux-form';
+import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
+import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
 /******************************************************************************
  renderErrorField - function to render erorr field sub component
@@ -12,7 +12,7 @@ const renderErrorField = function(error, touched) {
   return (
     <div
       className="form__error-field"
-      style={{ marginBottom: "20px", color: "red" }}
+      style={{ marginBottom: '20px', color: 'red' }}
     >
       {touched && error}
     </div>
@@ -28,7 +28,7 @@ const renderIdField = function({ input }) {
       <input
         {...input}
         type="text"
-        style={{ marginBottom: "5px", display: "none" }}
+        style={{ marginBottom: '5px', display: 'none' }}
       />
     </div>
   );
@@ -41,7 +41,7 @@ const renderTitleField = function({ input, label, meta: { error, touched } }) {
   return (
     <div className="form__title-field">
       <label>{label}</label>
-      <input {...input} type="text" style={{ marginBottom: "5px" }} />
+      <input {...input} type="text" style={{ marginBottom: '5px' }} />
       {renderErrorField(error, touched)}
     </div>
   );
@@ -58,7 +58,7 @@ const renderDescriptionField = function({
   return (
     <div className="form__description-field">
       <label>{label}</label>
-      <input {...input} type="text" style={{ marginBottom: "5px" }} />
+      <input {...input} type="text" style={{ marginBottom: '5px' }} />
       {renderErrorField(error, touched)}
     </div>
   );
@@ -71,7 +71,7 @@ const renderImageField = function({ input, label, meta: { error, touched } }) {
   return (
     <div className="form__image-field">
       <label>{label}</label>
-      <input {...input} type="text" style={{ marginBottom: "5px" }} />
+      <input {...input} type="text" style={{ marginBottom: '5px' }} />
       {renderErrorField(error, touched)}
     </div>
   );
@@ -157,7 +157,7 @@ class RecipeForm extends Component {
           <button
             className="waves-effect waves-light btn form__submit-button"
             onClick={handleSubmit(values => formHandler(values, history))}
-            style={{ marginBottom: "20px" }}
+            style={{ marginBottom: '20px' }}
             type="submit"
           >
             Submit
@@ -175,35 +175,35 @@ const validate = function(values) {
   const errors = {};
 
   if (!values.title) {
-    errors.title = "Required";
+    errors.title = 'Required';
   }
 
   if (!values.description) {
-    errors.description = "Required";
+    errors.description = 'Required';
   }
 
   if (!values.servings) {
-    errors.servings = "Required";
+    errors.servings = 'Required';
   }
 
   if (!values.ingredients || !values.ingredients.length) {
-    errors.ingredients = { _error: "At least one ingredient must be entered" };
+    errors.ingredients = { _error: 'At least one ingredient must be entered' };
   } else {
     const ingredientsArrayErrors = [];
     values.ingredients.forEach((ingredient, ingredientIndex) => {
       const ingredientErrors = {};
       if (!ingredient || !ingredient.quantity) {
-        ingredientErrors.quantity = "Required";
+        ingredientErrors.quantity = 'Required';
         ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
       }
 
       if (!ingredient || !ingredient.measure) {
-        ingredientErrors.measure = "Required";
+        ingredientErrors.measure = 'Required';
         ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
       }
 
       if (!ingredient || !ingredient.ingredient) {
-        ingredientErrors.ingredient = "Required";
+        ingredientErrors.ingredient = 'Required';
         ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
       }
     });
@@ -214,13 +214,13 @@ const validate = function(values) {
 
   if (!values.instructions || !values.instructions.length) {
     errors.instructions = {
-      _error: "At least one instruction must be entered"
+      _error: 'At least one instruction must be entered'
     };
   } else {
     const instructionsArrayErrors = [];
     values.instructions.forEach((instruction, instructionIndex) => {
       if (!instruction || !instruction.length) {
-        instructionsArrayErrors[instructionIndex] = "Required";
+        instructionsArrayErrors[instructionIndex] = 'Required';
       }
     });
     if (instructionsArrayErrors.length) {
@@ -234,6 +234,6 @@ const validate = function(values) {
 //Export a reduxForm using RecipeForm component
 export default reduxForm({
   validate,
-  form: "recipeForm",
+  form: 'recipeForm',
   enableReintialization: true
 })(RecipeForm);

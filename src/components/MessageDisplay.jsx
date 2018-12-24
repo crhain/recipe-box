@@ -1,7 +1,7 @@
 // @nots-check
-import React from "react";
-import { connect } from "react-redux";
-import { getLatestMessage } from "redux-flash";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getLatestMessage } from 'redux-flash';
 
 function MessageDisplay({ flash }) {
   return (

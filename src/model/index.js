@@ -1,10 +1,10 @@
 // @nots-check
-import seed from "model/seed.js";
+import seed from 'model/seed.js';
 import {
   RecipeLimitReached,
   DuplicateRecipe,
   RecipeDoesNotExist
-} from "model/error.js";
+} from 'model/error.js';
 
 let MAX_RECIPES = 50;
 
@@ -99,7 +99,7 @@ Model.deleteRecipeById = function(id) {
 function getRecipeID() {
   return (
     Date.now().toString() +
-    "_" +
+    '_' +
     Math.random()
       .toString(32)
       .slice(2, 9)
@@ -107,11 +107,11 @@ function getRecipeID() {
 }
 
 function initialize() {
-  recipesInitialized = !!localStorage.getItem("recipesInitialized");
+  recipesInitialized = !!localStorage.getItem('recipesInitialized');
   if (!testMode && !recipesInitialized) {
-    console.log("populating data...");
+    console.log('populating data...');
     populateSeedDataToStorage();
-    localStorage.setItem("recipesInitialized", "true");
+    localStorage.setItem('recipesInitialized', 'true');
   }
 }
 
@@ -129,7 +129,7 @@ function shouldAddRecipesToStorage() {
 // in memory storage
 function getRecipesFromStorage() {
   // return seed;
-  let storedRecipes = JSON.parse(localStorage.getItem("recipes"));
+  let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
   return storedRecipes ? storedRecipes : [];
 }
 
@@ -142,21 +142,21 @@ function refreshRecipes() {
 //Function to add recipes to localstorage in appropriate format
 function addRecipesToStorage() {
   if (shouldAddRecipesToStorage()) {
-    localStorage.setItem("recipes", JSON.stringify(recipes));
+    localStorage.setItem('recipes', JSON.stringify(recipes));
   }
 }
 
 //Function to clear local storage
 function clearStorage() {
-  localStorage.removeItem("recipes");
+  localStorage.removeItem('recipes');
 }
 
 //populates premade recipes to storage if storage is empty
 function populateSeedDataToStorage() {
   let retrievedRecipes = getRecipesFromStorage();
   if (retrievedRecipes.length < 1) {
-    console.log("adding recipes...");
-    localStorage.setItem("recipes", JSON.stringify(seed));
+    console.log('adding recipes...');
+    localStorage.setItem('recipes', JSON.stringify(seed));
   }
 }
 

@@ -1,13 +1,13 @@
 // @nots-check
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { deleteRecipe } from "actions/";
-import M from "../../node_modules/materialize-css/dist/js/materialize.min.js";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { deleteRecipe } from 'actions/';
+import M from '../../node_modules/materialize-css/dist/js/materialize.min.js';
 
 class DeleteModal extends Component {
   componentDidMount() {
-    var elems = document.querySelectorAll(".modal");
+    var elems = document.querySelectorAll('.modal');
     M.Modal.init(elems);
   }
   constructor(props) {

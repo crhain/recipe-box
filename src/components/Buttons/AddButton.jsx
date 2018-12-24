@@ -1,11 +1,11 @@
 // @nots-check
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import M from "../../../node_modules/materialize-css/dist/js/materialize.min.js";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import M from '../../../node_modules/materialize-css/dist/js/materialize.min.js';
 
 export default class AddButton extends Component {
   componentDidMount() {
-    var elems = document.querySelectorAll(".tooltipped");
+    var elems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(elems, { enterDelay: 800 });
   }
   render() {

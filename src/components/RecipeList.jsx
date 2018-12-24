@@ -1,10 +1,10 @@
 // @nots-check
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link, withRouter } from "react-router-dom";
-import { getRecipes } from "actions/";
-import EditButton from "components/Buttons/EditButton";
-import DeleteButton from "components/Buttons/DeleteButton";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
+import { getRecipes } from 'actions/';
+import EditButton from 'components/Buttons/EditButton';
+import DeleteButton from 'components/Buttons/DeleteButton';
 
 export class RecipeList extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export class RecipeList extends Component {
         return (
           <li key={index} className="recipe-list__recipe">
             <Link
-              to={"/recipe/" + recipe.id}
+              to={'/recipe/' + recipe.id}
               className="collection-item recipe-list__recipe__name"
             >
               {recipe.title}

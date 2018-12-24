@@ -1,12 +1,12 @@
 // @nots-check
-import { store } from "components/Root";
-import { flashMessage } from "redux-flash";
+import { store } from 'components/Root';
+import { flashMessage } from 'redux-flash';
 import {
   RecipeLimitReached,
   DuplicateRecipe,
   RecipeDoesNotExist
-} from "model/error.js";
-import Model from "model/index";
+} from 'model/error.js';
+import Model from 'model/index';
 import {
   GET_RECIPES,
   GET_RECIPE,
@@ -14,7 +14,7 @@ import {
   EDIT_RECIPE,
   DELETE_RECIPE,
   SET_RECIPE_TO_DELETE
-} from "actions/types";
+} from 'actions/types';
 
 export const getRecipes = (model = Model) => {
   const payload = model.getAllRecipes();
@@ -40,12 +40,12 @@ export const addRecipe = (recipe, history, model = Model) => {
 
   try {
     payload = model.addRecipe(recipe);
-    store.dispatch(flashMessage("Successfully added a new recipe!"));
-    history.push("/");
+    store.dispatch(flashMessage('Successfully added a new recipe!'));
+    history.push('/');
   } catch (error) {
-    if (error.name == "DuplicateRecipe") {
+    if (error.name == 'DuplicateRecipe') {
       throw new DuplicateRecipe();
-    } else if (error.name == "RecipeLimitReached") {
+    } else if (error.name == 'RecipeLimitReached') {
       store.dispatch(flashMessage(error.message));
     } else {
       throw new Error(error.message);
@@ -57,8 +57,8 @@ export const addRecipe = (recipe, history, model = Model) => {
 
 export const editRecipe = (recipe, history, model = Model) => {
   let payload = model.editRecipe(recipe);
-  store.dispatch(flashMessage("Recipe succesfully edited!"));
-  history.push("/");
+  store.dispatch(flashMessage('Recipe succesfully edited!'));
+  history.push('/');
   return { type: EDIT_RECIPE, payload };
 };
 
@@ -66,8 +66,8 @@ export const deleteRecipe = (id, history, model = Model) => {
   let payload = [];
   try {
     payload = model.deleteRecipeById(id);
-    store.dispatch(flashMessage("Recipe succesfully deleted!"));
-    history.push("/");
+    store.dispatch(flashMessage('Recipe succesfully deleted!'));
+    history.push('/');
   } catch (error) {
     if (error instanceof RecipeDoesNotExist) {
       store.dispatch(flashMessage(error.message));

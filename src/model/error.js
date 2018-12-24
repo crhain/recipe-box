@@ -1,21 +1,21 @@
 // @nots-check
 export class RecipeLimitReached extends Error {
-  constructor(message = "No more recipes can be added!") {
+  constructor(message = 'No more recipes can be added!') {
     super(message);
-    this.name = "RecipeLimitReached";
+    this.name = 'RecipeLimitReached';
   }
 }
 
 export class DuplicateRecipe extends Error {
-  constructor(message = "That recipe already exists!") {
+  constructor(message = 'That recipe already exists!') {
     super(message);
-    this.name = "DuplicateRecipe";
+    this.name = 'DuplicateRecipe';
   }
 }
 
 export class RecipeDoesNotExist extends Error {
-  constructor(message = "That recipe does not exist!") {
+  constructor(message = 'That recipe does not exist!') {
     super(message);
-    this.name = "RecipeDoesNotExist";
+    this.name = 'RecipeDoesNotExist';
   }
 }

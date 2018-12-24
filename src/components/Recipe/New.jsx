@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { addRecipe } from "actions/";
-import RecipeForm from "components/Form/RecipeForm";
-import BackButton from "components/Buttons/BackButton";
+//@nots-check
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { addRecipe } from 'actions/';
+import RecipeForm from 'components/Form/RecipeForm';
+import BackButton from 'components/Buttons/BackButton';
 
 export class New extends Component {
   constructor(props) {

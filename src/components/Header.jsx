@@ -1,8 +1,8 @@
 // @nots-check
-import React, { Component } from "react";
-import AddButton from "components/Buttons/AddButton";
-import HomeButton from "components/Buttons/HomeButton";
-import DeleteModal from "components/DeleteModal";
+import React, { Component } from 'react';
+import AddButton from 'components/Buttons/AddButton';
+import HomeButton from 'components/Buttons/HomeButton';
+import DeleteModal from 'components/DeleteModal';
 
 class Header extends Component {
   render() {
