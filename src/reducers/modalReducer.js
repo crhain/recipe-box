@@ -1,3 +1,4 @@
+// @nots-check
 import { SET_RECIPE_TO_DELETE } from "actions/types";
 
 export default (state = null, action) => {

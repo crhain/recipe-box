@@ -1,3 +1,4 @@
+// @nots-check
 export class RecipeLimitReached extends Error {
   constructor(message = "No more recipes can be added!") {
     super(message);

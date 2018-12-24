@@ -1,3 +1,4 @@
+// @nots-check
 import React from "react";
 import { connect } from "react-redux";
 import { getLatestMessage } from "redux-flash";
