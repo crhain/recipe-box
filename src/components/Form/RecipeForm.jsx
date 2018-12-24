@@ -3,13 +3,11 @@ import React, { Component } from "react";
 import { reduxForm, Field, FieldArray } from "redux-form";
 import RecipeFormIngredientEntry from "components/Form/RecipeFormIngredientEntry";
 import RecipeFormInstructionEntry from "components/Form/RecipeFormInstructionEntry";
-import { store } from "components/Root";
-import { flashMessage } from "redux-flash";
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderErrorField - function to render erorr field sub component
-/////////////////////////////////////////////////////////////////////////////////////
-const renderErrorField = (error, touched) => {
+/******************************************************************************
+ renderErrorField - function to render erorr field sub component
+*******************************************************************************/
+const renderErrorField = function(error, touched) {
   return (
     <div
       className="form__error-field"
@@ -20,10 +18,10 @@ const renderErrorField = (error, touched) => {
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderIDField - function to render hidden id field component
-/////////////////////////////////////////////////////////////////////////////////////
-const renderIdField = ({ input }) => {
+/******************************************************************************
+ renderIDField - function to render hidden id field component
+*******************************************************************************/
+const renderIdField = function({ input }) {
   return (
     <div className="form__id-field">
       <input
@@ -35,10 +33,10 @@ const renderIdField = ({ input }) => {
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderTitleField - function to render title field component
-/////////////////////////////////////////////////////////////////////////////////////
-const renderTitleField = ({ input, label, meta: { error, touched } }) => {
+/******************************************************************************
+ renderTitleField - function to render title field component
+*******************************************************************************/
+const renderTitleField = function({ input, label, meta: { error, touched } }) {
   return (
     <div className="form__title-field">
       <label>{label}</label>
@@ -48,10 +46,14 @@ const renderTitleField = ({ input, label, meta: { error, touched } }) => {
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderDescriptionField - function to render description field component
-/////////////////////////////////////////////////////////////////////////////////////
-const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
+/******************************************************************************
+ renderDescriptionField - function to render description field component
+*******************************************************************************/
+const renderDescriptionField = function({
+  input,
+  label,
+  meta: { error, touched }
+}) {
   return (
     <div className="form__description-field">
       <label>{label}</label>
@@ -61,10 +63,10 @@ const renderDescriptionField = ({ input, label, meta: { error, touched } }) => {
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderImageField - function to render image url field component
-/////////////////////////////////////////////////////////////////////////////////////
-const renderImageField = ({ input, label, meta: { error, touched } }) => {
+/******************************************************************************
+ renderImageField - function to render image url field component
+*******************************************************************************/
+const renderImageField = function({ input, label, meta: { error, touched } }) {
   return (
     <div className="form__image-field">
       <label>{label}</label>
@@ -74,10 +76,14 @@ const renderImageField = ({ input, label, meta: { error, touched } }) => {
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderServingsField - function to render servings field component
-/////////////////////////////////////////////////////////////////////////////////////
-const renderServingsField = ({ input, label, meta: { error, touched } }) => {
+/******************************************************************************
+ renderServingsField - function to render servings field component
+*******************************************************************************/
+const renderServingsField = function({
+  input,
+  label,
+  meta: { error, touched }
+}) {
   return (
     <div className="form__servings-field col s1">
       <label>{label}</label>
@@ -87,9 +93,9 @@ const renderServingsField = ({ input, label, meta: { error, touched } }) => {
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// RecipeForm - React class component for form used by New and Edit components
-/////////////////////////////////////////////////////////////////////////////////////
+/******************************************************************************
+ RecipeForm - React class component for form used by New and Edit components
+*******************************************************************************/
 class RecipeForm extends Component {
   componentDidMount() {
     let recipe = this.props.intialRecipeValues;
@@ -161,10 +167,10 @@ class RecipeForm extends Component {
   }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////
-// validate - function used by Redux Form to validate fields on form
-/////////////////////////////////////////////////////////////////////////////////////
-const validate = values => {
+/******************************************************************************
+ validate - function used by Redux Form to validate fields on form
+*******************************************************************************/
+const validate = function(values) {
   const errors = {};
 
   if (!values.title) {

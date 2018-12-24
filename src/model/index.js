@@ -1,3 +1,4 @@
+// @ts-nocheck
 import seed from "model/seed.js";
 import {
   RecipeLimitReached,
@@ -11,16 +12,6 @@ let recipes = [];
 let testMode = false;
 let Model = {};
 let recipesInitialized = false;
-
-const getRecipeID = () => {
-  return (
-    Date.now().toString() +
-    "_" +
-    Math.random()
-      .toString(32)
-      .slice(2, 9)
-  );
-};
 
 Model.toggleTestMode = function(state) {
   testMode = state;
@@ -105,12 +96,22 @@ Model.deleteRecipeById = function(id) {
   return recipes;
 };
 
+function getRecipeID() {
+  return (
+    Date.now().toString() +
+    "_" +
+    Math.random()
+      .toString(32)
+      .slice(2, 9)
+  );
+}
+
 function initialize() {
-  recipesInitialized = localStorage.getItem("recipesInitialized");
+  recipesInitialized = !!localStorage.getItem("recipesInitialized");
   if (!testMode && !recipesInitialized) {
     console.log("populating data...");
     populateSeedDataToStorage();
-    localStorage.setItem("recipesInitialized", true);
+    localStorage.setItem("recipesInitialized", "true");
   }
 }
 
