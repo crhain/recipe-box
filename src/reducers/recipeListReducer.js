@@ -5,11 +5,6 @@ import {
   EDIT_RECIPE,
   DELETE_RECIPE
 } from "actions/types";
-import {
-  RecipeLimitReached,
-  DuplicateRecipe,
-  RecipeDoesNotExist
-} from "model/error.js";
 import Model from "model/index";
 
 export default (state = [], action, model = Model) => {
