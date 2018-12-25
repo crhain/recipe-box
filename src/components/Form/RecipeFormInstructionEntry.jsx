@@ -5,11 +5,11 @@ import { Field } from 'redux-form';
 /////////////////////////////////////////////////////////////////////////////////////
 // renderInstructionInput - function to render instruction input component
 /////////////////////////////////////////////////////////////////////////////////////
-const renderInstructionInput = ({
+const renderInstructionInput = function({
   input,
   label,
   meta: { error, submitFailed }
-}) => {
+}) {
   return (
     <div className="input-field col s11">
       <input {...input} type="text" placeholder={label} />
@@ -26,7 +26,7 @@ const renderInstructionInput = ({
 /////////////////////////////////////////////////////////////////////////////////////
 // RecipeFormInstructionEntry - functional component for instruction entry field
 /////////////////////////////////////////////////////////////////////////////////////
-export default ({ fields, meta: { error, submitFailed } }) => {
+export default function({ fields, meta: { error, submitFailed } }) {
   return (
     <div className="form__instructions-field">
       <ul>
@@ -68,4 +68,4 @@ export default ({ fields, meta: { error, submitFailed } }) => {
       </ul>
     </div>
   );
-};
+}

@@ -5,11 +5,11 @@ import { Field } from 'redux-form';
 /////////////////////////////////////////////////////////////////////////////////////
 // renderQuantityInput - function to render quantity input
 /////////////////////////////////////////////////////////////////////////////////////
-const renderQuantityInput = ({
+const renderQuantityInput = function({
   input,
   label,
   meta: { error, submitFailed }
-}) => {
+}) {
   return (
     <div className="input-field col s1">
       <input {...input} type="number" placeholder={label} />
@@ -26,11 +26,11 @@ const renderQuantityInput = ({
 /////////////////////////////////////////////////////////////////////////////////////
 // rendermeasureInput - function to render measure input
 /////////////////////////////////////////////////////////////////////////////////////
-const renderMeasureInput = ({
+const renderMeasureInput = function({
   input,
   label,
   meta: { error, submitFailed }
-}) => {
+}) {
   return (
     <div className="input-field col s2">
       <input {...input} type="text" placeholder={label} />
@@ -47,11 +47,11 @@ const renderMeasureInput = ({
 /////////////////////////////////////////////////////////////////////////////////////
 // renderIngredientInput - function to render ingredient input
 /////////////////////////////////////////////////////////////////////////////////////
-const renderIngredientInput = ({
+const renderIngredientInput = function({
   input,
   label,
   meta: { error, submitFailed }
-}) => {
+}) {
   return (
     <div className="input-field col s8">
       <input {...input} type="text" placeholder={label} />
@@ -69,7 +69,7 @@ const renderIngredientInput = ({
 // RecipeFormIngredientEntry - functional component for RecipeFormIngredientEntry
 //                              used in RecipeForm
 /////////////////////////////////////////////////////////////////////////////////////
-export default ({ fields, meta: { error, submitFailed } }) => {
+export default function({ fields, meta: { error, submitFailed } }) {
   return (
     <div className="form__ingredients-field">
       <ul>
@@ -122,4 +122,4 @@ export default ({ fields, meta: { error, submitFailed } }) => {
       </ul>
     </div>
   );
-};
+}
