@@ -7,7 +7,7 @@ import {
 } from 'actions/types';
 import Model from 'model/index';
 
-export default (state = [], action, model = Model) => {
+export default function(state = [], action, model = Model) {
   let recipe = {};
   let newState = state;
   switch (action.type) {
@@ -25,4 +25,4 @@ export default (state = [], action, model = Model) => {
     default:
       return newState;
   }
-};
+}

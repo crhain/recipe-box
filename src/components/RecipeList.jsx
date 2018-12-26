@@ -50,9 +50,9 @@ export class RecipeList extends Component {
   }
 }
 
-function mapStateToProps({ recipes }) {
+const mapStateToProps = function({ recipes }) {
   return { recipes };
-}
+};
 
 export default withRouter(
   connect(

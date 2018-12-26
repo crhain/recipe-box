@@ -41,9 +41,9 @@ class DeleteModal extends Component {
   }
 }
 
-function mapStateToProps({ recipeToDelete }) {
+const mapStateToProps = function({ recipeToDelete }) {
   return { recipeToDelete };
-}
+};
 
 export default withRouter(
   connect(

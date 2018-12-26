@@ -51,9 +51,9 @@ export class Edit extends Component {
   }
 }
 
-function mapStateToProps({ selectedRecipe }) {
+const mapStateToProps = function({ selectedRecipe }) {
   return { selectedRecipe };
-}
+};
 
 export default withRouter(
   connect(

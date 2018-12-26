@@ -11,8 +11,8 @@ function MessageDisplay({ flash }) {
   );
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = function(state) {
   return { flash: getLatestMessage(state) };
-}
+};
 
 export default connect(mapStateToProps)(MessageDisplay);
