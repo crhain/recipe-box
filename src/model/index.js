@@ -13,6 +13,73 @@ let testMode = false;
 let Model = {};
 let recipesInitialized = false;
 
+const getRecipeID = function() {
+  return (
+    Date.now().toString() +
+    '_' +
+    Math.random()
+      .toString(32)
+      .slice(2, 9)
+  );
+};
+
+//Function to retireve recipes state from localstorage and convert to appropriate format for
+// in memory storage
+const getRecipesFromStorage = function() {
+  // return seed;
+  let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
+  return storedRecipes ? storedRecipes : [];
+};
+
+//populates premade recipes to storage if storage is empty
+const populateSeedDataToStorage = function() {
+  let retrievedRecipes = getRecipesFromStorage();
+  if (retrievedRecipes.length < 1) {
+    console.log('adding recipes...');
+    localStorage.setItem('recipes', JSON.stringify(seed));
+  }
+};
+
+//Function that checks to see if recipes state should be retrieved from localstorage or not
+const shouldGetRecipesFromStorage = function() {
+  return recipes.length <= 0 && !testMode;
+};
+
+//Function to check if recipes state should be added to localstorage
+const shouldAddRecipesToStorage = function() {
+  return !testMode;
+};
+
+const refreshRecipes = function() {
+  if (shouldGetRecipesFromStorage()) {
+    recipes = getRecipesFromStorage();
+  }
+};
+
+//Function to add recipes to localstorage in appropriate format
+const addRecipesToStorage = function() {
+  if (shouldAddRecipesToStorage()) {
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+  }
+};
+
+//Function to clear local storage
+function clearStorage() {
+  localStorage.removeItem('recipes');
+}
+
+function initialize() {
+  recipesInitialized = !!localStorage.getItem('recipesInitialized');
+  if (!testMode && !recipesInitialized) {
+    populateSeedDataToStorage();
+    localStorage.setItem('recipesInitialized', 'true');
+  }
+}
+
+/* 
+   PUBLIC METHODS
+*/
+
 Model.toggleTestMode = function(state) {
   testMode = state;
   if (testMode) {
@@ -95,69 +162,5 @@ Model.deleteRecipeById = function(id) {
 
   return recipes;
 };
-
-function getRecipeID() {
-  return (
-    Date.now().toString() +
-    '_' +
-    Math.random()
-      .toString(32)
-      .slice(2, 9)
-  );
-}
-
-function initialize() {
-  recipesInitialized = !!localStorage.getItem('recipesInitialized');
-  if (!testMode && !recipesInitialized) {
-    console.log('populating data...');
-    populateSeedDataToStorage();
-    localStorage.setItem('recipesInitialized', 'true');
-  }
-}
-
-//Function that checks to see if recipes state should be retrieved from localstorage or not
-function shouldGetRecipesFromStorage() {
-  return recipes.length <= 0 && !testMode;
-}
-
-//Function to check if recipes state should be added to localstorage
-function shouldAddRecipesToStorage() {
-  return !testMode;
-}
-
-//Function to retireve recipes state from localstorage and convert to appropriate format for
-// in memory storage
-function getRecipesFromStorage() {
-  // return seed;
-  let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
-  return storedRecipes ? storedRecipes : [];
-}
-
-function refreshRecipes() {
-  if (shouldGetRecipesFromStorage()) {
-    recipes = getRecipesFromStorage();
-  }
-}
-
-//Function to add recipes to localstorage in appropriate format
-function addRecipesToStorage() {
-  if (shouldAddRecipesToStorage()) {
-    localStorage.setItem('recipes', JSON.stringify(recipes));
-  }
-}
-
-//Function to clear local storage
-function clearStorage() {
-  localStorage.removeItem('recipes');
-}
-
-//populates premade recipes to storage if storage is empty
-function populateSeedDataToStorage() {
-  let retrievedRecipes = getRecipesFromStorage();
-  if (retrievedRecipes.length < 1) {
-    console.log('adding recipes...');
-    localStorage.setItem('recipes', JSON.stringify(seed));
-  }
-}
 
 export default Model;
