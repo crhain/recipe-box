@@ -8,7 +8,6 @@ import {
 import Model from 'model/index';
 
 export default function(state = [], action, model = Model) {
-  let recipe = {};
   let newState = state;
   switch (action.type) {
     case GET_RECIPES:
