@@ -52,19 +52,26 @@ export class RecipeView extends Component {
     return instructions;
   }
 
+  renderImage() {
+    if (this.props.selectedRecipe && this.props.selectedRecipe.image) {
+      return (
+        <img
+          src={this.props.selectedRecipe.image}
+          alt={'Image of ' + this.props.selectedRecipe.title}
+        />
+      );
+    }
+    //TODO: return an image with some default image instead
+    return '';
+  }
+
   render() {
     return (
       <div className="recipe container">
         <h1 className="recipe__title">
           {this.props.selectedRecipe ? this.props.selectedRecipe.title : ''}
         </h1>
-        <div className="recipe__image">
-          <img
-            src={
-              this.props.selectedRecipe ? this.props.selectedRecipe.image : ''
-            }
-          />
-        </div>
+        <div className="recipe__image">{this.renderImage()}</div>
         <EditButton recipeId={this.recipeId} />
         <DeleteButton recipeId={this.recipeId} history={this.history} />
         <BackButton history={this.history} />
