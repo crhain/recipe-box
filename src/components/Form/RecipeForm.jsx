@@ -1,5 +1,4 @@
 // @nots-check
-import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
