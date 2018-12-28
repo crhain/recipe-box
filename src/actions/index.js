@@ -37,9 +37,9 @@ export const addRecipe = function(recipe, history, model = Model) {
     store.dispatch(flashMessage('Successfully added a new recipe!'));
     history.push('/');
   } catch (error) {
-    if (error.name == 'DuplicateRecipe') {
+    if (error.name === 'DuplicateRecipe') {
       throw new DuplicateRecipe();
-    } else if (error.name == 'RecipeLimitReached') {
+    } else if (error.name === 'RecipeLimitReached') {
       store.dispatch(flashMessage(error.message));
     } else {
       throw new Error(error.message);
