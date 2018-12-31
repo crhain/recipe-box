@@ -1,10 +1,6 @@
 // @nots-check
 import seed from 'model/seed.js';
-import {
-  RecipeLimitReached,
-  DuplicateRecipe,
-  RecipeDoesNotExist
-} from 'model/error.js';
+import { RecipeLimitReached, RecipeDoesNotExist } from 'model/error.js';
 
 let MAX_RECIPES = 50;
 

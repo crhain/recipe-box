@@ -1,7 +1,7 @@
 // @nots-check
 import { store } from 'components/Root';
 import { flashMessage } from 'redux-flash';
-import { DuplicateRecipe, RecipeDoesNotExist } from 'model/error.js';
+import { RecipeDoesNotExist } from 'model/error.js';
 import Model from 'model/index';
 import {
   GET_RECIPES,

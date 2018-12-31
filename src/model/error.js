@@ -6,13 +6,6 @@ export class RecipeLimitReached extends Error {
   }
 }
 
-export class DuplicateRecipe extends Error {
-  constructor(message = 'That recipe already exists!') {
-    super(message);
-    this.name = 'DuplicateRecipe';
-  }
-}
-
 export class RecipeDoesNotExist extends Error {
   constructor(message = 'That recipe does not exist!') {
     super(message);
