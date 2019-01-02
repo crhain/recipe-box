@@ -9,6 +9,13 @@ let testMode = false;
 let Model = {};
 let recipesInitialized = false;
 
+/***********************************************************
+ ***********************************************************    
+   PRIVATE FUNCTIONS
+************************************************************
+************************************************************/
+
+// Returns ID for new recipes - uses random string + system data to generate unique ID
 const getRecipeID = function() {
   return (
     Date.now().toString() +
@@ -19,15 +26,19 @@ const getRecipeID = function() {
   );
 };
 
-//Function to retireve recipes state from localstorage and convert to appropriate format for
-// in memory storage
+/*
+Function to retireve recipes state from localstorage and convert to appropriate format for
+ in memory storage
+*/
 const getRecipesFromStorage = function() {
   // return seed;
   let storedRecipes = JSON.parse(localStorage.getItem('recipes'));
   return storedRecipes ? storedRecipes : [];
 };
 
-//populates premade recipes to storage if storage is empty
+/*
+  populates premade recipes to storage if storage is empty
+*/
 const populateSeedDataToStorage = function() {
   let retrievedRecipes = getRecipesFromStorage();
   if (retrievedRecipes.length < 1) {
@@ -72,10 +83,16 @@ function initialize() {
   }
 }
 
-/* 
-   PUBLIC METHODS
-*/
+/***********************************************************
+ ***********************************************************    
+   PUBLIC FUNCTIONS
+************************************************************
+************************************************************/
 
+/***********************************************************
+  Toggles Test Mode
+   state = boolean value to switch test mode on/off
+************************************************************/
 Model.toggleTestMode = function(state) {
   testMode = state;
   if (testMode) {
@@ -85,10 +102,18 @@ Model.toggleTestMode = function(state) {
   }
 };
 
+/***********************************************************
+  Sets Max Recipes that can be stored on client
+   max = integer representing total number of recipes that 
+     can be stored.
+************************************************************/
 Model.setMaxRecipes = function(max) {
   MAX_RECIPES = max;
 };
 
+/***********************************************************
+   Retrieve all recipes    
+************************************************************/
 Model.getAllRecipes = function() {
   if (shouldGetRecipesFromStorage()) {
     initialize();
@@ -98,6 +123,10 @@ Model.getAllRecipes = function() {
   return recipes;
 };
 
+/***********************************************************
+   Add a recipe
+    recipe = recipe object to be stored   
+************************************************************/
 Model.addRecipe = function(recipe) {
   refreshRecipes();
 
@@ -113,6 +142,10 @@ Model.addRecipe = function(recipe) {
   return recipes;
 };
 
+/***********************************************************
+   Edit a recipe
+     recipe = recipe object to overwrite existing recipe    
+************************************************************/
 Model.editRecipe = function(recipe) {
   //if recipes length is less than one, it may mean that we need to get them from localstorage
   refreshRecipes();
@@ -132,6 +165,10 @@ Model.editRecipe = function(recipe) {
   return recipes;
 };
 
+/***********************************************************
+   Retrieve a specific recipe by its unique ID
+     id = string representing the recipe's id   
+************************************************************/
 Model.getRecipeById = function(id) {
   refreshRecipes();
   let recipe = recipes.filter(recipe => recipe.id === id);
@@ -143,6 +180,10 @@ Model.getRecipeById = function(id) {
   return recipe[0];
 };
 
+/***********************************************************
+   Delete a recipe with a given id
+     id = string representing the recipe's id    
+************************************************************/
 Model.deleteRecipeById = function(id) {
   //if recipes length is less than one, it may mean that we need to get them from localstorage
   refreshRecipes();
