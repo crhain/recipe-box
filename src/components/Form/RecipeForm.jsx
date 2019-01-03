@@ -6,6 +6,8 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 
 /******************************************************************************
  renderErrorField - function to render erorr field sub component
+   error = error object
+   touched = boolean value indicating if component touched or not
 *******************************************************************************/
 const renderErrorField = function(error, touched) {
   return (
@@ -20,6 +22,7 @@ const renderErrorField = function(error, touched) {
 
 /******************************************************************************
  renderIDField - function to render hidden id field component
+   input = destructured item from form that continas all attributes for input
 *******************************************************************************/
 const renderIdField = function({ input }) {
   return (
@@ -35,6 +38,11 @@ const renderIdField = function({ input }) {
 
 /******************************************************************************
  renderTitleField - function to render title field component
+   input = destructured item from form that contains all input attirbutes
+   label = desctructred item from form that contains label
+   meta = destrcuctred item from form taht contains meta elements
+     error = object for error messages
+     touched = boolean indicating if component touched or not
 *******************************************************************************/
 const renderTitleField = function({ input, label, meta: { error, touched } }) {
   return (
@@ -48,6 +56,11 @@ const renderTitleField = function({ input, label, meta: { error, touched } }) {
 
 /******************************************************************************
  renderDescriptionField - function to render description field component
+  input = destructured item from form that contains all input attirbutes
+    label = desctructred item from form that contains label
+    meta = destrcuctred item from form taht contains meta elements
+      error = object for error messages
+      touched = boolean indicating if component touched or not
 *******************************************************************************/
 const renderDescriptionField = function({
   input,
@@ -65,6 +78,11 @@ const renderDescriptionField = function({
 
 /******************************************************************************
  renderImageField - function to render image url field component
+  input = destructured item from form that contains all input attirbutes
+   label = desctructred item from form that contains label
+   meta = destrcuctred item from form taht contains meta elements
+     error = object for error messages
+     touched = boolean indicating if component touched or not
 *******************************************************************************/
 const renderImageField = function({ input, label, meta: { error, touched } }) {
   return (
@@ -78,6 +96,11 @@ const renderImageField = function({ input, label, meta: { error, touched } }) {
 
 /******************************************************************************
  renderServingsField - function to render servings field component
+  input = destructured item from form that contains all input attirbutes
+   label = desctructred item from form that contains label
+   meta = destrcuctred item from form taht contains meta elements
+     error = object for error messages
+     touched = boolean indicating if component touched or not
 *******************************************************************************/
 const renderServingsField = function({
   input,
@@ -95,7 +118,9 @@ const renderServingsField = function({
 
 /******************************************************************************
  RecipeForm - React class component for form used by New and Edit components
+*******************************************************************************
 *******************************************************************************/
+
 class RecipeForm extends Component {
   componentDidMount() {
     let recipe = this.props.intialRecipeValues;
@@ -169,6 +194,7 @@ class RecipeForm extends Component {
 
 /******************************************************************************
  validate - function used by Redux Form to validate fields on form
+  values = object that contains values for all fields in form
 *******************************************************************************/
 const validate = function(values) {
   const errors = {};
