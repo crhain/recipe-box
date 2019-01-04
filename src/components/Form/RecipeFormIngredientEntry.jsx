@@ -2,9 +2,13 @@
 import React from 'react';
 import { Field } from 'redux-form';
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderQuantityInput - function to render quantity input
-/////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************ 
+  renderQuantityInput - function to render quantity input
+    input = inputs from fieldArray object
+    label = label from fieldArray object
+    meta -> error = error information from fieldArray object
+    meta -> submitFailed = boolean indicating if submit was successful or not
+*************************************************************************************/
 const renderQuantityInput = function({
   input,
   label,
@@ -23,9 +27,13 @@ const renderQuantityInput = function({
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// rendermeasureInput - function to render measure input
-/////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************ 
+ rendermeasureInput - function to render measure input
+   input = inputs from fieldArray object
+    label = label from fieldArray object
+    meta -> error = error information from fieldArray object
+    meta -> submitFailed = boolean indicating if submit was successful or not
+*************************************************************************************/
 const renderMeasureInput = function({
   input,
   label,
@@ -44,9 +52,13 @@ const renderMeasureInput = function({
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderIngredientInput - function to render ingredient input
-/////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************ 
+ renderIngredientInput - function to render ingredient input
+    input = inputs from fieldArray object
+    label = label from fieldArray object
+    meta -> error = error information from fieldArray object
+    meta -> submitFailed = boolean indicating if submit was successful or not
+*************************************************************************************/
 const renderIngredientInput = function({
   input,
   label,
@@ -65,10 +77,14 @@ const renderIngredientInput = function({
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// RecipeFormIngredientEntry - functional component for RecipeFormIngredientEntry
-//                              used in RecipeForm
-/////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************ 
+ RecipeFormIngredientEntry - functional component for RecipeFormIngredientEntry
+ used in RecipeForm
+  input = inputs from fieldArray object
+  label = label from fieldArray object
+  meta -> error = error information from fieldArray object
+  meta -> submitFailed = boolean indicating if submit was successful or not   
+*************************************************************************************/
 export default function({ fields, meta: { error, submitFailed } }) {
   return (
     <div className="form__ingredients-field">
