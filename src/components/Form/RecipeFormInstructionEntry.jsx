@@ -2,9 +2,12 @@
 import React from 'react';
 import { Field } from 'redux-form';
 
-/////////////////////////////////////////////////////////////////////////////////////
-// renderInstructionInput - function to render instruction input component
-/////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************ 
+ renderInstructionInput - function to render instruction input component
+ used in RecipeForm
+  input = inputs from fieldArray object
+  label = label from fieldArray object  
+*************************************************************************************/
 const renderInstructionInput = function({
   input,
   label,
@@ -23,9 +26,14 @@ const renderInstructionInput = function({
   );
 };
 
-/////////////////////////////////////////////////////////////////////////////////////
-// RecipeFormInstructionEntry - functional component for instruction entry field
-/////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************ 
+ RecipeFormInstructionEntry - functional component for instruction entry field
+ used in RecipeForm
+  input = inputs from fieldArray object
+  label = label from fieldArray object
+  meta -> error = error information from fieldArray object
+  meta -> submitFailed = boolean indicating if submit was successful or not   
+*************************************************************************************/
 export default function({ fields, meta: { error, submitFailed } }) {
   return (
     <div className="form__instructions-field">
