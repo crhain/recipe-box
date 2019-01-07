@@ -15,7 +15,7 @@ const renderQuantityInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field col s1">
+    <div className="input-field recipe-ingredient__quantity-input col s1">
       <input {...input} type="number" placeholder={label} />
       <div
         className="form__error-field"
@@ -40,7 +40,7 @@ const renderMeasureInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field col s2">
+    <div className="input-field recipe-ingredient__measure-input col s2">
       <input {...input} type="text" placeholder={label} />
       <div
         className="form__error-field"
@@ -65,7 +65,7 @@ const renderIngredientInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field col s8">
+    <div className="input-field recipe-ingredient__ingredient-input col s8">
       <input {...input} type="text" placeholder={label} />
       <div
         className="form__error-field"
