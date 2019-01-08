@@ -14,7 +14,7 @@ const renderInstructionInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field col s11">
+    <div className="input-field recipe-instruction__input col s11">
       <input {...input} type="text" placeholder={label} />
       <div
         className="form__error-field"
