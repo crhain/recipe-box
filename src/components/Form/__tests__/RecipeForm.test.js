@@ -1,15 +1,14 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeForm from 'components/Form/RecipeForm';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 import { Root } from 'components/Root';
 
 let component;
-let meta = { error: null, touched: false };
 const mockFormHandler = jest.fn();
 const mockHistory = [];
-const input = {};
 
 describe('RecipeForm', () => {
   beforeEach(() => {
@@ -65,7 +64,7 @@ describe('RecipeForm', () => {
   it('renders an ingredients field', () => {
     let element = component.find('div.form__ingredients-field');
     expect(element.length).toEqual(1);
-    expect(element.find('button.form_ingredient-add-btn').length).toEqual(1);
+    expect(element.find('button.form__ingredient-add-btn').length).toEqual(1);
     expect(element.find('div.form__error-field').length).toEqual(1);
   });
 
@@ -81,3 +80,27 @@ describe('RecipeForm', () => {
     expect(element.length).toEqual(1);
   });
 });
+
+let mockData = {
+  fields: [{}],
+  meta: {
+    error: {},
+    submitFailed: false
+  }
+};
+
+//   it('renders for each ingriedent a h4, a quantity field, a measure field, and an igredient field, and a delete button', () => {
+//     let element = component.find('li.form__ingredient-entry');
+//     expect(element.find('h4').length).toEqual(1);
+//     expect(element.find('button.delete-button').length).toEqual(1);
+//     expect(
+//       element.find('div.recipe-ingredient__quantity-input').length
+//     ).toEqual(1);
+//     expect(element.find('div.recipe-ingredient__measure-input').length).toEqual(
+//       1
+//     );
+//     expect(
+//       element.find('div.recipe-ingredient__ingredient-input').length
+//     ).toEqual(1);
+//   });
+// });

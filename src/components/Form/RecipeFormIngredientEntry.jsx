@@ -91,7 +91,7 @@ export default function({ fields, meta: { error, submitFailed } }) {
       <ul>
         <li>
           <button
-            className="waves-effect waves-light btn form_ingredient-add-btn"
+            className="waves-effect waves-light btn form__ingredient-add-btn"
             type="button"
             onClick={() => fields.push({})}
           >
@@ -105,7 +105,7 @@ export default function({ fields, meta: { error, submitFailed } }) {
           </div>
         </li>
         {fields.map((ingredient, index) => (
-          <li key={index}>
+          <li key={index} className="form__ingredient-entry">
             <h4>Ingredient #{index + 1}</h4>
             <div className="row">
               <div className="col s1">
