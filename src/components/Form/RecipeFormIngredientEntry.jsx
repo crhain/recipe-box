@@ -15,10 +15,10 @@ const renderQuantityInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field recipe-ingredient__quantity-input col s1">
+    <div className="input-field ingredient-entry__quantity-input col s1">
       <input {...input} type="number" placeholder={label} />
       <div
-        className="form__error-field"
+        className="recipe-form__error-field"
         style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
@@ -40,10 +40,10 @@ const renderMeasureInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field recipe-ingredient__measure-input col s2">
+    <div className="input-field ingredient-entry__measure-input col s2">
       <input {...input} type="text" placeholder={label} />
       <div
-        className="form__error-field"
+        className="recipe-form__error-field"
         style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
@@ -65,10 +65,10 @@ const renderIngredientInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field recipe-ingredient__ingredient-input col s8">
+    <div className="input-field ingredient-entry__ingredient-input col s8">
       <input {...input} type="text" placeholder={label} />
       <div
-        className="form__error-field"
+        className="recipe-form__error-field"
         style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
@@ -87,30 +87,30 @@ const renderIngredientInput = function({
 *************************************************************************************/
 export default function({ fields, meta: { error, submitFailed } }) {
   return (
-    <div className="form__ingredients-field">
+    <div className="ingredients-field">
       <ul>
         <li>
           <button
-            className="waves-effect waves-light btn form__ingredient-add-btn"
+            className="waves-effect waves-light btn ingredients-field__add-btn"
             type="button"
             onClick={() => fields.push({})}
           >
             Add Ingredient
           </button>
           <div
-            className="form__error-field"
+            className="recipe-form__error-field"
             style={{ marginBottom: '20px', color: 'red' }}
           >
             {submitFailed && error}
           </div>
         </li>
         {fields.map((ingredient, index) => (
-          <li key={index} className="form__ingredient-entry">
+          <li key={index} className="ingredients-entry">
             <h4>Ingredient #{index + 1}</h4>
             <div className="row">
               <div className="col s1">
                 <button
-                  className="waves-effect waves-light btn red delete-button"
+                  className="waves-effect waves-light btn red ingredients-entry__delete-button"
                   onClick={() => fields.remove(index)}
                 >
                   <i className="material-icons">delete</i>
