@@ -12,7 +12,7 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 const renderErrorField = function(error, touched) {
   return (
     <div
-      className="form__error-field"
+      className="recipe-form__error-field"
       style={{ marginBottom: '20px', color: 'red' }}
     >
       {touched && error}
@@ -26,7 +26,7 @@ const renderErrorField = function(error, touched) {
 *******************************************************************************/
 const renderIdField = function({ input }) {
   return (
-    <div className="form__id-field">
+    <div className="recipe-form__id-field">
       <input
         {...input}
         type="text"
@@ -46,7 +46,7 @@ const renderIdField = function({ input }) {
 *******************************************************************************/
 const renderTitleField = function({ input, label, meta: { error, touched } }) {
   return (
-    <div className="form__title-field">
+    <div className="recipe-form__title-field">
       <label>{label}</label>
       <input {...input} type="text" style={{ marginBottom: '5px' }} />
       {renderErrorField(error, touched)}
@@ -68,7 +68,7 @@ const renderDescriptionField = function({
   meta: { error, touched }
 }) {
   return (
-    <div className="form__description-field">
+    <div className="recipe-form__description-field">
       <label>{label}</label>
       <input {...input} type="text" style={{ marginBottom: '5px' }} />
       {renderErrorField(error, touched)}
@@ -86,7 +86,7 @@ const renderDescriptionField = function({
 *******************************************************************************/
 const renderImageField = function({ input, label, meta: { error, touched } }) {
   return (
-    <div className="form__image-field">
+    <div className="recipe-form__image-field">
       <label>{label}</label>
       <input {...input} type="text" style={{ marginBottom: '5px' }} />
       {renderErrorField(error, touched)}
@@ -108,7 +108,7 @@ const renderServingsField = function({
   meta: { error, touched }
 }) {
   return (
-    <div className="form__servings-field col s1">
+    <div className="recipe-form__servings-field col s1">
       <label>{label}</label>
       <input {...input} type="number" />
       {renderErrorField(error, touched)}
@@ -132,7 +132,7 @@ class RecipeForm extends Component {
   render() {
     const { handleSubmit, formHandler, history } = this.props;
     return (
-      <div className="row">
+      <div className="row recipe-form">
         <form className="col s12">
           <Field component={renderIdField} label="id" name="id" />
           <div className="row">
