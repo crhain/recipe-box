@@ -62,10 +62,10 @@ describe('RecipeForm', () => {
   });
 
   it('renders an ingredients field', () => {
-    let element = component.find('div.form__ingredients-field');
+    let element = component.find('div.ingredients-field');
     expect(element.length).toEqual(1);
-    expect(element.find('button.form__ingredient-add-btn').length).toEqual(1);
-    expect(element.find('div.form__error-field').length).toEqual(1);
+    expect(element.find('button.ingredients-field__add-btn').length).toEqual(1);
+    expect(element.find('div.recipe-form__error-field').length).toEqual(1);
   });
 
   it('renders an instructions field', () => {
