@@ -20,21 +20,6 @@ describe('Error', () => {
     });
   });
 
-  describe('DuplicateRecipe', () => {
-    it('Instantiates as an instance of Error and of DuplicateRecipe', () => {
-      let error = new DuplicateRecipe('Test message');
-      expect(error instanceof Error).toEqual(true);
-      expect(error instanceof DuplicateRecipe).toEqual(true);
-    });
-
-    it('Uses passed message and default message if no message passed', () => {
-      let error = new DuplicateRecipe('Test message');
-      expect(error.message).toEqual('Test message');
-      let defaultError = new DuplicateRecipe();
-      expect(defaultError.message).toEqual('That recipe already exists!');
-    });
-  });
-
   describe('RecipeDoesNotExist', () => {
     it('Instantiates as an instance of Error and of RecipeDoesNotExist', () => {
       let error = new RecipeDoesNotExist('Test message');
