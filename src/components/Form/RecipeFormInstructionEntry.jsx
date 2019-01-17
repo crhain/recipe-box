@@ -14,10 +14,10 @@ const renderInstructionInput = function({
   meta: { error, submitFailed }
 }) {
   return (
-    <div className="input-field recipe-instruction__input col s11">
+    <div className="input-field instruction-entry__input col s11">
       <input {...input} type="text" placeholder={label} />
       <div
-        className="form__error-field"
+        className="recipe-form__error-field"
         style={{ marginBottom: '20px', color: 'red' }}
       >
         {submitFailed && error}
@@ -36,30 +36,30 @@ const renderInstructionInput = function({
 *************************************************************************************/
 export default function({ fields, meta: { error, submitFailed } }) {
   return (
-    <div className="form__instructions-field">
+    <div className="instructions-field">
       <ul>
         <li>
           <button
-            className="waves-effect waves-light btn form_instructions-add-btn"
+            className="waves-effect waves-light btn instructions-field__add-btn"
             type="button"
             onClick={() => fields.push()}
           >
             Add Instruction
           </button>
           <div
-            className="form__error-field"
+            className="recipe-form__error-field"
             style={{ marginBottom: '20px', color: 'red' }}
           >
             {submitFailed && error}
           </div>
         </li>
         {fields.map((instruction, index) => (
-          <li key={index}>
+          <li className="instruction-entry" key={index}>
             <h4>Instruction #{index + 1}</h4>
             <div className="row">
               <div className="col s1">
                 <button
-                  className="waves-effect waves-light btn red delete-button"
+                  className="waves-effect waves-light btn red instruction-entry__delete-button"
                   onClick={() => fields.remove(index)}
                 >
                   <i className="material-icons">delete</i>

@@ -105,12 +105,12 @@ export default function({ fields, meta: { error, submitFailed } }) {
           </div>
         </li>
         {fields.map((ingredient, index) => (
-          <li key={index} className="ingredients-entry">
+          <li key={index} className="ingredient-entry">
             <h4>Ingredient #{index + 1}</h4>
             <div className="row">
               <div className="col s1">
                 <button
-                  className="waves-effect waves-light btn red ingredients-entry__delete-button"
+                  className="waves-effect waves-light btn red ingredient-entry__delete-button"
                   onClick={() => fields.remove(index)}
                 >
                   <i className="material-icons">delete</i>
