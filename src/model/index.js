@@ -3,7 +3,6 @@ import seed from 'model/seed.js';
 import { RecipeLimitReached, RecipeDoesNotExist } from 'model/error.js';
 
 let MAX_RECIPES = 50;
-
 let recipes = [];
 let testMode = false;
 let Model = {};
