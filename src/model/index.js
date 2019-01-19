@@ -17,7 +17,7 @@ let recipesInitialized = false;
 
 /**
  * @description Returns ID for new recipes - uses random string + system data to generate unique ID
- * @return {String}
+ * @return {string}
  */
 const getRecipeID = function() {
   return (
@@ -32,7 +32,7 @@ const getRecipeID = function() {
 /**
  * @description Function to retireve recipes state from localstorage and convert to appropriate format for
  * in memory storage
- * @return {Array}
+ * @return {array}
  */
 const getRecipesFromStorage = function() {
   // return seed;
@@ -42,7 +42,7 @@ const getRecipesFromStorage = function() {
 
 /**
  * @description populates premade recipes to storage if storage is empty
- * @return {Void}
+ * @return {void}
  */
 const populateSeedDataToStorage = function() {
   let retrievedRecipes = getRecipesFromStorage();
@@ -54,7 +54,7 @@ const populateSeedDataToStorage = function() {
 
 /**
  * @description Function that checks to see if recipes state should be retrieved from localstorage or not
- * @return {Boolean}
+ * @return {boolean}
  */
 const shouldGetRecipesFromStorage = function() {
   return recipes.length <= 0 && !testMode;
@@ -62,7 +62,7 @@ const shouldGetRecipesFromStorage = function() {
 
 /**
  * @description Function to check if recipes state should be added to localstorage
- * @return {Boolean}
+ * @return {boolean}
  */
 const shouldAddRecipesToStorage = function() {
   return !testMode;
@@ -70,7 +70,7 @@ const shouldAddRecipesToStorage = function() {
 
 /**
  * @description function to retrieve recipes from localstorage
- * @return {Void}
+ * @return {void}
  */
 const refreshRecipes = function() {
   if (shouldGetRecipesFromStorage()) {
@@ -80,7 +80,7 @@ const refreshRecipes = function() {
 
 /**
  * @description function to add recipes to localstorage in appropriate format
- * @return {Void}
+ * @return {void}
  */
 const addRecipesToStorage = function() {
   if (shouldAddRecipesToStorage()) {
@@ -90,7 +90,7 @@ const addRecipesToStorage = function() {
 
 /**
  * @description function to clear local storage
- * @return {Void}
+ * @return {void}
  */
 function clearStorage() {
   localStorage.removeItem('recipes');
@@ -99,7 +99,7 @@ function clearStorage() {
 /**
  * @description function retrieves recipes from local storage
  * or in memory model depending on current state. Runs at start of application
- * @return {Void}
+ * @return {void}
  */
 function initialize() {
   recipesInitialized = !!localStorage.getItem('recipesInitialized');
@@ -117,8 +117,8 @@ function initialize() {
 
 /**
  * @description Toggles Test Mode
- * @param {Boolean} state = value representing testing mode on/off
- * @return {Void}
+ * @param {boolean} state = value representing testing mode on/off
+ * @return {void}
  */
 Model.toggleTestMode = function(state) {
   testMode = state;
@@ -131,9 +131,9 @@ Model.toggleTestMode = function(state) {
 
 /**
  * @description Sets Max Recipes that can be stored on client
- * @param {Number} max - integer represeing total number of recipes
+ * @param {number} max - integer represeing total number of recipes
  * that can be stored
- * @return {Void}
+ * @return {void}
  */
 Model.setMaxRecipes = function(max) {
   MAX_RECIPES = max;
@@ -141,7 +141,7 @@ Model.setMaxRecipes = function(max) {
 
 /**
  * @description retrieve all recipes from storage or memory
- * @return {Array} an array of recipes
+ * @return {array} an array of recipes
  */
 Model.getAllRecipes = function() {
   if (shouldGetRecipesFromStorage()) {
@@ -154,8 +154,8 @@ Model.getAllRecipes = function() {
 
 /**
  * @description add a recipe to the model
- * @param {Object} recipe - object to be stored
- * @return {Array} of updated recipes
+ * @param {object} recipe - object to be stored
+ * @return {array} of updated recipes
  */
 Model.addRecipe = function(recipe) {
   refreshRecipes();
@@ -174,8 +174,8 @@ Model.addRecipe = function(recipe) {
 
 /**
  * @description edit a recipe
- * @param {Object} recipe - an edited version of a recipe
- * @return {Array} of updated recipes
+ * @param {object} recipe - an edited version of a recipe
+ * @return {array} of updated recipes
  */
 Model.editRecipe = function(recipe) {
   //if recipes length is less than one, it may mean that we need to get them from localstorage
@@ -198,8 +198,8 @@ Model.editRecipe = function(recipe) {
 
 /**
  * @description retrieve a specific recipe by its unique ID
- * @param {String} id - of recipe to be retrieved
- * @return {Object} a single recipe
+ * @param {string} id - of recipe to be retrieved
+ * @return {object} a single recipe
  */
 Model.getRecipeById = function(id) {
   refreshRecipes();
@@ -214,8 +214,8 @@ Model.getRecipeById = function(id) {
 
 /**
  * @description delete a recipe with a given id
- * @param {String} id - for recipe to be deleted
- * @return {Array} of updated recipes
+ * @param {string} id - for recipe to be deleted
+ * @return {array} of updated recipes
  */
 Model.deleteRecipeById = function(id) {
   //if recipes length is less than one, it may mean that we need to get them from localstorage
