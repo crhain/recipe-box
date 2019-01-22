@@ -3,9 +3,10 @@
     "module": "es6",
     "noImplicitAny": false,
     "removeComments": false,
-    "sourceMap": true
+    "sourceMap": true,
+    "jsx": "preserve"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"],
+  "exclude": ["node_modules", "build", "**/*.spec.ts"],
   "baseUrl": "./src/"
 }
