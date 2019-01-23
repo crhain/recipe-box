@@ -6,8 +6,8 @@ import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEnt
 
 /**
  * @description function to render erorr field sub component
- * @param {object} error - represents reduxForm error
- * @param {boolean} touched - flag to indicate if component was touched
+ * @param {Object} error - represents reduxForm error
+ * @param {Boolean} touched - flag to indicate if component was touched
  * @return {*} jsx component
  */
 const renderErrorField = function(error, touched) {
@@ -23,7 +23,7 @@ const renderErrorField = function(error, touched) {
 
 /**
  * @description function to render hidden id field component
- * @param {object} param0 - input comes from object passed from reduxForm
+ * @param {Object} param0 - input comes from object passed from reduxForm
  * @return {*} jsx component
  */
 const renderIdField = function({ input }) {
@@ -40,7 +40,7 @@ const renderIdField = function({ input }) {
 
 /**
  * @description function to render title field component
- * @param {object} param0 - object passed from reduxForm
+ * @param {Object} param0 - object passed from reduxForm
  * @return {*} jsx component
  */
 const renderTitleField = function({ input, label, meta: { error, touched } }) {
@@ -55,7 +55,7 @@ const renderTitleField = function({ input, label, meta: { error, touched } }) {
 
 /**
  * @description function to render description field component
- * @param {object} param0
+ * @param {Object} param0
  * @return {*} jsx component
  */
 const renderDescriptionField = function({
@@ -74,7 +74,7 @@ const renderDescriptionField = function({
 
 /**
  * @description function to render image url field component
- * @param {object} param0
+ * @param {Object} param0
  * @return jsx component
  */
 const renderImageField = function({ input, label, meta: { error, touched } }) {
@@ -89,7 +89,7 @@ const renderImageField = function({ input, label, meta: { error, touched } }) {
 
 /**
  * @description function to render servings field component
- * @param {object} param0
+ * @param {Object} param0
  * @return {*} jsx object
  */
 const renderServingsField = function({
@@ -190,8 +190,8 @@ class RecipeForm extends Component {
 
 /**
  * @description function used by Redux Form to validate fields on form
- * @param {object} values - object that contains values for all fields in form
- * @return {object} errors object with any validation errors found on form
+ * @param {Object} values - object that contains values for all fields in form
+ * @return {Object} errors object with any validation errors found on form
  */
 const validate = function(values) {
   const errors = {};
