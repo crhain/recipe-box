@@ -4,11 +4,12 @@ import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
 import RecipeFormInstructionEntry from 'components/Form/RecipeFormInstructionEntry';
 
-/******************************************************************************
- renderErrorField - function to render erorr field sub component
-   error = error object
-   touched = boolean value indicating if component touched or not
-*******************************************************************************/
+/**
+ * @description function to render erorr field sub component
+ * @param {object} error - represents reduxForm error
+ * @param {boolean} touched - flag to indicate if component was touched
+ * @return {*} jsx component
+ */
 const renderErrorField = function(error, touched) {
   return (
     <div
@@ -20,10 +21,11 @@ const renderErrorField = function(error, touched) {
   );
 };
 
-/******************************************************************************
- renderIDField - function to render hidden id field component
-   input = destructured item from form that continas all attributes for input
-*******************************************************************************/
+/**
+ * @description function to render hidden id field component
+ * @param {object} param0 - input comes from object passed from reduxForm
+ * @return {*} jsx component
+ */
 const renderIdField = function({ input }) {
   return (
     <div className="recipe-form__id-field">
@@ -36,14 +38,11 @@ const renderIdField = function({ input }) {
   );
 };
 
-/******************************************************************************
- renderTitleField - function to render title field component
-   input = destructured item from form that contains all input attirbutes
-   label = desctructred item from form that contains label
-   meta = destrcuctred item from form taht contains meta elements
-     error = object for error messages
-     touched = boolean indicating if component touched or not
-*******************************************************************************/
+/**
+ * @description function to render title field component
+ * @param {object} param0 - object passed from reduxForm
+ * @return {*} jsx component
+ */
 const renderTitleField = function({ input, label, meta: { error, touched } }) {
   return (
     <div className="recipe-form__title-field">
@@ -54,14 +53,11 @@ const renderTitleField = function({ input, label, meta: { error, touched } }) {
   );
 };
 
-/******************************************************************************
- renderDescriptionField - function to render description field component
-  input = destructured item from form that contains all input attirbutes
-    label = desctructred item from form that contains label
-    meta = destrcuctred item from form taht contains meta elements
-      error = object for error messages
-      touched = boolean indicating if component touched or not
-*******************************************************************************/
+/**
+ * @description function to render description field component
+ * @param {object} param0
+ * @return {*} jsx component
+ */
 const renderDescriptionField = function({
   input,
   label,
@@ -76,14 +72,11 @@ const renderDescriptionField = function({
   );
 };
 
-/******************************************************************************
- renderImageField - function to render image url field component
-  input = destructured item from form that contains all input attirbutes
-   label = desctructred item from form that contains label
-   meta = destrcuctred item from form taht contains meta elements
-     error = object for error messages
-     touched = boolean indicating if component touched or not
-*******************************************************************************/
+/**
+ * @description function to render image url field component
+ * @param {object} param0
+ * @return jsx component
+ */
 const renderImageField = function({ input, label, meta: { error, touched } }) {
   return (
     <div className="recipe-form__image-field">
@@ -94,14 +87,11 @@ const renderImageField = function({ input, label, meta: { error, touched } }) {
   );
 };
 
-/******************************************************************************
- renderServingsField - function to render servings field component
-  input = destructured item from form that contains all input attirbutes
-   label = desctructred item from form that contains label
-   meta = destrcuctred item from form taht contains meta elements
-     error = object for error messages
-     touched = boolean indicating if component touched or not
-*******************************************************************************/
+/**
+ * @description function to render servings field component
+ * @param {object} param0
+ * @return {*} jsx object
+ */
 const renderServingsField = function({
   input,
   label,
@@ -116,12 +106,13 @@ const renderServingsField = function({
   );
 };
 
-/******************************************************************************
- RecipeForm - React class component for form used by New and Edit components
-*******************************************************************************
-*******************************************************************************/
-
+/**
+ * @description React class component for form used by New and Edit components
+ */
 class RecipeForm extends Component {
+  /**
+   * @description React lifecycle method that runs after component is mounted
+   */
   componentDidMount() {
     let recipe = this.props.intialRecipeValues;
     if (recipe) {
@@ -129,6 +120,10 @@ class RecipeForm extends Component {
     }
   }
 
+  /**
+   * @description method to render component
+   * @return {*} jsx component
+   */
   render() {
     const { handleSubmit, formHandler, history } = this.props;
     return (
@@ -192,10 +187,11 @@ class RecipeForm extends Component {
   }
 }
 
-/******************************************************************************
- validate - function used by Redux Form to validate fields on form
-  values = object that contains values for all fields in form
-*******************************************************************************/
+/**
+ * @description function used by Redux Form to validate fields on form
+ * @param {object} values - object that contains values for all fields in form
+ * @return {object} errors object with any validation errors found on form
+ */
 const validate = function(values) {
   const errors = {};
 
