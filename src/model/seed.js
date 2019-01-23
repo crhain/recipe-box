@@ -1,4 +1,20 @@
-// @nots-check
+// @ts-check
+
+/**
+ * @typedef Recipe
+ * @type {Object}
+ * @property {string} id - an ID
+ * @property {string} title - recipe title
+ * @property {string} description - recipe description
+ * @property {string} image - url for image
+ * @property {number} servings - number of servings
+ * @property {*} ingredients - list of ingredient objects
+ * @property {array.<strings>} instructions - list of instruction objects
+ */
+
+/**
+ *  @type {Array.<Recipe>}
+ */
 export default [
   {
     id: 'beefstrogonoff',
