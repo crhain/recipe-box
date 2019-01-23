@@ -1,4 +1,12 @@
 // @nots-check
+
+/**
+ * @typedef Action
+ * @type {Object}
+ * @property {String} type - type of the action
+ * @property {*} payload - contents delivered by action
+ */
+
 import { store } from 'components/Root';
 import { flashMessage } from 'redux-flash';
 import { RecipeDoesNotExist } from 'model/error.js';
@@ -15,7 +23,7 @@ import {
 /**
  * @description action to retrieve all recipes from Model
  * @param {*} model - used to retrieve recipes. Defaults to Model
- * @return {action}
+ * @return {Action}
  */
 export const getRecipes = function(model = Model) {
   const payload = model.getAllRecipes();
@@ -24,9 +32,9 @@ export const getRecipes = function(model = Model) {
 
 /**
  * @description action to retrieve a single recipe from Model
- * @param {string} id - an id string for a recipe
+ * @param {String} id - an id string for a recipe
  * @param {*} model - used to retrieve recipes - Defaults to Model
- * @return {action}
+ * @return {Action}
  */
 export const getRecipe = function(id, model = Model) {
   let payload = {};
@@ -42,10 +50,10 @@ export const getRecipe = function(id, model = Model) {
 
 /**
  * @description action to add a recipe to Model
- * @param {object} recipe -  object to be added
- * @param {object} history - object used by react router
+ * @param {Object} recipe -  object to be added
+ * @param {Object} history - object used by react router
  * @param {*} model - used to retrieve recipes. Defaults to Model
- * @return {action}
+ * @return {Action}
  */
 export const addRecipe = function(recipe, history, model = Model) {
   let payload = {};
@@ -69,10 +77,10 @@ export const addRecipe = function(recipe, history, model = Model) {
 
 /**
  * @description action to replace old recipe with new version
- * @param {object} recipe - recipe object to replace old recipe with
- * @param {object} history - object used by react router
+ * @param {Object} recipe - recipe object to replace old recipe with
+ * @param {Object} history - object used by react router
  * @param {*} model -used to retrieve recipes. Defaults to Model
- * @return {action}
+ * @return {Action}
  */
 export const editRecipe = function(recipe, history, model = Model) {
   let payload = model.editRecipe(recipe);
@@ -83,10 +91,10 @@ export const editRecipe = function(recipe, history, model = Model) {
 
 /**
  * @description action to delete recipe by id from Model
- * @param {string} id - identifies a recipe
- * @param {object} history - object used by react router
+ * @param {String} id - identifies a recipe
+ * @param {Object} history - object used by react router
  * @param {*} model - used to retrieve recipes. Defaults to Model
- * @return {action}
+ * @return {Action}
  */
 export const deleteRecipe = function(id, history, model = Model) {
   let payload = [];
@@ -106,8 +114,8 @@ export const deleteRecipe = function(id, history, model = Model) {
 
 /**
  * @description action used with delete confirmation modal window
- * @param {string} id - identifies a recipe
- * @return {action}
+ * @param {String} id - identifies a recipe
+ * @return {Action}
  */
 export const setRecipeToDelete = function(id) {
   return { type: SET_RECIPE_TO_DELETE, payload: { id } };
