@@ -1,4 +1,4 @@
-// @ts-check
+// @nots-check
 
 import seed from 'model/seed.js';
 import { RecipeLimitReached, RecipeDoesNotExist } from 'model/error.js';

@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "allowJs": true,
     "checkJs": false,
+    "alwaysStrict": true,
+    "jsx": "react",
     "target": "es2017"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "**/*.spec.ts"],
-  "baseUrl": "./src/"
+  "exclude": ["node_modules", "build", "**/*.spec.ts"]
 }
