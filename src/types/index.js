@@ -17,3 +17,10 @@
  * @property {Array.<Ingredient>} ingredients - list of ingredient objects
  * @property {Array.<String>} instructions - list of instruction objects
  */
+
+/**
+ * @typedef Action
+ * @type {Object}
+ * @property {String} type - type of the action
+ * @property {*} payload - contents delivered by action
+ */

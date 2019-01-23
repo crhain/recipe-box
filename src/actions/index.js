@@ -1,13 +1,7 @@
-// @nots-check
-
-/**
- * @typedef Action
- * @type {Object}
- * @property {String} type - type of the action
- * @property {*} payload - contents delivered by action
- */
+// @ts-check
 
 import { store } from 'components/Root';
+//@ts-ignore
 import { flashMessage } from 'redux-flash';
 import { RecipeDoesNotExist } from 'model/error.js';
 import Model from 'model/index';
