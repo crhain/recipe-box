@@ -108,6 +108,7 @@ const renderServingsField = function({
 
 /**
  * @description React class component for form used by New and Edit components
+ * @extends Component
  */
 class RecipeForm extends Component {
   /**
