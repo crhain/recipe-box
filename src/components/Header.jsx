@@ -1,9 +1,13 @@
-// @nots-check
+// @ts-check
 import React, { Component } from 'react';
 import AddButton from 'components/Buttons/AddButton';
 import HomeButton from 'components/Buttons/HomeButton';
 import DeleteModal from 'components/DeleteModal';
 
+/**
+ * @description functional component for Header component
+ * @return {*} jsx element
+ */
 class Header extends Component {
   render() {
     return (
