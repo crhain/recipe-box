@@ -1,4 +1,4 @@
-// @nots-check
+// @ts-check
 import React, { Component } from 'react';
 import { reduxForm, Field, FieldArray } from 'redux-form';
 import RecipeFormIngredientEntry from 'components/Form/RecipeFormIngredientEntry';
@@ -23,6 +23,7 @@ const renderErrorField = function(error, touched) {
 
 /**
  * @description function to render hidden id field component
+ * @callback renderIdField
  * @param {Object} param0 - input comes from object passed from reduxForm
  * @return {*} jsx component
  */
@@ -40,6 +41,7 @@ const renderIdField = function({ input }) {
 
 /**
  * @description function to render title field component
+ * @callback renderTitleField
  * @param {Object} param0 - object passed from reduxForm
  * @return {*} jsx component
  */
@@ -55,6 +57,7 @@ const renderTitleField = function({ input, label, meta: { error, touched } }) {
 
 /**
  * @description function to render description field component
+ * @callback renderDescriptionField
  * @param {Object} param0
  * @return {*} jsx component
  */
@@ -74,6 +77,7 @@ const renderDescriptionField = function({
 
 /**
  * @description function to render image url field component
+ * @callback renderImageField
  * @param {Object} param0
  * @return jsx component
  */
@@ -89,6 +93,7 @@ const renderImageField = function({ input, label, meta: { error, touched } }) {
 
 /**
  * @description function to render servings field component
+ * @callback renderServingsField
  * @param {Object} param0
  * @return {*} jsx object
  */
@@ -133,6 +138,7 @@ class RecipeForm extends Component {
           <Field component={renderIdField} label="id" name="id" />
           <div className="row">
             <Field
+              //@ts-ignore
               component={renderTitleField}
               label="Recipe Title"
               name="title"
@@ -140,6 +146,7 @@ class RecipeForm extends Component {
           </div>
           <div className="row">
             <Field
+              //@ts-ignore
               component={renderDescriptionField}
               label="Recipe Description"
               name="description"
@@ -147,6 +154,7 @@ class RecipeForm extends Component {
           </div>
           <div className="row">
             <Field
+              //@ts-ignore
               component={renderImageField}
               label="Recipe Image URL"
               name="image"
@@ -154,6 +162,7 @@ class RecipeForm extends Component {
           </div>
           <div className="row">
             <Field
+              //@ts-ignore
               component={renderServingsField}
               label="Recipe Servings"
               name="servings"
@@ -161,6 +170,7 @@ class RecipeForm extends Component {
           </div>
           <div className="row">
             <FieldArray
+              //@ts-ignore
               component={RecipeFormIngredientEntry}
               label="Recipe Ingredients"
               name="ingredients"
@@ -168,6 +178,7 @@ class RecipeForm extends Component {
           </div>
           <div className="row">
             <FieldArray
+              //@ts-ignore
               component={RecipeFormInstructionEntry}
               label="Recipe Instructions"
               name="instructions"
