@@ -1,4 +1,4 @@
-// @nots-check
+// @ts-check
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Root } from 'components/Root';
@@ -11,6 +11,11 @@ import MessageDisplay from 'components/MessageDisplay';
 import 'components/App.css';
 import '../../node_modules/materialize-css/dist/css/materialize.min.css';
 
+/**
+ * @description class that returns the main App with a header, messageDisplay component
+ *  and routes to other pages
+ * @extends Component
+ */
 class App extends Component {
   render() {
     return (
