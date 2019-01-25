@@ -1,8 +1,14 @@
-// @nots-check
+// @ts-check
 import React from 'react';
 import { connect } from 'react-redux';
+//@ts-ignore
 import { getLatestMessage } from 'redux-flash';
 
+/**
+ * @description functional component that displays a flash message
+ * @param {*} param0 - flash property on props
+ * @return {*} jsx component
+ */
 function MessageDisplay({ flash }) {
   return (
     <div className="message-display">
@@ -11,6 +17,10 @@ function MessageDisplay({ flash }) {
   );
 }
 
+/**
+ * @description function that maps redux state onto props
+ * @param {*} state - represents redux state object
+ */
 const mapStateToProps = function(state) {
   return { flash: getLatestMessage(state) };
 };
