@@ -1,23 +1,44 @@
-// @nots-check
+// @ts-check
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setRecipeToDelete } from 'actions/';
+import { setRecipeToDelete } from 'actions/index';
 import M from '../../../node_modules/materialize-css/dist/js/materialize.min.js';
 
+/**
+ * @description Delete button component that opens a modal window
+ *  to select to delete a recipe or not
+ * @extends Component
+ */
 class DeleteButton extends Component {
+  /**
+   * @constructor
+   * @param {Object} props - property object
+   */
   constructor(props) {
     super(props);
     this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
     this.setRecipeToDelete = this.props.setRecipeToDelete.bind(this);
   }
+
+  /**
+   * @description lifecycle method that fires when component is rendered
+   */
   componentDidMount() {
     var elems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(elems, { enterDelay: 800 });
   }
+  /**
+   * @description method that sets recipe id to be deleted when a user
+   *  clicks on the delete button
+   */
   handleDeleteButtonClick() {
     this.setRecipeToDelete(this.props.recipeId);
   }
 
+  /**
+   * @description render method for the delete button component
+   * @return {*} jsx component
+   */
   render() {
     return (
       <button
@@ -34,6 +55,11 @@ class DeleteButton extends Component {
   }
 }
 
+/**
+ * @description utility function to map state to props
+ * @param {*} param0 - recipeToDelete is extracted from state object
+ * @return {Object} that represents mapped state
+ */
 const mapStateToProps = function({ recipeToDelete }) {
   return { recipeToDelete };
 };
