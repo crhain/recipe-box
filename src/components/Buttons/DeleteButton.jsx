@@ -25,6 +25,7 @@ class DeleteButton extends Component {
    */
   componentDidMount() {
     var elems = document.querySelectorAll('.tooltipped');
+    //@ts-ignore
     M.Tooltip.init(elems, { enterDelay: 800 });
   }
   /**
