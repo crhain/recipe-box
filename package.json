@@ -28,7 +28,7 @@
     "react-test-renderer": "^15.6.2"
   },
   "scripts": {
-    "start": "npm-run-all --parallel watch:sass watch:react test",
+    "start": "npm-run-all --parallel watch:sass watch:react",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "watch:react": "react-scripts start",
